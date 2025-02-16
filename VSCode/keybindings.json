@@ -1,0 +1,96 @@
+[
+    // {
+    //     "key": "ctrl+.",
+    //     "command": "-editor.action.quickFix",
+    //     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    // },
+    {
+        "key": "alt+enter",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "expand_region",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "undo_expand_region",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+b",
+        "command": "extension.toggleBool",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+o",
+        "command": "projectManager.listFavoriteProjects#sideBarFavorites",
+        "when": "isMac"
+    },
+    {
+        "key": "alt+o",
+        "command": "projectManager.listFavoriteProjects#sideBarFavorites",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "vim.active"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "editorTextFocus && vim.active"
+    },
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus && vim.active"
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && !inputFocus && vim.active"
+    },
+    {
+        "key": "c",
+        "command": "filesExplorer.copy",
+        "when": "filesExplorerFocus && !inputFocus && vim.active"
+    },
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "filesExplorerFocus && !inputFocus && vim.active"
+    },
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "filesExplorerFocus && !inputFocus && vim.active"
+    },
+    {
+        "key": "capslock capslock",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "isMac"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "!isMac"
+    },
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "workbench.action.navigateToLastEditLocation"
+    }
+]
