@@ -1,0 +1,202 @@
+let mapleader = ' '
+set scrolloff=5
+set nu rnu
+set visualbell
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nmap <Esc> :nohl<CR>
+map <C-s> :w!<CR>
+map <C-=> <Action>(ZoomInIdeAction)
+map <C--> <Action>(ZoomOutIdeAction)
+map <C-0> <Action>(ResetIdeScaleAction)
+
+set cursorline
+set backspace=indent,eol,start
+
+set clipboard=unnamed
+set clipboard^=ideaput
+"imap <C-v> <Esc>"0pa
+imap <C-v> <Action>($Paste)
+
+map Y y$
+
+"imap jj <Esc>
+
+nmap zl :source ~/.ideavimrc<CR>
+nmap zk :actionlist<CR>
+
+map == <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
+vmap == <Action>(ReformatCode)
+
+map <leader><leader> <Action>(GotoFile)
+map <leader>, <Action>(RecentFiles)
+map <leader>. <Action>(RecentLocations)
+map <leader>/ <Action>(GotoRelated)
+map <leader>; A;<Esc>
+map <leader>\| <C-w>v
+map <leader>- <C-w>s
+
+map <leader>q ci"
+map <leader>Q ci'
+map <leader><leader>q :q<CR>
+
+map <leader>w ciw
+map <leader>W ci[
+map <leader><leader>w :w<CR>
+
+map <leader>e <Action>(ActivateProjectToolWindow)
+map <leader>E <Action>(SelectIn)
+map <leader><leader>e <Action>(ActivateStructureToolWindow)
+
+map <leader>r <Action>(RenameElement)
+map <leader><leader>r <Action>(Run)
+
+map <leader>t cit
+map <leader>T cat
+map <leader><leader>t <Action>(ActivateTODOToolWindow)
+
+map <leader>y :set wrap!<CR>
+map <leader><leader>y :set nu rnu!<CR>
+
+map <leader>u <Action>(RiderUnitTestRunContextAction)
+map <leader>U <Action>(RiderUnitTestDebugContextAction)
+map <leader><leader>u <Action>(ActivateUnitTestsToolWindow)
+map <leader><leader>U <Action>(ActivateCoverageToolWindow)
+
+map <leader>i :Switch<CR>
+map <leader>I :SwitchReverse<CR>
+map <leader><leader>i <Action>(GotoImplementation)
+
+map <leader>o <Action>(RevealIn)
+map <leader><leader>o <Action>(ActivateTerminalToolWindow)
+map <leader><leader>O <Action>(ActivateNuGetToolWindow)
+
+map <leader>p "0p<CR>
+map <leader>P "0P<CR>
+map <leader><leader>p <Action>(PinActiveTabToggle)
+
+map <leader>a <Action>(Replace)
+map <leader><leader>a <Action>(ReplaceInPath)
+
+map <leader>s <Action>(Find)
+map <leader><leader>s <Action>(FindInPath)
+
+map <leader>d <Action>(SearchEverywhere)
+map <leader>D <Action>(GotoFile)
+map <leader><leader>d <Action>(Debug)
+
+map <leader>f <Action>(FileStructurePopup)
+map <leader>F <Action>(GotoSymbol)
+map <leader><leader>f <Action>(TextSearchAction)
+
+
+map <leader>g <Action>(ActivateCommitToolWindow)
+map <leader>G <Action>(ActivateVersionControlToolWindow)
+map <leader><leader>g <Action>(Annotate)
+
+map <leader>h ^
+map <leader><leader>h <Action>(ActivateHierarchyToolWindow)
+
+map <leader>j za
+map <leader>J <Action>(ExpandAllRegions)
+map <leader><leader>j <Action>(CollapseAllRegions)
+map <leader><leader>J <Action>(ExpandAllRegions)
+
+map <leader>k <Action>(ShowHoverInfo)
+map <leader><leader>k <Action>(Stop)
+
+map <leader>l $
+
+map <leader>z <Action>(ToggleZenMode)
+map <leader>Z <Action>(ToggleFullScreen)
+
+map <leader>x <Action>(ToggleLineBreakpoint)
+map <leader>X <Action>(EditBreakpoint)
+map <leader><leader>x :x<CR>
+
+map <leader>c <Action>(SilentCodeCleanup)
+map <leader><leader>c <Action>(CodeCleanup)
+
+map <leader>v <Action>(IntroduceVariable)
+map <leader>V <Action>(Inline)
+map <leader><leader>v <Action>(RiderShowIlViewerAction)
+
+map <leader>b cib
+map <leader>B ci{
+map <leader><leader>b <Action>(BuildCurrentProject)
+map <leader><leader>B <Action>(RebuildSolutionAction)
+
+map <leader>n <C-a>
+map <leader>N <C-x>
+map <leader><leader>n <Action>(NewElementSamePlace)
+map <leader><leader>N <Action>(ActivateNotificationsToolWindow)
+
+map <leader>m <Action>(GotoRelated)
+vmap <leader>m <Action>(GotoRelated)
+map <leader><leader>m <Action>(NavigateToImmediateWindow)
+
+map s <Action>(AceAction)
+vmap s <Action>(RiderSurroundWith)
+vmap n :norm
+vmap <leader>m <Action>(ExtractMethod)
+
+map + <Action>(EditorSelectWord)
+map _ <Action>(EditorUnSelectWord)
+
+map K <Action>(ShowHoverInfo)
+map H :tabp<CR>
+map L :tabn<CR>
+map <C-h> <Action>(PrevSplitter)
+map <C-j> <Action>(NextSplitter)
+map <C-k> <Action>(PrevSplitter)
+map <C-l> <Action>(NextSplitter)
+map <C-Left> <Action>(StretchSplitToLeft)
+map <C-Up> <Action>(StretchSplitToTop)
+map <C-Down> <Action>(StretchSplitToBottom)
+map <C-Right> <Action>(StretchSplitToRight)
+
+map gc <Action>(CommentByLineComment)
+map gC <Action>(CommentByBlockComment)
+map gd <Action>(GotoDeclaration)
+map gD <Action>(GotoDeclarationOnly)
+map gr <Action>(FindUsages)
+map gI <Action>(GotoImplementation)
+
+map ]b :tabn<CR>
+map [b :tabp<CR>
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+map ]e <Action>(ReSharperGotoNextErrorInSolution)
+map [e <Action>(ReSharperGotoPrevErrorInSolution)
+map ]f <Action>(MethodDown)
+map [f <Action>(MethodUp)
+map ]m <Action>(MethodDown)
+map [m <Action>(MethodUp)
+
+map <leader>` <Action>(ShowBookmarks)
+map <leader>0 <Action>(ToggleBookmark0)
+map <leader>1 <Action>(ToggleBookmark1)
+map <leader>2 <Action>(ToggleBookmark2)
+map <leader>3 <Action>(ToggleBookmark3)
+map <leader>4 <Action>(ToggleBookmark4)
+map <leader>5 <Action>(ToggleBookmark5)
+map <leader>6 <Action>(ToggleBookmark6)
+map <leader>7 <Action>(ToggleBookmark7)
+map <leader>8 <Action>(ToggleBookmark8)
+map <leader>9 <Action>(ToggleBookmark9)
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_color = "rgba(230, 97, 89, 178)"
+let g:highlightedyank_highlight_foreground_color = "rgba(255, 255, 255, 255)"
+
+" https://plugins.jetbrains.com/plugin/25899-vim-switch
+set switch
+let g:switch_definitions = 'group:basic,java_visibility,group:javascript,group:markdown'
+
+" https://plugins.jetbrains.com/plugin/9615-ideavimextension
+"set keep-english-in-normal
+set keep-english-in-normal-and-restore-in-insert

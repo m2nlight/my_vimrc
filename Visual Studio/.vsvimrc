@@ -1,0 +1,221 @@
+set vsvim_useeditordefaults
+set vsvim_useeditorindent
+let mapleader = ' '
+
+set scrolloff=5
+set nu rnu
+set visualbell
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <Esc> :nohl<CR>
+map <C-s> :w!<CR>
+noremap <C-=> :vsc View.ZoomIn<CR>
+noremap <C--> :vsc View.ZoomOut<CR>
+vnoremap <C-=> :vsc View.ZoomIn<CR>
+vnoremap <C--> :vsc View.ZoomOut<CR>
+
+set cursorline
+set backspace=indent,eol,start
+
+noremap u :vsc Edit.Undo<CR>
+noremap <C-r> :vsc Edit.Redo<CR>
+
+"imap <C-v> <Esc>"0pa
+set clipboard=unnamed
+noremap Y y$
+vnoremap Y $y
+" black hole register for x because chars do not need to go in any accessible register anyway
+"noremap x "_x
+
+"inoremap jj <Esc>
+
+" VsVim not support v:count
+" noremap j "v:count?'j':'gj'"
+noremap j gj
+noremap k gk
+
+noremap zl :so ~/.vsvimrc<CR>
+noremap zk :vsc Tools.CustomizeKeyboard<CR>
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
+vnoremap == :vsc Edit.FormatSelection<CR>
+noremap <leader><leader> :vsc Edit.GoToFile<CR>
+noremap <leader>, :vsc Edit.GoToRecentFile<CR>
+"noremap <leader>. _GotoRecentEdits
+noremap <leader>` :vsc View.BookmarkWindow<CR>
+"noremap <leader>' :vsc View.BookmarkWindow<CR>
+noremap <leader>; A;<Esc>
+noremap <leader>| <C-w>v
+noremap <leader>- <C-w>s
+noremap <leader>\ :vsc Windows.NewTab<CR>
+
+map <C-a> :vsc Edit.SelectAll<CR>
+imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
+map <C-x> :vsc Edit.LineCut<CR>
+imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
+vmap <C-x> :vsc Edit.Cut<CR>
+
+noremap <leader>q ci"
+noremap <leader>Q ci'
+noremap <leader><leader>q :q<CR>
+
+noremap <leader>w ciw
+noremap <leader>W ci[
+noremap <leader><leader>w :w<CR>
+
+noremap <leader>e :vsc View.SolutionExplorer<CR>
+noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+noremap <leader><leader>e :vsc View.DocumentOutline<CR>
+
+noremap <leader>r :vsc Refactor.Rename<CR>
+noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
+
+noremap <leader>t cit
+noremap <leader>T cat
+noremap <leader><leader>t :vsc View.TaskList<CR>
+
+noremap <leader>y :set wrap!<CR>
+noremap <leader><leader>y :set nu rnu!<CR>
+
+noremap <leader>u :vsc TestExplorer.RunAllTestsInContext<CR>
+"noremap <leader>U :vsc TestExplorer.DebugLastRun<CR>
+noremap <leader>U :vsc TestExplorer.DebugAllTestsInContext<CR>
+noremap <leader><leader>u :vsc TestExplorer.ShowTestExplorer<CR>
+noremap <leader><leader>U :vsc View.CodeCoverageResults<CR>
+
+noremap <leader>i :vsc Tools.Switch<CR>
+noremap <leader>I :vsc Tools.SwitchReverse<CR>
+noremap <leader><leader>i :vsc Edit.GoToImplementation<CR>
+
+"vs2026
+noremap <leader>o :vsc File.OpeninFileExplorer<CR>
+"vs2022
+"noremap <leader>O :vsc File.OpenContainingFolder<CR>
+noremap <leader><leader>o :vsc View.Terminal<CR>
+noremap <leader><leader>O :vsc View.PackageManagerConsole<CR>
+
+noremap <leader>p "0p<CR>
+noremap <leader>P "0P<CR>
+noremap <leader><leader>p :vsc Window.PinTab<CR>
+
+noremap <leader>a :vsc Edit.Replace<CR>
+noremap <leader><leader>a :vsc Edit.ReplaceinFiles<CR>
+
+noremap <leader>s :vsc Edit.Find<CR>
+noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
+
+noremap <leader>d :vsc Edit.NavigateTo<CR>
+noremap <leader>D :vsc Edit.GoToFile<CR>
+"noremap <leader>d :vsc Edit.GoToAll<CR>
+noremap <leader><leader>d :vsc Debug.Start<CR>
+
+noremap <leader>f :vsc Edit.GoToMember<CR>
+noremap <leader>F :vsc Edit.GotoSymbol<CR>
+noremap <leader><leader>f :vsc Edit.GotoText<CR>
+
+noremap <leader>g :vsc View.GitWindow<CR>
+noremap <leader>G :vsc Team.Git.ViewHistory<CR>
+noremap <leader><leader>g :vsc Team.Git.Annotate<CR>
+
+noremap <leader>h ^
+
+noremap <leader>j za
+noremap <leader><leader>j :vsc Edit.ToggleAllOutlining<CR>
+
+noremap <leader>h ^
+
+noremap <leader>k :vsc Edit.QuickInfo<CR>
+noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
+
+noremap <leader>l $
+
+noremap <leader>z :vsc View.FullScreen<CR>
+
+noremap <leader>x :vsc Debug.ToggleBreakpoint<CR>
+noremap <leader>X :vsc Debug.EnableBreakpoint<CR>
+noremap <leader><leader>x :x<CR>
+
+noremap <leader>c :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<CR>
+noremap <leader><leader>c :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<CR>
+
+"noremap <leader>v :vsc Resharper.Resharper_IntroVariable<CR>
+"noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
+noremap <leader><leader>v :vsc Tools.ILSpy<CR>
+
+noremap <leader>b cib
+noremap <leader>B ci{
+noremap <leader><leader>b :vsc Build.BuildSelection<CR>
+noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
+
+noremap <leader>n <C-a>
+noremap <leader>N <C-x>
+noremap <leader><leader>n :vsc AddQuickFile<CR>
+noremap <leader><leader>N :vsc View.Notifications<CR>
+
+noremap <leader>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader><leader>m :vsc Debug.Immediate<CR>
+
+noremap s :vsc Tools.InvokeAceJumpCommand<CR>
+"noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
+vnoremap s :vsc Edit.SurroundWith<CR>
+vnoremap n :norm 
+vnoremap <leader>m :vsc Refactor.ExtractMethod<CR>
+
+noremap + :vsc Edit.ExpandSelection<CR>
+vnoremap + :vsc Edit.ExpandSelection<CR>
+noremap _ :vsc Edit.ContractSelection<CR>
+vnoremap _ :vsc Edit.ContractSelection<CR>
+
+noremap <C-o> :vsc View.NavigateBackward<CR>
+noremap <C-i> :vsc View.NavigateForward<CR>
+
+" VsVim <C-i> always binding to <Tab>. Please rewrite them by AHK
+" -- visualstudio.ahk (AHK2) --
+" #HotIf WinActive("ahk_exe devenv.exe")
+" ; map ctrl-o, ctrl-i to navigate back/forward
+" ^i::Send "^+-"
+" ^o::Send "^-"
+" ; map ctrl-k to previous split pane
+" ^k::Send "+{F6}"
+" ; map ctrl-p, ctrl-n
+" ^p::Send "{up}"
+" ^n::Send "{down}"
+" #HotIf
+
+noremap K :vsc Edit.QuickInfo<CR>
+noremap H :tabp<CR>
+noremap L :tabn<CR>
+noremap <C-h> :vsc Window.PreviousDocumentWindow<CR>
+noremap <C-j> :vsc Window.NextSplitPane<CR>
+noremap <C-k> :vsc Window.PreviousSplitPane<CR>
+noremap <C-l> :vsc Window.NextDocumentWindow<CR>
+
+noremap gc :vsc Edit.ToggleLineComment<CR>
+noremap gC :vsc Edit.ToggleBlockComment<CR>
+vnoremap gc :vsc Edit.CommentSelection<CR>
+noremap gu :vsc Edit.UncommentSelection<CR>
+noremap gd :vsc Edit.GotoDefinition<CR>
+noremap gD :vsc Edit.GoToDeclaration<CR>
+noremap gr :vsc Edit.FindAllReferences<CR>
+noremap gi :vsc Edit.GoToLastEditLocation<CR>
+noremap gI :vsc Edit.GoToImplementation<CR>
+
+noremap ]b :tabn<CR>
+noremap [b :tabp<CR>
+noremap ]d :vsc Edit.GoToNextIssueinFile<CR>
+noremap [d :vsc Edit.GoToPreviousIssueinFile<CR>
+noremap ]w :vsc Edit.GoToNextIssueinFile<CR>
+noremap [w :vsc Edit.GoToPreviousIssueinFile<CR>
+noremap ]e :vsc View.NextError<CR>
+noremap [e :vsc View.PreviousError<CR>
+noremap ]f :vsc Edit.NextMethod<CR>
+noremap [f :vsc Edit.PreviousMethod<CR>
+noremap ]m :vsc Edit.NextMethod<CR>
+noremap [m :vsc Edit.PreviousMethod<CR>
+
+"noremap ,b :vsc Edit.PreviousSubword<CR>
+"noremap ,w :vsc Edit.NextSubword<CR>
+"vnoremap ,b :vsc Edit.PreviousSubwordExtend<CR>
+"vnoremap ,w :vsc Edit.NextSubwordExtend<CR>

@@ -1,0 +1,235 @@
+set vsvim_useeditordefaults
+set vsvim_useeditorindent
+let mapleader = ' '
+
+set scrolloff=5
+set nu rnu
+set visualbell
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <Esc> :nohl<CR>
+map <C-s> :w!<CR>
+noremap <C-=> :vsc View.ZoomIn<CR>
+noremap <C--> :vsc View.ZoomOut<CR>
+vnoremap <C-=> :vsc View.ZoomIn<CR>
+vnoremap <C--> :vsc View.ZoomOut<CR>
+
+set cursorline
+set backspace=indent,eol,start
+
+noremap u :vsc Edit.Undo<CR>
+noremap <C-r> :vsc Edit.Redo<CR>
+
+"imap <C-v> <Esc>"0pa
+set clipboard=unnamed
+noremap Y y$
+vnoremap Y $y
+" black hole register for x because chars do not need to go in any accessible register anyway
+"noremap x "_x
+
+"inoremap jj <Esc>
+
+" VsVim not support v:count
+" noremap j "v:count?'j':'gj'"
+noremap j gj
+noremap k gk
+
+noremap zl :so ~/.vsvimrc<CR>
+noremap zk :vsc Tools.CustomizeKeyboard<CR>
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
+vnoremap == :vsc Edit.FormatSelection<CR>
+noremap <leader><leader> :vsc ReSharper.ReSharper_GotoFile<CR>
+noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
+noremap <leader>. :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
+noremap <leader>/ :vsc Resharper.ReSharper_GotoRelatedFiles<CR>
+noremap <leader>` :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
+"noremap <leader>' :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
+noremap <leader>; A;<Esc>
+noremap <leader>| <C-w>v
+noremap <leader>- <C-w>s
+noremap <leader>\ :vsc Windows.NewTab<CR>
+
+map <C-a> :vsc Edit.SelectAll<CR>
+imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
+map <C-x> :vsc Edit.LineCut<CR>
+imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
+vmap <C-x> :vsc Edit.Cut<CR>
+
+noremap <leader>q ci"
+noremap <leader>Q ci'
+noremap <leader><leader>q :q<CR>
+
+noremap <leader>w ciw
+noremap <leader>W ci[
+noremap <leader><leader>w :w<CR>
+
+noremap <leader>e :vsc View.SolutionExplorer<CR>
+noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+noremap <leader><leader>e :vsc ReSharper.ReSharper_ShowCodeStructure<CR>
+
+noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
+noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
+
+noremap <leader>t cit
+noremap <leader>T cat
+noremap <leader><leader>t :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
+
+noremap <leader>y :set wrap!<CR>
+noremap <leader><leader>y :set nu rnu!<CR>
+
+noremap <leader>u :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
+noremap <leader>U :vsc ReSharper.ReSharper_UnitTestDebugContext<CR>
+noremap <leader><leader>u :vsc Resharper.ReSharper_ShowUnitTestExplorer<CR>
+noremap <leader><leader>U :vsc Resharper.ReSharper_ShowSolutionCoverage<CR>
+
+noremap <leader>i :vsc Tools.Switch<CR>
+noremap <leader>I :vsc Tools.SwitchReverse<CR>
+noremap <leader><leader>i :vsc ReSharper.ReSharper_GotoImplementations<CR>
+
+"vs2026
+noremap <leader>o :vsc File.OpeninFileExplorer<CR>
+"vs2022
+"noremap <leader>O :vsc File.OpenContainingFolder<CR>
+noremap <leader><leader>o :vsc View.Terminal<CR>
+noremap <leader><leader>O :vsc View.PackageManagerConsole<CR>
+
+noremap <leader>p "0p<CR>
+noremap <leader>P "0P<CR>
+noremap <leader><leader>p :vsc Window.PinTab<CR>
+
+noremap <leader>a :vsc Edit.Replace<CR>
+noremap <leader><leader>a :vsc Edit.ReplaceinFiles<CR>
+
+noremap <leader>s :vsc Edit.Find<CR>
+noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
+
+noremap <leader>d :vsc ReSharper.ReSharper_GotoType<CR>
+noremap <leader>D :vsc ReSharper.ReSharper_GotoFile<CR>
+noremap <leader><leader>d :vsc Debug.Start<CR>
+
+noremap <leader>f :vsc Resharper.Resharper_GotoFileMember<CR>
+noremap <leader>F :vsc ReSharper.ReSharper_GotoSymbol<CR>
+noremap <leader><leader>f :vsc ReSharper.ReSharper_GotoText<CR>
+
+
+noremap <leader>g :vsc View.GitWindow<CR>
+noremap <leader>G :vsc Team.Git.ViewHistory<CR>
+noremap <leader><leader>g :vsc Team.Git.Annotate<CR>
+
+noremap <leader>h ^
+noremap <leader><leader>h :vsc ReSharper.ReSharper_TypeHierarchyBrowse<CR>
+
+noremap <leader>j za
+noremap <leader><leader>j :vsc Edit.ToggleAllOutlining<CR>
+
+noremap <leader>k :vsc Edit.QuickInfo<CR>
+noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
+
+noremap <leader>l $
+
+noremap <leader>z :vsc View.FullScreen<CR>
+
+noremap <leader>x :vsc Debug.ToggleBreakpoint<CR>
+noremap <leader>X :vsc Debug.EnableBreakpoint<CR>
+noremap <leader><leader>x :x<CR>
+
+noremap <leader>c :vsc Resharper.ReSharper_SilentCleanupCode<CR>
+noremap <leader>C :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<CR>
+noremap <leader><leader>c :vsc Resharper.ReSharper_CleanupCode<CR>
+noremap <leader><leader>C :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<CR>
+
+noremap <leader>v :vsc Resharper.Resharper_IntroVariable<CR>
+noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
+noremap <leader><leader>v :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
+noremap <leader><leader>V :vsc Tools.ILSpy<CR>
+
+noremap <leader>b cib
+noremap <leader>B ci{
+noremap <leader><leader>b :vsc Build.BuildSelection<CR>
+noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
+
+noremap <leader>n <C-a>
+noremap <leader>N <C-x>
+noremap <leader><leader>n :vsc AddQuickFile<CR>
+noremap <leader><leader>N :vsc View.Notifications<CR>
+
+noremap <leader>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader><leader>m :vsc Debug.Immediate<CR>
+
+noremap s :vsc Tools.InvokeAceJumpCommand<CR>
+"noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
+vnoremap s :vsc ReSharper.ReSharper_SurroundWith<CR>
+vnoremap n :norm 
+vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
+
+noremap + :vsc Resharper.ReSharper_ExtendSelection<CR>
+vnoremap + :vsc Resharper.ReSharper_ExtendSelection<CR>
+noremap _ :vsc Resharper.ReSharper_ShrinkSelection<CR>
+vnoremap _ :vsc Resharper.ReSharper_ShrinkSelection<CR>
+
+noremap <C-o> :vsc View.NavigateBackward<CR>
+noremap <C-i> :vsc View.NavigateForward<CR>
+
+" VsVim <C-i> always binding to <Tab>. Please rewrite them by AHK
+" -- visualstudio.ahk (AHK2) --
+" #HotIf WinActive("ahk_exe devenv.exe")
+" ; map ctrl-o, ctrl-i to navigate back/forward
+" ^i::Send "^+-"
+" ^o::Send "^-"
+" ; map ctrl-k to previous split pane
+" ^k::Send "+{F6}"
+" ; map ctrl-p, ctrl-n
+" ^p::Send "{up}"
+" ^n::Send "{down}"
+" #HotIf
+
+noremap K :vsc Edit.QuickInfo<CR>
+noremap H :tabp<CR>
+noremap L :tabn<CR>
+noremap <C-h> :vsc Window.PreviousDocumentWindow<CR>
+noremap <C-j> :vsc Window.NextSplitPane<CR>
+noremap <C-k> :vsc Window.PreviousSplitPane<CR>
+noremap <C-l> :vsc Window.NextDocumentWindow<CR>
+
+noremap gc :vsc ReSharper.ReSharper_LineComment<CR>
+noremap gC :vsc ReSharper.ReSharper_BlockComment<CR>
+vnoremap gc :vsc Edit.CommentSelection<CR>
+noremap gu :vsc Edit.UncommentSelection<CR>
+noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+noremap gD :vsc Edit.GoToDeclaration<CR>
+noremap gr :vsc ReSharper.ReSharper_FindUsages<CR>
+noremap gi :vsc ReSharper.ReSharper_GotoLastEditLocation<CR>
+noremap gI :vsc ReSharper.ReSharper_GotoImplementations<CR>
+
+noremap ]b :tabn<CR>
+noremap [b :tabp<CR>
+noremap ]d :vsc ReSharper.ReSharper_GotoNextHighlight<CR>
+noremap [d :vsc ReSharper.ReSharper_GotoPrevHighlight<CR>
+noremap ]e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<CR>
+noremap [e :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
+noremap ]w :vsc Edit.GoToNextIssueinFile<CR>
+noremap [w :vsc Edit.GoToPreviousIssueinFile<CR>
+noremap ]f :vsc Edit.NextMethod<CR>
+noremap [f :vsc Edit.PreviousMethod<CR>
+noremap ]m :vsc ReSharper.ReSharper_GotoNextMember<CR>
+noremap [m :vsc ReSharper.ReSharper_GotoPrevMember<CR>
+
+"noremap ,b :vsc Edit.PreviousSubword<CR>
+"noremap ,w :vsc Edit.NextSubword<CR>
+"vnoremap ,b :vsc Edit.PreviousSubwordExtend<CR>
+"vnoremap ,w :vsc Edit.NextSubwordExtend<CR>
+
+noremap <leader>` :vsc Resharper.Resharper_BookmarksBookmarksMenu<CR>
+noremap <leader>0 :vsc Resharper_BookmarksToggleBookmark0<CR>
+noremap <leader>1 :vsc Resharper_BookmarksToggleBookmark1<CR>
+noremap <leader>2 :vsc Resharper_BookmarksToggleBookmark2<CR>
+noremap <leader>3 :vsc Resharper_BookmarksToggleBookmark3<CR>
+noremap <leader>4 :vsc Resharper_BookmarksToggleBookmark4<CR>
+noremap <leader>5 :vsc Resharper_BookmarksToggleBookmark5<CR>
+noremap <leader>6 :vsc Resharper_BookmarksToggleBookmark6<CR>
+noremap <leader>7 :vsc Resharper_BookmarksToggleBookmark7<CR>
+noremap <leader>8 :vsc Resharper_BookmarksToggleBookmark8<CR>
+noremap <leader>9 :vsc Resharper_BookmarksToggleBookmark9<CR>
