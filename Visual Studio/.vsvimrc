@@ -1,0 +1,131 @@
+set scrolloff=5
+set nu rnu
+set visualbell
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+noremap <C-n> :nohl<CR>
+
+set cursorline
+set backspace=indent,eol,start
+
+set clipboard=unnamed
+noremap Y y$
+vnoremap Y $y
+"noremap yy :vsc edit.copy<CR>"0yy
+"vnoremap y :vsc edit.copy<CR>gv"0y
+"noremap y "*y
+"noremap yy "*yy
+"noremap Y "*y$
+"noremap d "*d
+"noremap dd "*dd
+"noremap D "*D
+"noremap p "*p
+"noremap P "*P
+"" black hole register for x because chars do not need to go in any accessible register anyway
+"noremap x "_x
+
+vnoremap <C-x> "+x
+vnoremap <S-Del> "+x
+vnoremap <C-c> "+y
+vnoremap <C-Insert> "+y
+
+inoremap jk <Esc>
+
+noremap <C-o> :vsc View.NavigateBackward<CR>
+noremap <C-i> :vsc View.NavigateForward<CR>
+" VsVim <C-i> binding to <Tab>. You use AHK rewrite them
+" -- visualstudio.ahk (AHK2) --
+" #HotIf WinActive("ahk_exe devenv.exe")
+" ^i::Send "!{Right}"
+" ^o::Send "!{Left}"
+" #HotIf
+
+noremap > :vsc Edit.IncreaseLineIndent<CR>
+noremap < :vsc Edit.DecreaseLineIndent<CR>
+
+noremap H :tabp<CR>
+noremap L :tabn<CR>
+noremap Q :q<CR>
+noremap | <C-w>v
+noremap _ <C-w>s
+noremap <C-h> :vsc Window.PreviousDocumentWindow<CR>
+noremap <C-j> :vsc Window.NextSplitPane<CR>
+noremap <C-k> :vsc Window.PreviousSplitPane<CR>
+noremap <C-l> :vsc Window.NextDocumentWindow<CR>
+
+noremap <Space>x <C-x>
+noremap <Space>a <C-a>
+vnoremap <Space>x <C-x>
+vnoremap <Space>a <C-a>
+
+noremap <Space>w :w!<CR>
+noremap <Space>q :q!<CR>
+noremap <Space>k :vsc Edit.QuickInfo<CR>
+noremap <Space>o :vsc File.OpenContainingFolder<CR>
+noremap <Space>p :vsc Window.PinTab<CR>
+
+noremap <Space>/ :vsc Edit.ToggleLineComment<CR>
+noremap <Space>\ :vsc Edit.ToggleBlockComment<CR>
+noremap gc :vsc Edit.CommentSelection<CR>
+noremap gu :vsc Edit.UncommentSelection<CR>
+noremap <Space>- :vsc Tools.Switch<CR>
+noremap <Space>= :vsc Tools.SwitchReverse<CR>
+
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
+"noremap == :vsc Edit.FormatDocument<CR>
+vnoremap == :vsc Edit.FormatSelection<CR>
+
+noremap gd :vsc Edit.GoToDefinition<CR>
+noremap <Space>u :vsc Edit.FindAllReferences<CR>
+noremap <Space>i :vsc Edit.GoToImplementation<CR>
+"noremap <Space>s :vsc Edit.GoToAll<CR>
+noremap <Space>s :vsc 编辑.转到所有<CR>
+noremap <Space>S :vsc Edit.SurroundWith<CR>
+noremap <Space>, :vsc Edit.GoToRecentFile<CR>
+noremap <Space>. :vsc Edit.GoToText<CR>
+noremap <Space>r :vsc Refactor.Rename<CR><Esc>
+noremap <Space>l :vsc Edit.InsertSnippet<CR>
+"noremap <Space>v :vsc ReSharper.Resharper_IntroVariable<CR>
+noremap <Space>m :vsc Refactor.ExtractMethod<CR>
+
+noremap <Space>gp :vsc Edit.PeekDifference<CR>
+
+noremap <Space>tr :vsc TestExplorer.RunAllTestsInContext<CR>
+noremap <Space>td :vsc TestExplorer.DebugAllTestsInContext<CR>
+noremap <Space>ta :vsc TestExplorer.RunAllTests<CR>
+noremap <Space>tl :vsc TestExplorer.RepeatLastRun<CR>
+noremap <Space>tt :vsc TestExplorer.ShowTestExplorer<CR>
+
+noremap <Space>b :vsc Build.BuildSolution<CR>
+noremap <Space>bb :vsc Build.BuildSelection<CR>
+noremap <Space>br :vsc Build.RebuildSolution<CR>
+noremap <Space>bc :vsc Build.CleanSolution<CR>
+
+noremap <Space>dd :vsc Debug.Start<CR>
+noremap <Space>dr :vsc Debug.StartWithoutDebugging<CR>
+noremap <Space>dq :vsc Debug.StopDebugging<CR>
+noremap <Space>dc :vsc Debug.RunToCursor<CR>
+noremap <Space>di :vsc Debug.Immediate<CR>
+noremap <Space>do :vsc Debug.Output<CR>
+noremap <Space>ds :vsc Debug.CallStack<CR>
+noremap <Space>da :vsc Debug.AddWatch<CR>
+noremap <Space>db :vsc Debug.Breakpoints<CR>
+noremap <Space>de :vsc Debug.ToggleBreakpoint<CR>
+
+"noremap <Space>e :vsc View.SolutionExplorer<CR>
+noremap <Space>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+noremap <Space>f :vsc Edit.FindinFiles<CR>
+noremap <Space>F :vsc Edit.Find<CR>
+noremap <Space>h :vsc Edit.Replace<CR>
+noremap <Space>; A;<Esc>
+noremap <Space><Space> :vsc Tools.InvokeAceJumpCommand<CR>
+
+noremap ]d :vsc View.NextError<CR>
+noremap [d :vsc View.PreviousError<CR>
+noremap ]f :vsc Edit.NextMethod<CR>
+noremap [f :vsc Edit.PreviousMethod<CR>
+
+noremap zl :so ~/.vsvimrc<CR>

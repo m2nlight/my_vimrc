@@ -1,0 +1,138 @@
+let g:mapleader = ' '
+
+set scrolloff=5
+set nu rnu
+set visualbell
+
+set clipboard^=unnamed,unnamedplus
+map Y y$
+vmap Y $y
+"xmap <C-c> y
+"nmap <C-S-V> p
+"imap <C-S-V> <C-r>+
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nmap <C-n> :noh<CR>
+
+imap jk <Esc>
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+map <C-p> <Action>(GotoRelated)
+map <C-=> <Action>(EditorSelectWord)
+map <C--> <Action>(EditorUnSelectWord)
+
+map > <Action>(EditorIndentLineOrSelection)
+map < <Action>(EditorUnindentSelection)
+map <Tab> >
+map <S-Tab> <
+
+imap <C-v> <Action>($Paste)
+imap <C-c> <Action>($Copy)
+imap <C-x> <Action>($Cut)
+imap <C-a> <Action>($SelectAll)
+
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
+nmap Q :q<CR>
+
+map \| <C-w>v
+map _ <C-w>s
+map <C-h> <Action>(PrevSplitter)
+map <C-l> <Action>(NextSplitter)
+"map <C-j> <Action>(PrevSplitter)
+"map <C-k> <Action>(NextSplitter)
+map <leader>p <Action>(PinActiveTabToggle)
+
+map <leader>w :w!<CR>
+map <leader>q :q!<CR>
+map <leader>x <C-x>
+map <leader>a <C-a>
+
+map <leader>k <Action>(ShowHoverInfo)
+map <leader>o <Action>(RevealIn)
+"map == <Action>(ReformatCode)
+map == <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
+map <leader>/ <Action>(CommentByLineComment)
+map <leader>\\ <Action>(CommentByBlockComment)
+
+map gd <Action>(GotoDeclaration)
+map <leader>u <Action>(FindUsages)
+map <leader>i <Action>(GotoImplementation)
+nmap <leader>s <Action>(GotoClass)
+xmap <leader>S <Action>(RiderSurroundWith)
+map <leader>, <Action>(RecentChangedFiles)
+map <leader>. <Action>(RecentLocations)
+map <leader>r <Action>(RenameElement)
+map <leader>l <Action>(InsertLiveTemplate)
+map <leader>v <Action>(IntroduceVariable)
+map <leader>m <Action>(ExtractMethod)
+
+map <leader>gp <Action>(Vcs.ShowDiffChangedLines)
+
+nmap <leader>tr <Action>(RiderUnitTestRunContextAction)
+nmap <leader>td <Action>(RiderUnitTestDebugContextAction)
+nmap <leader>ta <Action>(Rider.UnitTesting.RunSolution)
+nmap <leader>tl <Action>(RiderUnitTestRepeatPreviousRunAction)
+nmap <leader>tt <Action>(ActivateUnitTestsToolWindow)
+
+nmap <leader>b <Action>(BuildSolutionAction)
+nmap <leader>bb <Action>(BuildCurrentProject)
+nmap <leader>br <Action>(build)
+
+nmap <leader>dd <Action>(Debug)
+nmap <leader>dr <Action>(Run)
+nmap <leader>dq <Action>(Stop)
+nmap <leader>db <Action>(ViewBreakpoints)
+nmap <leader>de <Action>(ToggleLineBreakpoint)
+
+nmap <leader>f <Action>(FindInPath)
+nmap <leader>F <Action>(Find)
+nmap <leader>h <Action>(Replace)
+nmap <leader>H <Action>(ReplaceInPath)
+nmap <leader>; A;<Esc>
+
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]f <Action>(MethodDown)
+nmap [f <Action>(MethodUp)
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" IdeaVimExtension
+set keep-english-in-normal
+
+" IdeaVim-Switch
+set switch
+map <leader>- :Switch<CR>
+map <leader>= :SwitchReverse<CR>
+let g:switch_definitions = 'group:basic,java_visibility,group:markdown'
+
+" IdeaVim-EasyMotion
+let g:EasyMotion_do_mapping = 0
+set easymotion
+nmap <leader><leader> <Plug>(easymotion-s)
+
+" NERDTree
+Plug 'preservim/nerdtree'
+set NERDTree
+nmap <leader>e :NERDTreeFind<CR>
+nmap <leader>E :NERDTreeToggle<CR>
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = "200"
+let g:highlightedyank_highlight_color = "rgba(230, 97, 89, 179)"
+let g:highlightedyank_highlight_foreground_color = "rgba(255, 255, 255, 255)"
+
+" surround
+Plug 'tpope/vim-surround'
+set surround
+
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+" other
+nmap zl :so ~/.ideavimrc<CR>
+"nmap zp :actionlist<CR>
