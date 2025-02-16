@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "pkief.material-icon-theme",
+        "sainnhe.everforest",
+        "ow.vscode-subword-navigation",
+        "letrieu.expand-region",
+        "silesky.toggle-boolean",
+        "alefragnani.project-manager",
+        "vscodevim.vim",
+        // "vspacecode.vspacecode",
+    ]
+}
