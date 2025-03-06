@@ -112,8 +112,8 @@ noremap <Space>da :vsc Debug.AddWatch<CR>
 noremap <Space>db :vsc Debug.Breakpoints<CR>
 noremap <Space>de :vsc Debug.ToggleBreakpoint<CR>
 
-"noremap <Space>e :vsc View.SolutionExplorer<CR>
-noremap <Space>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+noremap <Space>e :vsc View.SolutionExplorer<CR>
+"noremap <Space>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 noremap <Space>f :vsc Edit.FindinFiles<CR>
 noremap <Space>F :vsc Edit.Find<CR>
 noremap <Space>h :vsc Edit.Replace<CR>
