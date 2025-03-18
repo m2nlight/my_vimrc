@@ -1,7 +1,9 @@
 ; map ctrl-o to alt-right, ctrl-i to alt-left for vim navigate back/forward
 #HotIf WinActive("ahk_exe devenv.exe")
-^i::Send "!{Right}"
-^o::Send "!{Left}"
+^i::Send "^+-"
+^o::Send "^-"
+^=::Send "!+="
+^-::Send "!+-"
 #HotIf
 
 ; map capslock to ctrl key, like HHKB
