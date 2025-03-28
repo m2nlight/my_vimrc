@@ -32,7 +32,7 @@ vnoremap <S-Del> "+x
 vnoremap <C-c> "+y
 vnoremap <C-Insert> "+y
 
-inoremap jk <Esc>
+inoremap jj <Esc>
 
 noremap <C-o> :vsc View.NavigateBackward<CR>
 noremap <C-i> :vsc View.NavigateForward<CR>
@@ -78,7 +78,7 @@ vnoremap == :vsc Edit.FormatSelection<CR>
 
 noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
 noremap <Space>u :vsc ReSharper.ReSharper_FindUsages<CR>
-noremap <Space>i :vsc ReSharper.GoToImplementation<CR>
+noremap <Space>i :vsc ReSharper.ReSharper_GoToImplementation<CR>
 noremap <Space>s :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <Space>S :vsc ReSharper.ReSharper_SurroundWith<CR>
 noremap <Space>, :vsc ReSharper.ReSharper_GotoRecentEdits<CR>

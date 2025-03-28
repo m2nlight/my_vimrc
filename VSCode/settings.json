@@ -19,7 +19,7 @@
         {
             "before": [
                 "j",
-                "k"
+                "j"
             ],
             "after": [
                 "<Esc>"

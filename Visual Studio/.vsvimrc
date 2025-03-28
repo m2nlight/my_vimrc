@@ -32,7 +32,7 @@ vnoremap <S-Del> "+x
 vnoremap <C-c> "+y
 vnoremap <C-Insert> "+y
 
-inoremap jk <Esc>
+inoremap jj <Esc>
 
 noremap <C-o> :vsc View.NavigateBackward<CR>
 noremap <C-i> :vsc View.NavigateForward<CR>

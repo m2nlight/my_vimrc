@@ -17,7 +17,7 @@ set ignorecase
 set smartcase
 nmap <C-n> :noh<CR>
 
-imap jk <Esc>
+imap jj <Esc>
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 map <C-p> <Action>(GotoRelated)
