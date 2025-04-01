@@ -4,8 +4,10 @@
 ^o::Send "^-"
 ^=::Send "!+="
 ^-::Send "!+-"
+; map capslock to ctrl key, like HHKB
+;CapsLock::LCtrl
+;AppsKey::CapsLock
 #HotIf
 
-; map capslock to ctrl key, like HHKB
-CapsLock::LCtrl
-AppsKey::CapsLock
+; map win+q to win+alt+space for PowerToys 1.90.0
+;#q::Send "#!{Space}"
