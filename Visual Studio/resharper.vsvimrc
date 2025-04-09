@@ -120,8 +120,8 @@ noremap <Space>h :vsc Edit.Replace<CR>
 noremap <Space>; A;<Esc>
 noremap <Space><Space> :vsc Tools.InvokeAceJumpCommand<CR>
 
-noremap ]d :vsc Edit.GoToNextIssueinFile<CR>
-noremap [d :vsc Edit.GoToPreviousIssueinFile<CR>
+nmap ]d :vsc ReSharper.ReSharper_GotoNextHighlight<CR>
+nmap [d :vsc ReSharper.ReSharper_GotoPrevHighlight<CR>
 noremap ]e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<CR>
 noremap [e :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
 noremap ]f :vsc ReSharper.ReSharper_GotoNextMember<CR>
