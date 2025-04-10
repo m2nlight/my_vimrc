@@ -88,9 +88,9 @@ nmap <leader>dq <Action>(Stop)
 nmap <leader>db <Action>(ViewBreakpoints)
 nmap <leader>de <Action>(ToggleLineBreakpoint)
 
-nmap <leader>f <Action>(FindInPath)
-nmap <leader>F <Action>(Find)
-nmap <leader>h <Action>(Replace)
+map <leader>f <Action>(FindInPath)
+map <leader>F <Action>(Find)
+map <leader>h <Action>(Replace)
 nmap <leader>; A;<Esc>
 
 nmap ]d <Action>(GotoNextError)
