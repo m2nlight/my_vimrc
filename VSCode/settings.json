@@ -161,6 +161,15 @@
         {
             "before": [
                 "<leader>",
+                "o"
+            ],
+            "commands": [
+                "revealFileInOS"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
                 "p"
             ],
             "commands": [
@@ -352,19 +361,19 @@
         },
         {
             "before": [
-                "<c-p>"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
                 "<leader>",
                 "."
             ],
             "commands": [
                 "workbench.action.quickTextSearch"
+            ]
+        },
+        {
+            "before": [
+                "<c-p>"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
             ]
         },
         {
