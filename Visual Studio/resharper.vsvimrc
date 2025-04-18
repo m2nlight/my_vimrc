@@ -14,23 +14,8 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 noremap Y y$
 vnoremap Y $y
-"noremap yy :vsc edit.copy<CR>"0yy
-"vnoremap y :vsc edit.copy<CR>gv"0y
-"noremap y "*y
-"noremap yy "*yy
-"noremap Y "*y$
-"noremap d "*d
-"noremap dd "*dd
-"noremap D "*D
-"noremap p "*p
-"noremap P "*P
-"" black hole register for x because chars do not need to go in any accessible register anyway
-"noremap x "_x
-
-vnoremap <C-x> "+x
-vnoremap <S-Del> "+x
-vnoremap <C-c> "+y
-vnoremap <C-Insert> "+y
+" black hole register for x because chars do not need to go in any accessible register anyway
+noremap x "_x
 
 inoremap jj <Esc>
 
