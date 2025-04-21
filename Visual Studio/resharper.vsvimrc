@@ -1,3 +1,6 @@
+set vsvim_useeditordefaults
+set vsvim_useeditorindent
+
 set scrolloff=5
 set nu rnu
 set visualbell
@@ -62,24 +65,25 @@ noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
 vnoremap == :vsc Edit.FormatSelection<CR>
 
 noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+noremap <Space>t :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <Space>u :vsc ReSharper.ReSharper_FindUsages<CR>
 noremap <Space>i :vsc ReSharper.ReSharper_GoToImplementations<CR>
-noremap <Space>s :vsc ReSharper.ReSharper_GotoType<CR>
-noremap <Space>S :vsc ReSharper.ReSharper_SurroundWith<CR>
+noremap <Space>s :vsc ReSharper.ReSharper_SurroundWith<CR>
 noremap <Space>, :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
 noremap <Space>. :vsc ReSharper.ReSharper_GotoText<CR>
 noremap <Space>r :vsc ReSharper.ReSharper_Rename<CR>
-noremap <Space>l :vsc ReSharper.ReSharper_LiveTemplatesInsert
+noremap <Space>l :vsc ReSharper.ReSharper_LiveTemplatesInsert<CR>
 noremap <Space>v :vsc ReSharper.Resharper_IntroVariable<CR>
 noremap <Space>m :vsc ReSharper.ReSharper_ExtractMethod<CR>
+noremap <Space>n :vsc ReSharper.ReSharper_InspectThis<CR>
 
 noremap <Space>gp :vsc Edit.PeekDifference<CR>
 
-noremap <Space>tr :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
-noremap <Space>td :vsc ReSharper.ReSharper_UnitTestDebugContext<CR>
-noremap <Space>ta :vsc ReSharper.ReSharper_UnitTestRunSolution<CR>
-noremap <Space>tl :vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
-noremap <Space>tt :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
+noremap <Space>yr :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
+noremap <Space>yd :vsc ReSharper.ReSharper_UnitTestDebugContext<CR>
+noremap <Space>ya :vsc ReSharper.ReSharper_UnitTestRunSolution<CR>
+noremap <Space>yy :vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
+noremap <Space>yt :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
 
 noremap <Space>b :vsc Build.BuildSolution<CR>
 noremap <Space>bb :vsc Build.BuildSelection<CR>

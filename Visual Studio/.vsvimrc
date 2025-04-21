@@ -1,3 +1,6 @@
+set vsvim_useeditordefaults
+set vsvim_useeditorindent
+
 set scrolloff=5
 set nu rnu
 set visualbell
@@ -64,11 +67,11 @@ noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
 vnoremap == :vsc Edit.FormatSelection<CR>
 
 noremap gd :vsc Edit.GoToDefinition<CR>
+"noremap <Space>t :vsc Edit.GoToAll<CR>
+noremap <Space>t :vsc 编辑.转到所有<CR>
 noremap <Space>u :vsc Edit.FindAllReferences<CR>
 noremap <Space>i :vsc Edit.GoToImplementation<CR>
-"noremap <Space>s :vsc Edit.GoToAll<CR>
-noremap <Space>s :vsc 编辑.转到所有<CR>
-noremap <Space>S :vsc Edit.SurroundWith<CR>
+noremap <Space>s :vsc Edit.SurroundWith<CR>
 noremap <Space>, :vsc Edit.GoToRecentFile<CR>
 noremap <Space>. :vsc Edit.GoToText<CR>
 noremap <Space>r :vsc Refactor.Rename<CR><Esc>
@@ -78,11 +81,11 @@ noremap <Space>m :vsc Refactor.ExtractMethod<CR>
 
 noremap <Space>gp :vsc Edit.PeekDifference<CR>
 
-noremap <Space>tr :vsc TestExplorer.RunAllTestsInContext<CR>
-noremap <Space>td :vsc TestExplorer.DebugAllTestsInContext<CR>
-noremap <Space>ta :vsc TestExplorer.RunAllTests<CR>
-noremap <Space>tl :vsc TestExplorer.RepeatLastRun<CR>
-noremap <Space>tt :vsc TestExplorer.ShowTestExplorer<CR>
+noremap <Space>yr :vsc TestExplorer.RunAllTestsInContext<CR>
+noremap <Space>yd :vsc TestExplorer.DebugAllTestsInContext<CR>
+noremap <Space>ya :vsc TestExplorer.RunAllTests<CR>
+noremap <Space>yy :vsc TestExplorer.RepeatLastRun<CR>
+noremap <Space>yt :vsc TestExplorer.ShowTestExplorer<CR>
 
 noremap <Space>b :vsc Build.BuildSolution<CR>
 noremap <Space>bb :vsc Build.BuildSelection<CR>
