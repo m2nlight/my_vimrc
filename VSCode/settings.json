@@ -15,6 +15,10 @@
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<c-s>": false
+    },
     "vim.insertModeKeyBindings": [
         {
             "before": [
@@ -22,7 +26,7 @@
                 "j"
             ],
             "after": [
-                "<Esc>"
+                "<esc>"
             ]
         }
     ],
@@ -38,79 +42,48 @@
         },
         {
             "before": [
-                "<c-a>",
-            ],
-            "after": [
-                "g",
-                "g",
-                "V",
-                "G"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "x"
-            ],
-            "after": [
-                "<C-x>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "a"
-            ],
-            "after": [
-                "<C-a>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "g",
-                "r"
+                "-"
             ],
             "commands": [
-                "git.revertSelectedRanges"
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                "<leader>",
-                "/"
-            ],
-            "commands": [
-                "editor.action.commentLine"
+                "extension.toggleBool",
             ]
         },
         {
             "before": [
-                "<leader>",
-                "\\"
+                "+"
             ],
             "commands": [
-                "editor.action.blockComment"
+                "expand_region",
             ]
         },
         {
             "before": [
-                ">"
+                "_"
             ],
             "commands": [
-                "editor.action.indentLines"
+                "undo_expand_region",
             ]
         },
         {
             "before": [
-                "<"
+                "<space>"
             ],
             "commands": [
-                "editor.action.outdentLines"
+                "vspacecode.space"
             ]
-        }
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -124,26 +97,7 @@
         },
         {
             "before": [
-                "K"
-            ],
-            "commands": [
-                "lineBreakInsert"
-            ],
-            "silent": true
-        },
-        {
-            "before": [
-                "<leader>",
-                "d"
-            ],
-            "after": [
-                "d",
-                "d"
-            ]
-        },
-        {
-            "before": [
-                "<C-n>"
+                "<c-n>"
             ],
             "commands": [
                 ":nohl"
@@ -151,112 +105,126 @@
         },
         {
             "before": [
-                "<leader>",
-                "e"
-            ],
-            "commands": [
-                "workbench.files.action.focusFilesExplorer"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "o"
-            ],
-            "commands": [
-                "revealFileInOS"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "p"
-            ],
-            "commands": [
-                "workbench.action.pinEditor"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "P"
-            ],
-            "commands": [
-                "workbench.action.unpinEditor"
-            ]
-        },
-        {
-            "before": [
                 "K"
             ],
             "commands": [
-                "lineBreakInsert"
-            ],
-            "silent": true
-        },
-        {
-            "before": [
-                "<leader>",
-                "f"
-            ],
-            "commands": [
-                "actions.find"
+                "editor.action.showHover"
             ]
         },
         {
             "before": [
-                "<leader>",
-                "h"
-            ],
-            "commands": [
-                "editor.action.startFindReplaceAction"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "w"
-            ],
-            "commands": [
-                ":w!"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "q"
-            ],
-            "commands": [
-                ":q!"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "x"
-            ],
-            "commands": [
-                ":x!"
-            ]
-        },
-        {
-            "before": [
-                "<c-a>",
+                "s"
             ],
             "after": [
-                "g",
-                "g",
-                "V",
-                "G"
+                "<leader>",
+                "<leader>",
+                "s"
             ]
         },
         {
             "before": [
                 "<leader>",
-                "k"
+                "<space>"
             ],
             "commands": [
-                "editor.action.showHover"
+                "workbench.action.showAllSymbols"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                ";"
+            ],
+            "after": [
+                "A",
+                ";",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "|"
+            ],
+            "after": [
+                "<c-w>",
+                "v",
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "-"
+            ],
+            "after": [
+                "<c-w>",
+                "s",
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
             ]
         },
         {
@@ -323,150 +291,46 @@
                 "editor.action.quickFix"
             ]
         },
-        {
+         {
             "before": [
                 "<leader>",
-                "-"
+                "e"
             ],
             "commands": [
-                "extension.toggleBool",
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "x"
-            ],
-            "after": [
-                "<C-x>"
+                "workbench.files.action.focusFilesExplorer"
             ]
         },
         {
             "before": [
                 "<leader>",
-                "a"
+                "o"
             ],
-            "after": [
-                "<C-a>"
+            "commands": [
+                "revealFileInOS"
             ]
         },
         {
             "before": [
                 "<leader>",
-                ","
+                "p"
             ],
             "commands": [
-                "workbench.action.quickOpen"
+                "workbench.action.pinEditor"
             ]
         },
         {
             "before": [
                 "<leader>",
-                "."
+                "P"
             ],
             "commands": [
-                "workbench.action.quickTextSearch"
-            ]
-        },
-        {
-            "before": [
-                "<c-p>"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
+                "workbench.action.unpinEditor"
             ]
         },
         {
             "before": [
                 "<leader>",
-                "<leader>"
-            ],
-            "after": [
-                "<leader>",
-                "<leader>",
-                "s"
-            ]
-        }
-    ],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "H"
-            ],
-            "commands": [
-                "workbench.action.previousEditor"
-            ]
-        },
-        {
-            "before": [
-                "L"
-            ],
-            "commands": [
-                "workbench.action.nextEditor"
-            ]
-        },
-        {
-            "before": [
-                "Q"
-            ],
-            "after": [
-                "<C-w>",
-                "q"
-            ]
-        },
-        {
-            "before": [
-                "|"
-            ],
-            "after": [
-                "<C-w>",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                "_"
-            ],
-            "after": [
-                "<C-w>",
-                "s"
-            ]
-        },
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "commands": [
-                "workbench.action.focusLeftGroup"
-            ]
-        },
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "commands": [
-                "workbench.action.focusBelowGroup"
-            ]
-        },
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "commands": [
-                "workbench.action.focusAboveGroup"
-            ]
-        },
-        {
-            "before": [
-                "<C-l>"
-            ],
-            "commands": [
-                "workbench.action.focusRightGroup"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
+                "s",
                 "f"
             ],
             "commands": [
@@ -476,6 +340,7 @@
         {
             "before": [
                 "<leader>",
+                "s",
                 "F"
             ],
             "commands": [
@@ -485,109 +350,58 @@
         {
             "before": [
                 "<leader>",
-                "t"
-            ],
-            "commands": [
-                "workbench.action.showAllSymbols"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "u"
-            ],
-            "commands": [
-                "editor.action.goToReferences"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "i"
-            ],
-            "commands": [
-                "editor.action.goToImplementation"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "g",
-                "p"
-            ],
-            "commands": [
-                "editor.action.dirtydiff.next"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "g",
+                "s",
                 "r"
             ],
             "commands": [
-                "git.revertSelectedRanges"
+                "editor.action.startFindReplaceAction"
             ]
         },
         {
             "before": [
-                "<leader>",
-                "g",
-                "j"
+                "-"
             ],
             "commands": [
-                "workbench.action.editor.nextChange"
+                "extension.toggleBool",
             ]
         },
         {
             "before": [
-                "<leader>",
-                "g",
-                "k"
+                "+"
             ],
             "commands": [
-                "workbench.action.editor.previousChange"
+                "expand_region",
             ]
         },
         {
             "before": [
-                "<leader>",
-                ";"
-            ],
-            "after": [
-                "A",
-                ";",
-                "<Esc>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "/"
+                "_"
             ],
             "commands": [
-                "editor.action.commentLine"
+                "undo_expand_region",
             ]
         },
         {
             "before": [
-                "<leader>",
-                "\\"
+                "<space>"
             ],
             "commands": [
-                "editor.action.blockComment"
+                "vspacecode.space"
             ]
-        }
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        },
     ],
-    "vim.leader": "<Space>",
-    "vim.handleKeys": {
-        "<C-a>": true,
-        "<C-x>": false,
-        "<C-f>": true,
-        "<C-c>": false,
-        "<C-d>": true,
-        "<C-s>": false,
-    },
     //// MacOS
     // "vim.autoSwitchInputMethod.enable": true,
     // "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",

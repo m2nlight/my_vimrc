@@ -1,13 +1,7 @@
-; map ctrl-o to alt-right, ctrl-i to alt-left for vim navigate back/forward
 #HotIf WinActive("ahk_exe devenv.exe")
+; map ctrl-o, ctrl-i to navigate back/forward
 ^i::Send "^+-"
 ^o::Send "^-"
-^=::Send "!+="
-^-::Send "!+-"
-; map capslock to ctrl key, like HHKB
-;CapsLock::LCtrl
-;AppsKey::CapsLock
+; map ctrl-k to previous split pane
+^k::Send "+{F6}"
 #HotIf
-
-; map win+q to win+alt+space for PowerToys 1.90.0
-;#q::Send "#!{Space}"

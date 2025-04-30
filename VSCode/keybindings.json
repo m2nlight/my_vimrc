@@ -4,25 +4,15 @@
     //     "command": "-editor.action.quickFix",
     //     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
     // },
-    // {
-    //     "key": "alt+b",
-    //     "command": "extension.toggleBool",
-    //     "when": "editorTextFocus"
-    // },
+    {
+        "key": "alt+b",
+        "command": "-extension.toggleBool",
+        "when": "editorTextFocus"
+    },
     {
         "key": "alt+enter",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+=",
-        "command": "expand_region",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+-",
-        "command": "undo_expand_region",
-        "when": "editorTextFocus"
     },
     {
         "key": "cmd+o",

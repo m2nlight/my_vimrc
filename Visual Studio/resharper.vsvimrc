@@ -1,5 +1,6 @@
 set vsvim_useeditordefaults
 set vsvim_useeditorindent
+let mapleader = ' '
 
 set scrolloff=5
 set nu rnu
@@ -9,7 +10,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-noremap <C-n> :nohl<CR>
+noremap <c-n> :nohl<cr>
+map <c-s> :w!<cr>
 
 set cursorline
 set backspace=indent,eol,start
@@ -18,103 +20,152 @@ set clipboard=unnamed
 noremap Y y$
 vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
-noremap x "_x
+"noremap x "_x
 
-inoremap jj <Esc>
+inoremap jj <esc>
+noremap s :vsc Tools.InvokeAceJumpCommand<cr>
+noremap zl :so ~/.vsvimrc<cr>
+noremap - :vsc Tools.Switch<cr>
+vnoremap - :vsc Tools.Switch<cr>
+noremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
+vnoremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
+noremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
+vnoremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
+noremap <leader>kc :vsc Edit.CommentSelection<cr>
+noremap <leader>ku :vsc Edit.UncommentSelection<cr>
+noremap <leader>ks :vsc ReSharper.ReSharper_SurroundWith<cr>
+noremap <leader>o :vsc File.OpenContainingFolder<cr>
+noremap <leader>; A;<esc>
 
-noremap <C-o> :vsc View.NavigateBackward<CR>
-noremap <C-i> :vsc View.NavigateForward<CR>
-" VsVim <C-i> binding to <Tab>. You use AHK rewrite them
+noremap <c-o> :vsc View.NavigateBackward<cr>
+noremap <c-i> :vsc View.NavigateForward<cr>
+
+" VsVim <c-i> always binding to <Tab>. Please rewrite them by AHK
 " -- visualstudio.ahk (AHK2) --
 " #HotIf WinActive("ahk_exe devenv.exe")
-" ^i::Send "!{Right}"
-" ^o::Send "!{Left}"
+" ; map ctrl-o, ctrl-i to navigate back/forward
+" ^i::Send "^+-"
+" ^o::Send "^-"
+" ; map ctrl-k to previous split pane
+" ^k::Send "+{F6}"
 " #HotIf
 
-noremap > :vsc Edit.IncreaseLineIndent<CR>
-noremap < :vsc Edit.DecreaseLineIndent<CR>
+noremap K :vsc Edit.QuickInfo<cr>
+noremap H :tabp<cr>
+noremap L :tabn<cr>
 
-noremap H :tabp<CR>
-noremap L :tabn<CR>
-noremap Q :q<CR>
-noremap | <C-w>v
-noremap _ <C-w>s
-noremap <C-h> :vsc Window.PreviousDocumentWindow<CR>
-noremap <C-j> :vsc Window.NextSplitPane<CR>
-noremap <C-k> :vsc Window.PreviousSplitPane<CR>
-noremap <C-l> :vsc Window.NextDocumentWindow<CR>
-noremap <Space>p :vsc Window.PinTab<CR>
+noremap <leader>bb :vsc Window.NextDocumentWindowNav<cr>
+noremap <leader>bd :q<cr>
+noremap <leader>bo :vsc File.CloseOtherTabs<cr>
+noremap <leader>bp :vsc Window.PinTab<cr>
+noremap <leader>bP :vsc Window.CloseAllButPinned<cr>
 
-noremap <Space>x <C-x>
-noremap <Space>a <C-a>
-vnoremap <Space>x <C-x>
-vnoremap <Space>a <C-a>
+noremap <leader>| <c-w>v
+noremap <leader>- <c-w>s
+noremap <c-h> :vsc Window.PreviousDocumentWindow<cr>
+noremap <c-j> :vsc Window.NextSplitPane<cr>
+noremap <c-k> :vsc Window.PreviousSplitPane<cr>
+noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 
-noremap <Space>w :w!<CR>
-noremap <Space>q :q!<CR>
-noremap <Space>k :vsc Edit.QuickInfo<CR>
-noremap <Space>o :vsc File.OpenContainingFolder<CR>
+noremap <leader>ca :vsc ReSharper_AltEnter<cr>
+noremap <leader>cA :vsc View.QuickActions<cr>
+noremap <leader>cc :vsc EditorContextMenus.CodeLens.RefreshCodeLensTeamIndicators<cr>
+noremap <leader>cC :vsc Edit.ShowCodeLensMenu<cr>
+noremap <leader>cf :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+"noremap <leader>cf :vsc Edit.FormatDocument<cr>
+vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
+noremap <leader>cr :vsc Refactor.Rename<cr>
+noremap <leader>cs :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
 
-noremap <Space>/ :vsc ReSharper.ReSharper_LineComment<CR>
-noremap <Space>\ :vsc ReSharper.ReSharper_BlockComment<CR>
-noremap <Space>- :vsc Tools.Switch<CR>
-noremap <Space>= :vsc Tools.SwitchReverse<CR>
+noremap <leader><space> :vsc ReSharper.ReSharper_GotoType<cr>
+noremap gc :vsc ReSharper.ReSharper_LineComment<cr>
+noremap gC :vsc ReSharper.ReSharper_BlockComment<cr>
 
-noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
-"noremap == :vsc Edit.FormatDocument<CR>
-vnoremap == :vsc Edit.FormatSelection<CR>
+noremap gd :vsc Edit.GotoDeclaration<cr>
+noremap gr :vsc ReSharper.ReSharper_FindUsages<cr>
+noremap gi :vsc ReSharper.ReSharper_InspectThis<cr>
+noremap gI :vsc Edit.GotoImplementation<cr>
 
-noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
-noremap <Space>t :vsc ReSharper.ReSharper_GotoType<CR>
-noremap <Space>u :vsc ReSharper.ReSharper_FindUsages<CR>
-noremap <Space>i :vsc ReSharper.ReSharper_GoToImplementations<CR>
-noremap <Space>s :vsc ReSharper.ReSharper_SurroundWith<CR>
-noremap <Space>, :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
-noremap <Space>. :vsc ReSharper.ReSharper_GotoText<CR>
-noremap <Space>r :vsc ReSharper.ReSharper_Rename<CR>
-noremap <Space>l :vsc ReSharper.ReSharper_LiveTemplatesInsert<CR>
-noremap <Space>v :vsc ReSharper.Resharper_IntroVariable<CR>
-noremap <Space>m :vsc ReSharper.ReSharper_ExtractMethod<CR>
-noremap <Space>n :vsc ReSharper.ReSharper_InspectThis<CR>
+noremap <leader>rr :vsc ReSharper.Resharper_RefactorThis<cr>
+noremap <leader>rs :vsc ReSharper.Resharper_RefactorThis<cr>
+noremap <leader>rx :vsc ReSharper.Resharper_InlineVariable<cr>
+noremap <leader>rv :vsc ReSharper.Resharper_IntroVariable<cr>
+noremap <leader>rf :vsc Refactor.ExtractMethod<cr>
+noremap <leader>ri :vsc Refactor.ExtractInterface<cr>
 
-noremap <Space>gp :vsc Edit.PeekDifference<CR>
+noremap <leader>ob :vsc Build.BuildSolution<cr>
+noremap <leader>oB :vsc Build.RebuildSolution<cr>
+noremap <leader>oc :vsc Build.CleanSolution<cr>
+noremap <leader>oo :vsc Build.BuildSelection<cr>
 
-noremap <Space>yr :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
-noremap <Space>yd :vsc ReSharper.ReSharper_UnitTestDebugContext<CR>
-noremap <Space>ya :vsc ReSharper.ReSharper_UnitTestRunSolution<CR>
-noremap <Space>yy :vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
-noremap <Space>yt :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
+noremap <leader>da :vsc Debug.StartWithoutDebugging<cr>
+noremap <leader>db :vsc Debug.ToggleBreakpoint<cr>
+noremap <leader>dB :vsc Debug.Breakpoints<cr>
+noremap <leader>dc :vsc Debug.RunToCursor<cr>
+noremap <leader>dC :vsc Debug.RunToCursor<cr>
+noremap <leader>dd :vsc Debug.Start<cr>
+noremap <leader>di :vsc Debug.StepInto<cr>
+noremap <leader>do :vsc Debug.StepOut<cr>
+noremap <leader>dO :vsc Debug.StepOver<cr>
+noremap <leader>dt :vsc Debug.StopDebugging<cr>
+noremap <leader>dT :vsc Debug.TerminateAll<cr>
 
-noremap <Space>b :vsc Build.BuildSolution<CR>
-noremap <Space>bb :vsc Build.BuildSelection<CR>
-noremap <Space>br :vsc Build.RebuildSolution<CR>
-noremap <Space>bc :vsc Build.CleanSolution<CR>
+noremap <leader>gb :vsc Team.Git.Annotate<cr>
+noremap <leader>gB :vsc Team.Git.OpenBrowser<cr>
+noremap <leader>gc :vsc Team.Git.ViewBranchHistory<cr>
+noremap <leader>gd :vsc Team.Git.CompareWithUnmodified<cr>
+noremap <leader>gf :vsc Team.Git.ViewHistory<cr>
+noremap <leader>gg :vsc Team.Git.Commit<cr>
+noremap <leader>gl :vsc Team.Git.ManageBranches<cr>
+noremap <leader>gs :vsc Team.Git.Commit<cr>
+noremap <leader>gS :vsc Team.Git.ShowStash<cr>
+noremap <leader>gY :vsc Team.Git.CopyLink<cr>
+noremap <leader>gp :vsc Edit.PeekDifference<cr>
 
-noremap <Space>dd :vsc Debug.Start<CR>
-noremap <Space>dr :vsc Debug.StartWithoutDebugging<CR>
-noremap <Space>dq :vsc Debug.StopDebugging<CR>
-noremap <Space>dc :vsc Debug.RunToCursor<CR>
-noremap <Space>di :vsc Debug.Immediate<CR>
-noremap <Space>do :vsc Debug.Output<CR>
-noremap <Space>ds :vsc Debug.CallStack<CR>
-noremap <Space>da :vsc Debug.AddWatch<CR>
-noremap <Space>db :vsc Debug.Breakpoints<CR>
-noremap <Space>de :vsc Debug.ToggleBreakpoint<CR>
+noremap <leader>tl :vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<cr>
+noremap <leader>to :vsc ReSharper.ReSharper_ShowUnitTestSessions<cr>
+noremap <leader>tr :vsc ReSharper.ReSharper_UnitTestRunCurrentSession<cr>
+noremap <leader>ts :vsc ReSharper.ReSharper_ShowUnitTestExplorer<cr>
+noremap <leader>tt :vsc ReSharper.ReSharper_UnitTestRunFromContext<cr>
+noremap <leader>tT :vsc ReSharper.ReSharper_UnitTestRunSolution<cr>
+noremap <leader>td :vsc ReSharper.ReSharper_UnitTestDebugContext<cr>
 
-noremap <Space>e :vsc View.SolutionExplorer<CR>
-"noremap <Space>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
-noremap <Space>f :vsc Edit.FindinFiles<CR>
-noremap <Space>F :vsc Edit.Find<CR>
-noremap <Space>h :vsc Edit.Replace<CR>
-noremap <Space>; A;<Esc>
-noremap <Space><Space> :vsc Tools.InvokeAceJumpCommand<CR>
+noremap <leader>ss :vsc ReSharper.ReSharper_GotoSymbol<cr>
+noremap <leader>sd :vsc View.ErrorList<cr>
+noremap <leader>sk :vsc Tools.CustomizeKeyboard<cr>
+noremap <leader>sm :vsc ReSharper.ReSharper_BookmarksBookmarksMenu<cr>
+noremap <leader>sg :vsc ReSharper.ReSharper_GotoText<cr>
+noremap <leader>sq :vsc Edit.ErrorList<cr>
+noremap <leader>sr :vsc Edit.ReplaceinFiles<cr>
+noremap <leader>sR :vsc Edit.Replace<cr>
+noremap <leader>st :vsc ReSharper.ReSharper_ShowTodoExplorer<cr>
+noremap <leader>sn :vsc View.Notifications<cr>
+noremap <leader>sf :vsc Edit.FindinFiles<cr>
+noremap <leader>sF :vsc Edit.Find<cr>
 
-nmap ]d :vsc ReSharper.ReSharper_GotoNextHighlight<CR>
-nmap [d :vsc ReSharper.ReSharper_GotoPrevHighlight<CR>
-noremap ]e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<CR>
-noremap [e :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
-noremap ]f :vsc ReSharper.ReSharper_GotoNextMember<CR>
-noremap [f :vsc ReSharper.ReSharper_GotoPrevMember<CR>
+noremap <leader>fb :vsc Window.Windows<cr>
+noremap <leader>e :vsc View.SolutionExplorer<cr>
+noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
+noremap <leader>fe :vsc View.SolutionExplorer<cr>
+noremap <leader>fE :vsc SolutionExplorer.SyncWithActiveDocument<cr>
+noremap <leader>ff :vsc ReSharper.ReSharper_GotoRecentFiles<cr>
+noremap <leader>fg :vsc Team.Git.OpenFileExplorer<cr>
+noremap <leader>fn :vsc File.NewFile<cr>
+noremap <leader>fp :vsc View.Repository<cr>
+noremap <leader>fr :vsc ReSharper.ReSharper_GotoRecentEdits<cr>
+noremap <leader>fR :vsc ReSharper.ReSharper_GotoRelatedFiles<cr>
+noremap <leader>ft :vsc View.Terminal<cr>
 
-noremap zl :so ~/.vsvimrc<CR>
+noremap ]b :tabp<cr>
+noremap [b :tabn<cr>
+noremap ]d :vsc ReSharper.ReSharper_GotoNextHighlight<cr>
+noremap [d :vsc ReSharper.ReSharper_GotoPrevHighlight<cr>
+noremap ]e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<cr>
+noremap [e :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<cr>
+noremap ]w :vsc Edit.GoToNextIssueinFile<cr>
+noremap [w :vsc Edit.GoToPreviousIssueinFile<cr>
+noremap ]f :vsc Edit.NextMethod<cr>
+noremap [f :vsc Edit.PreviousMethod<cr>
+noremap ]m :vsc ReSharper.ReSharper_GotoNextMember<cr>
+noremap [m :vsc ReSharper.ReSharper_GotoPrevMember<cr>
 

@@ -6,5 +6,6 @@
         "silesky.toggle-boolean",
         "alefragnani.project-manager",
         "vscodevim.vim",
+        "vspacecode.vspacecode",
     ]
 }

@@ -2,4 +2,3 @@
 
 * vscode
 * visual studio
-* jetbrains idea...
