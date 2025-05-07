@@ -24,17 +24,18 @@ vnoremap Y $y
 
 inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
-noremap zl :so ~/.vsvimrc<cr>
-noremap - :vsc Tools.Switch<cr>
-vnoremap - :vsc Tools.Switch<cr>
 noremap + :vsc Edit.ExpandSelection<cr>
 vnoremap + :vsc Edit.ExpandSelection<cr>
 noremap _ :vsc Edit.ContractSelection<cr>
 vnoremap _ :vsc Edit.ContractSelection<cr>
+noremap <leader>kf :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 noremap <leader>kc :vsc Edit.CommentSelection<cr>
 noremap <leader>ku :vsc Edit.UncommentSelection<cr>
 noremap <leader>ks :vsc Edit.SurroundWith<cr>
-noremap <leader>o :vsc File.OpenContainingFolder<cr>
+noremap <leader>ki :vsc Tools.Switch<cr>
+noremap <leader>kI :vsc Tools.SwitchReverse<cr>
+noremap <leader>ko :vsc File.OpenContainingFolder<cr>
+noremap <leader>kl :so ~/.vsvimrc<cr>
 noremap <leader>; A;<esc>
 
 noremap <c-o> :vsc View.NavigateBackward<cr>
@@ -70,8 +71,7 @@ noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 noremap <leader>ca :vsc View.QuickActions<cr>
 noremap <leader>cc :vsc EditorContextMenus.CodeLens.RefreshCodeLensTeamIndicators<cr>
 noremap <leader>cC :vsc Edit.ShowCodeLensMenu<cr>
-noremap <leader>cf :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
-"noremap <leader>cf :vsc Edit.FormatDocument<cr>
+noremap <leader>cf :vsc Edit.FormatDocument<cr>
 vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
 noremap <leader>cr :vsc Refactor.Rename<cr>
 noremap <leader>cs :vsc View.DocumentOutline<cr>
