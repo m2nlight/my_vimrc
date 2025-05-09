@@ -28,7 +28,9 @@ noremap + :vsc Edit.ExpandSelection<cr>
 vnoremap + :vsc Edit.ExpandSelection<cr>
 noremap _ :vsc Edit.ContractSelection<cr>
 vnoremap _ :vsc Edit.ContractSelection<cr>
-noremap <leader>kf :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+noremap <leader>kk :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+noremap <leader>kf :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
+noremap <leader>kF :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
 noremap <leader>kc :vsc Edit.CommentSelection<cr>
 noremap <leader>ku :vsc Edit.UncommentSelection<cr>
 noremap <leader>ks :vsc Edit.SurroundWith<cr>
@@ -37,6 +39,8 @@ noremap <leader>kI :vsc Tools.SwitchReverse<cr>
 noremap <leader>ko :vsc File.OpenContainingFolder<cr>
 noremap <leader>kl :so ~/.vsvimrc<cr>
 noremap <leader>; A;<esc>
+
+inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
 
 noremap <c-o> :vsc View.NavigateBackward<cr>
 noremap <c-i> :vsc View.NavigateForward<cr>

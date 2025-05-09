@@ -28,6 +28,14 @@
             "after": [
                 "<esc>"
             ]
+        },
+        {
+            "before": [
+                "<c-x>"
+            ],
+            "commands": [
+                "editor.action.clipboardCutAction"
+            ]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
