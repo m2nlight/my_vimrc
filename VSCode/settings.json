@@ -51,7 +51,8 @@
         {
             "before": [
                 "<leader>",
-                "i"
+                "k",
+                "k",
             ],
             "commands": [
                 "extension.toggleBool"
@@ -130,16 +131,7 @@
         },
         {
             "before": [
-                "<leader>",
-                "i"
-            ],
-            "commands": [
-                "editor.action.goToImplementation"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
+                "g",
                 "I"
             ],
             "commands": [
@@ -319,16 +311,6 @@
         {
             "before": [
                 "<leader>",
-                "k",
-                "o"
-            ],
-            "commands": [
-                "revealFileInOS"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
                 "p"
             ],
             "commands": [
@@ -376,12 +358,51 @@
         },
         {
             "before": [
+                "=",
+                "="
+            ],
+            "commands": [
+                "editor.action.format"
+            ]
+        },
+        {
+            "before": [
                 "<leader>",
                 "k",
-                "i"
+                "o"
+            ],
+            "commands": [
+                "revealFileInOS"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k",
+                "k"
             ],
             "commands": [
                 "extension.toggleBool"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "u",
+                "z"
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "u",
+                "Z"
+            ],
+            "commands": [
+                "workbench.action.toggleFullScreen"
             ]
         },
         {

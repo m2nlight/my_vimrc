@@ -28,18 +28,20 @@ noremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 vnoremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 noremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
 vnoremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
-noremap <leader>kk :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 noremap <leader>kf :vsc Resharper.ReSharper_SilentCleanupCode<cr>
 noremap <leader>kF :vsc Resharper.ReSharper_CleanupCode<cr>
 noremap <leader>kc :vsc Edit.CommentSelection<cr>
 noremap <leader>ku :vsc Edit.UncommentSelection<cr>
 noremap <leader>ks :vsc ReSharper.ReSharper_SurroundWith<cr>
-noremap <leader>ki :vsc Tools.Switch<cr>
-noremap <leader>kI :vsc Tools.SwitchReverse<cr>
+noremap <leader>ki :vsc ReSharper.ReSharper_InspectThis<cr>
+noremap <leader>kk :vsc Tools.Switch<cr>
+noremap <leader>kK :vsc Tools.SwitchReverse<cr>
 noremap <leader>ko :vsc File.OpenContainingFolder<cr>
 noremap <leader>kl :so ~/.vsvimrc<cr>
 noremap <leader>; A;<esc>
 
+noremap <c-/> :vsc View.Terminal<cr>
 inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
 
 noremap <c-o> :vsc View.NavigateBackward<cr>
@@ -87,8 +89,8 @@ noremap gC :vsc ReSharper.ReSharper_BlockComment<cr>
 
 noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<cr>
 noremap gr :vsc ReSharper.ReSharper_FindUsages<cr>
-noremap gi :vsc ReSharper.ReSharper_InspectThis<cr>
-noremap gI :vsc Edit.GotoImplementation<cr>
+noremap gi :vsc ReSharper.ReSharper_GotoLastEditLocation<cr>
+noremap gI :vsc ReSharper.ReSharper_GotoImplementations<cr>
 
 noremap <leader>rr :vsc ReSharper.Resharper_RefactorThis<cr>
 noremap <leader>rs :vsc ReSharper.Resharper_RefactorThis<cr>
@@ -159,6 +161,9 @@ noremap <leader>fp :vsc View.Repository<cr>
 noremap <leader>fr :vsc ReSharper.ReSharper_GotoRecentEdits<cr>
 noremap <leader>fR :vsc ReSharper.ReSharper_GotoRelatedFiles<cr>
 noremap <leader>ft :vsc View.Terminal<cr>
+
+noremap <leader>uz :vsc View.FullScreen<cr>
+noremap <leader>uZ :vsc View.FullScreen<cr>
 
 noremap ]b :tabp<cr>
 noremap [b :tabn<cr>

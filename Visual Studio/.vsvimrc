@@ -28,18 +28,20 @@ noremap + :vsc Edit.ExpandSelection<cr>
 vnoremap + :vsc Edit.ExpandSelection<cr>
 noremap _ :vsc Edit.ContractSelection<cr>
 vnoremap _ :vsc Edit.ContractSelection<cr>
-noremap <leader>kk :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 noremap <leader>kf :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
 noremap <leader>kF :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
 noremap <leader>kc :vsc Edit.CommentSelection<cr>
 noremap <leader>ku :vsc Edit.UncommentSelection<cr>
 noremap <leader>ks :vsc Edit.SurroundWith<cr>
-noremap <leader>ki :vsc Tools.Switch<cr>
-noremap <leader>kI :vsc Tools.SwitchReverse<cr>
+noremap <leader>ki :vsc View.ClassViewShowInheritedMembers<cr>
+noremap <leader>kk :vsc Tools.Switch<cr>
+noremap <leader>kK :vsc Tools.SwitchReverse<cr>
 noremap <leader>ko :vsc File.OpenContainingFolder<cr>
 noremap <leader>kl :so ~/.vsvimrc<cr>
 noremap <leader>; A;<esc>
 
+noremap <c-/> :vsc View.Terminal<cr>
 inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
 
 noremap <c-o> :vsc View.NavigateBackward<cr>
@@ -85,10 +87,10 @@ noremap <leader><space> :vsc 编辑.转换所有<cr>
 noremap gc :vsc Edit.ToggleLineComment<cr>
 noremap gC :vsc Edit.ToggleBlockComment<cr>
 
-noremap gd :vsc Edit.GotoDeclaration<cr>
+noremap gd :vsc Edit.GoToDeclaration<cr>
 noremap gr :vsc Edit.FindAllReferences<cr>
-noremap gi :vsc View.ClassViewShowInheritedMembers<cr>
-noremap gI :vsc Edit.GotoImplementation<cr>
+noremap gi :vsc Edit.GoToLastEditLocation<cr>
+noremap gI :vsc Edit.GoToImplementation<cr>
 
 noremap <leader>rf :vsc Refactor.ExtractMethod<cr>
 noremap <leader>ri :vsc Refactor.ExtractInterface<cr>
@@ -154,6 +156,9 @@ noremap <leader>fn :vsc File.NewFile<cr>
 noremap <leader>fp :vsc View.Repository<cr>
 noremap <leader>fr :vsc Edit.GoToRecentFile<cr>
 noremap <leader>ft :vsc View.Terminal<cr>
+
+noremap <leader>uz :vsc View.FullScreen<cr>
+noremap <leader>uZ :vsc View.FullScreen<cr>
 
 noremap ]b :tabp<cr>
 noremap [b :tabn<cr>
