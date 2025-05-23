@@ -61,8 +61,10 @@ noremap K :vsc Edit.QuickInfo<cr>
 noremap H :tabp<cr>
 noremap L :tabn<cr>
 
+noremap <leader>qq :vsc File.Exit<cr>
+
 noremap <leader>bb :vsc Window.NextDocumentWindowNav<cr>
-noremap <leader>bd :q<cr>
+noremap <leader>bd :vsc File.Close<cr>
 noremap <leader>bo :vsc File.CloseOtherTabs<cr>
 noremap <leader>bp :vsc Window.PinTab<cr>
 noremap <leader>bP :vsc Window.CloseAllButPinned<cr>
@@ -177,4 +179,3 @@ noremap ]f :vsc Edit.NextMethod<cr>
 noremap [f :vsc Edit.PreviousMethod<cr>
 noremap ]m :vsc ReSharper.ReSharper_GotoNextMember<cr>
 noremap [m :vsc ReSharper.ReSharper_GotoPrevMember<cr>
-
