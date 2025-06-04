@@ -22,8 +22,9 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
-inoremap jj <esc>
+"inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
+"noremap s :vsc Tools.InvokePeasyMotionOneCharJump<cr>
 noremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 vnoremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 noremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>

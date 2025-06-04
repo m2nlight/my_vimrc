@@ -20,15 +20,15 @@
         "<c-s>": false
     },
     "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<esc>"
-            ]
-        },
+        //{
+        //    "before": [
+        //        "j",
+        //        "j"
+        //    ],
+        //    "after": [
+        //        "<esc>"
+        //    ]
+        //},
         {
             "before": [
                 "<c-x>"

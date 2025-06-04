@@ -2,3 +2,4 @@
 
 * vscode
 * visual studio
+* nvim (lazyvim)
