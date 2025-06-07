@@ -1,6 +1,6 @@
 set vsvim_useeditordefaults
 set vsvim_useeditorindent
-let mapleader = ' '
+let mapleader = ','
 
 set scrolloff=5
 set nu rnu
@@ -22,6 +22,57 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
+noremap <leader>, :vsc Edit.GoToRecentFile<cr>
+noremap <leader>. :so ~/.vsvimrc<cr>
+noremap <space><space> :vsc Edit.GoToAll<cr>
+"noremap <space><space> :vsc 编辑.转换所有<cr>
+noremap <space>= :vsc Edit.FormatDocument<cr>
+vnoremap <space>= :vsc Edit.FormatSelection<cr>
+noremap <space>/ :vsc View.TaskList<cr>
+noremap <space>, :vsc Edit.GotoText<cr>
+noremap <space>; A;<esc>
+noremap <space>| <c-w>v
+noremap <space>\ <c-w>s
+
+noremap <space>q :vsc File.Close<cr>
+noremap <space>Q :vsc File.Exit<cr>
+noremap <space>w :w!
+noremap <space>W :vsc File.SaveAll<cr>
+noremap <space>e :vsc View.SolutionExplorer<cr>
+noremap <space>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
+noremap <space>r :vsc Refactor.Rename<cr>
+noremap <space>t :vsc TestExplorer.ShowTestExplorer<cr>
+noremap <space>u :vsc Tools.Switch<cr>
+noremap <space>U :vsc Tools.SwitchReverse<cr>
+noremap <space>y :vsc Edit.GotoSymbol<cr>
+noremap <space>i :vsc Edit.GoToImplementation<cr>
+noremap <space>I :vsc Debug.Immediate<cr>
+noremap <space>o :vsc File.OpenContainingFolder<cr>
+noremap <space>O :vsc View.Output<cr>
+noremap <space>p :vsc Window.PinTab<cr>
+
+noremap <space>a :vsc View.QuickActions<cr>
+noremap <space>s :vsc View.DocumentOutline<cr>
+noremap <space>S :vsc Edit.SurroundWith<cr>
+noremap <space>d :vsc Debug.Start<cr>
+noremap <space>g :vsc Debug.StartWithoutDebugging<cr>
+noremap <space>f :vsc Edit.Find<cr>
+noremap <space>F :vsc Edit.FindinFiles<cr>
+noremap <space>h ^
+noremap <space>j :vsc Edit.CompleteWord<cr>
+noremap <space>k :vsc Edit.QuickInfo<cr>
+noremap <space>l $
+
+noremap <space>z :vsc View.FullScreen<cr>
+noremap <space>x :vsc Debug.ToggleBreakpoint<cr>
+noremap <space>X :vsc Debug.Breakpoints<cr>=
+noremap <space>c :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
+noremap <space>C :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
+noremap <space>b :vsc Build.BuildSolution<cr>
+noremap <space>B :vsc Build.RebuildSolution<cr>
+noremap <space>m :vsc Refactor.ExtractMethod<cr>
+noremap <space>n :vsc Refactor.ExtractInterface<cr>
+
 "inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<cr>
@@ -30,17 +81,8 @@ vnoremap + :vsc Edit.ExpandSelection<cr>
 noremap _ :vsc Edit.ContractSelection<cr>
 vnoremap _ :vsc Edit.ContractSelection<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
-noremap <leader>kf :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
-noremap <leader>kF :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
 noremap <leader>kc :vsc Edit.CommentSelection<cr>
 noremap <leader>ku :vsc Edit.UncommentSelection<cr>
-noremap <leader>ks :vsc Edit.SurroundWith<cr>
-noremap <leader>ki :vsc View.ClassViewShowInheritedMembers<cr>
-noremap <leader>kk :vsc Tools.Switch<cr>
-noremap <leader>kK :vsc Tools.SwitchReverse<cr>
-noremap <leader>ko :vsc File.OpenContainingFolder<cr>
-noremap <leader>kl :so ~/.vsvimrc<cr>
-noremap <leader>; A;<esc>
 
 noremap <c-/> :vsc View.Terminal<cr>
 inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
@@ -61,6 +103,10 @@ noremap <c-i> :vsc View.NavigateForward<cr>
 noremap K :vsc Edit.QuickInfo<cr>
 noremap H :tabp<cr>
 noremap L :tabn<cr>
+noremap <c-h> :vsc Window.PreviousDocumentWindow<cr>
+noremap <c-j> :vsc Window.NextSplitPane<cr>
+noremap <c-k> :vsc Window.PreviousSplitPane<cr>
+noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 
 noremap <leader>qq :vsc File.Exit<cr>
 
@@ -70,13 +116,6 @@ noremap <leader>bo :vsc File.CloseOtherTabs<cr>
 noremap <leader>bp :vsc Window.PinTab<cr>
 noremap <leader>bP :vsc Window.CloseAllButPinned<cr>
 
-noremap <leader>| <c-w>v
-noremap <leader>- <c-w>s
-noremap <c-h> :vsc Window.PreviousDocumentWindow<cr>
-noremap <c-j> :vsc Window.NextSplitPane<cr>
-noremap <c-k> :vsc Window.PreviousSplitPane<cr>
-noremap <c-l> :vsc Window.NextDocumentWindow<cr>
-
 noremap <leader>ca :vsc View.QuickActions<cr>
 noremap <leader>cc :vsc EditorContextMenus.CodeLens.RefreshCodeLensTeamIndicators<cr>
 noremap <leader>cC :vsc Edit.ShowCodeLensMenu<cr>
@@ -85,8 +124,6 @@ vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
 noremap <leader>cr :vsc Refactor.Rename<cr>
 noremap <leader>cs :vsc View.DocumentOutline<cr>
 
-"noremap <leader><space> :vsc Edit.GoToAll<cr>
-noremap <leader><space> :vsc 编辑.转换所有<cr>
 noremap gc :vsc Edit.ToggleLineComment<cr>
 noremap gC :vsc Edit.ToggleBlockComment<cr>
 

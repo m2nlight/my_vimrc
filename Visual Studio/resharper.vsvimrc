@@ -1,6 +1,6 @@
 set vsvim_useeditordefaults
 set vsvim_useeditorindent
-let mapleader = ' '
+let mapleader = ','
 
 set scrolloff=5
 set nu rnu
@@ -22,6 +22,60 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
+noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentFiles<cr>
+noremap <leader>. :so ~/.vsvimrc<cr>
+noremap <space><space> :vsc ReSharper.ReSharper_GotoType<cr>
+noremap <space>= :vsc Edit.FormatDocument<cr>
+vnoremap <space>= :vsc Edit.FormatSelection<cr>
+noremap <space>/ :vsc ReSharper.ReSharper_ShowTodoExplorer<cr>
+noremap <space>, :vsc ReSharper.ReSharper_GotoText<cr>
+noremap <space>. :vsc ReSharper.ReSharper_GotoRecentEdits<cr>
+noremap <space>; A;<esc>
+noremap <space>| <c-w>v
+noremap <space>\ <c-w>s
+
+noremap <space>q :vsc File.Close<cr>
+noremap <space>Q :vsc File.Exit<cr>
+noremap <space>w :w!
+noremap <space>W :vsc File.SaveAll<cr>
+noremap <space>e :vsc View.SolutionExplorer<cr>
+noremap <space>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
+noremap <space>r :vsc Refactor.Rename<cr>
+noremap <space>t :vsc ReSharper.ReSharper_ShowUnitTestSessions<cr>
+noremap <space>T :vsc ReSharper.ReSharper_ShowUnitTestExplorer<cr>
+noremap <space>u :vsc Tools.Switch<cr>
+noremap <space>U :vsc Tools.SwitchReverse<cr>
+noremap <space>y :vsc ReSharper.ReSharper_GotoSymbol<cr>
+noremap <space>i :vsc ReSharper.ReSharper_GotoImplementations<cr>
+noremap <space>I :vsc Debug.Immediate<cr>
+noremap <space>o :vsc File.OpenContainingFolder<cr>
+noremap <space>O :vsc View.Output<cr>
+noremap <space>p :vsc Window.PinTab<cr>
+
+noremap <space>a :vsc ReSharper_AltEnter<cr>
+noremap <space>A :vsc View.QuickActions<cr>
+noremap <space>s :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
+noremap <space>S :vsc ReSharper.ReSharper_SurroundWith<cr>
+noremap <space>d :vsc Debug.Start<cr>
+noremap <space>g :vsc Debug.StartWithoutDebugging<cr>
+noremap <space>f :vsc Edit.Find<cr>
+noremap <space>F :vsc Edit.FindinFiles<cr>
+noremap <space>h ^
+noremap <space>j :vsc Edit.CompleteWord<cr>
+noremap <space>k :vsc Edit.QuickInfo<cr>
+noremap <space>l $
+
+noremap <space>z :vsc View.FullScreen<cr>
+noremap <space>x :vsc Debug.ToggleBreakpoint<cr>
+noremap <space>X :vsc Debug.Breakpoints<cr>
+noremap <space>v :vsc ReSharper.Resharper_IntroVariable<cr>
+noremap <space>c :vsc Resharper.ReSharper_SilentCleanupCode<cr>
+noremap <space>C :vsc Resharper.ReSharper_CleanupCode<cr>
+noremap <space>b :vsc Build.BuildSolution<cr>
+noremap <space>B :vsc Build.RebuildSolution<cr>
+noremap <space>m :vsc Refactor.ExtractMethod<cr>
+noremap <space>n :vsc ReSharper.Resharper_RefactorThis<cr>
+
 "inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<cr>
@@ -30,17 +84,8 @@ vnoremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 noremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
 vnoremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
-noremap <leader>kf :vsc Resharper.ReSharper_SilentCleanupCode<cr>
-noremap <leader>kF :vsc Resharper.ReSharper_CleanupCode<cr>
 noremap <leader>kc :vsc Edit.CommentSelection<cr>
 noremap <leader>ku :vsc Edit.UncommentSelection<cr>
-noremap <leader>ks :vsc ReSharper.ReSharper_SurroundWith<cr>
-noremap <leader>ki :vsc ReSharper.ReSharper_InspectThis<cr>
-noremap <leader>kk :vsc Tools.Switch<cr>
-noremap <leader>kK :vsc Tools.SwitchReverse<cr>
-noremap <leader>ko :vsc File.OpenContainingFolder<cr>
-noremap <leader>kl :so ~/.vsvimrc<cr>
-noremap <leader>; A;<esc>
 
 noremap <c-/> :vsc View.Terminal<cr>
 inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
@@ -61,6 +106,10 @@ noremap <c-i> :vsc View.NavigateForward<cr>
 noremap K :vsc Edit.QuickInfo<cr>
 noremap H :tabp<cr>
 noremap L :tabn<cr>
+noremap <c-h> :vsc Window.PreviousDocumentWindow<cr>
+noremap <c-j> :vsc Window.NextSplitPane<cr>
+noremap <c-k> :vsc Window.PreviousSplitPane<cr>
+noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 
 noremap <leader>qq :vsc File.Exit<cr>
 
@@ -69,13 +118,6 @@ noremap <leader>bd :vsc File.Close<cr>
 noremap <leader>bo :vsc File.CloseOtherTabs<cr>
 noremap <leader>bp :vsc Window.PinTab<cr>
 noremap <leader>bP :vsc Window.CloseAllButPinned<cr>
-
-noremap <leader>| <c-w>v
-noremap <leader>- <c-w>s
-noremap <c-h> :vsc Window.PreviousDocumentWindow<cr>
-noremap <c-j> :vsc Window.NextSplitPane<cr>
-noremap <c-k> :vsc Window.PreviousSplitPane<cr>
-noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 
 noremap <leader>ca :vsc ReSharper_AltEnter<cr>
 noremap <leader>cA :vsc View.QuickActions<cr>
@@ -86,10 +128,8 @@ vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
 noremap <leader>cr :vsc Refactor.Rename<cr>
 noremap <leader>cs :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
 
-noremap <leader><space> :vsc ReSharper.ReSharper_GotoType<cr>
 noremap gc :vsc ReSharper.ReSharper_LineComment<cr>
 noremap gC :vsc ReSharper.ReSharper_BlockComment<cr>
-
 noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<cr>
 noremap gr :vsc ReSharper.ReSharper_FindUsages<cr>
 noremap gi :vsc ReSharper.ReSharper_GotoLastEditLocation<cr>
