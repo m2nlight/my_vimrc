@@ -22,6 +22,61 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
+noremap zl :so ~/.vsvimrc<cr>
+noremap zk :vsc Tools.CustomizeKeyboard<cr>
+noremap <leader><leader> :vsc Edit.GoToAll<cr>
+"noremap <leader><leader> :vsc 编辑.转换所有<cr>
+noremap <leader>, :vsc Edit.GoToRecentFile<cr>
+noremap <leader>. :vsc View.TaskList<cr>
+noremap <leader>; A;<esc>
+noremap <leader>| <c-w>v
+noremap <leader>- <c-w>s
+noremap <leader>/ :vsc Edit.CommentSelection<cr>
+noremap <leader>\ :vsc Edit.UncommentSelection<cr>
+
+noremap <leader>q :vsc File.Close<cr>
+noremap <leader>Q :vsc File.Exit<cr>
+noremap <leader>w :w!<cr>
+"noremap <leader>W :vsc File.SaveAll<cr>
+noremap <leader>e :vsc View.SolutionExplorer<cr>
+noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
+noremap <leader>r :vsc Refactor.Rename<cr>
+noremap <leader>t :vsc Edit.GotoText<cr>
+noremap <leader>T :vsc TestExplorer.ShowTestExplorer<cr>
+noremap <leader>u :vsc Tools.Switch<cr>
+noremap <leader>U :vsc Tools.SwitchReverse<cr>
+noremap <leader>y :vsc Edit.GotoSymbol<cr>
+noremap <leader>i :vsc Edit.GoToImplementation<cr>
+noremap <leader>I :vsc Debug.Immediate<cr>
+noremap <leader>o :vsc File.OpenContainingFolder<cr>
+noremap <leader>O :vsc View.Output<cr>
+noremap <leader>p :vsc Window.PinTab<cr>
+
+noremap <leader>a :vsc View.QuickActions<cr>
+noremap <leader>s :vsc View.DocumentOutline<cr>
+noremap <leader>S :vsc Edit.SurroundWith<cr>
+noremap <leader>d :vsc Debug.Start<cr>
+noremap <leader>g :vsc Debug.StartWithoutDebugging<cr>
+noremap <leader>f :vsc Edit.Find<cr>
+noremap <leader>F :vsc Edit.FindinFiles<cr>
+noremap <leader>h ^
+noremap <leader>j :vsc Edit.CompleteWord<cr>
+noremap <leader>k :vsc Edit.QuickInfo<cr>
+noremap <leader>l $
+
+noremap <leader>z :vsc View.FullScreen<cr>
+noremap <leader>x :vsc Debug.ToggleBreakpoint<cr>
+noremap <leader>X :vsc Debug.Breakpoints<cr>
+noremap <leader>c :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
+noremap <leader>C :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
+noremap <leader>v :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+vnoremap <leader>v :vsc Edit.FormatSelection<cr>
+noremap <leader>V :vsc Edit.FormatDocument<cr>
+noremap <leader>b :vsc Build.BuildSolution<cr>
+noremap <leader>B :vsc Build.RebuildSolution<cr>
+noremap <leader>m :vsc Refactor.ExtractMethod<cr>
+noremap <leader>n :vsc Refactor.ExtractInterface<cr>
+
 "inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<cr>
@@ -29,18 +84,6 @@ noremap + :vsc Edit.ExpandSelection<cr>
 vnoremap + :vsc Edit.ExpandSelection<cr>
 noremap _ :vsc Edit.ContractSelection<cr>
 vnoremap _ :vsc Edit.ContractSelection<cr>
-noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
-noremap <leader>kf :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
-noremap <leader>kF :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
-noremap <leader>kc :vsc Edit.CommentSelection<cr>
-noremap <leader>ku :vsc Edit.UncommentSelection<cr>
-noremap <leader>ks :vsc Edit.SurroundWith<cr>
-noremap <leader>ki :vsc View.ClassViewShowInheritedMembers<cr>
-noremap <leader>kk :vsc Tools.Switch<cr>
-noremap <leader>kK :vsc Tools.SwitchReverse<cr>
-noremap <leader>ko :vsc File.OpenContainingFolder<cr>
-noremap <leader>kl :so ~/.vsvimrc<cr>
-noremap <leader>; A;<esc>
 
 noremap <c-/> :vsc View.Terminal<cr>
 inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
@@ -61,107 +104,16 @@ noremap <c-i> :vsc View.NavigateForward<cr>
 noremap K :vsc Edit.QuickInfo<cr>
 noremap H :tabp<cr>
 noremap L :tabn<cr>
-
-noremap <leader>qq :vsc File.Exit<cr>
-
-noremap <leader>bb :vsc Window.NextDocumentWindowNav<cr>
-noremap <leader>bd :vsc File.Close<cr>
-noremap <leader>bo :vsc File.CloseOtherTabs<cr>
-noremap <leader>bp :vsc Window.PinTab<cr>
-noremap <leader>bP :vsc Window.CloseAllButPinned<cr>
-
-noremap <leader>| <c-w>v
-noremap <leader>- <c-w>s
 noremap <c-h> :vsc Window.PreviousDocumentWindow<cr>
 noremap <c-j> :vsc Window.NextSplitPane<cr>
 noremap <c-k> :vsc Window.PreviousSplitPane<cr>
 noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 
-noremap <leader>ca :vsc View.QuickActions<cr>
-noremap <leader>cc :vsc EditorContextMenus.CodeLens.RefreshCodeLensTeamIndicators<cr>
-noremap <leader>cC :vsc Edit.ShowCodeLensMenu<cr>
-noremap <leader>cf :vsc Edit.FormatDocument<cr>
-vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
-noremap <leader>cr :vsc Refactor.Rename<cr>
-noremap <leader>cs :vsc View.DocumentOutline<cr>
-
-"noremap <leader><space> :vsc Edit.GoToAll<cr>
-noremap <leader><space> :vsc 编辑.转换所有<cr>
 noremap gc :vsc Edit.ToggleLineComment<cr>
 noremap gC :vsc Edit.ToggleBlockComment<cr>
-
 noremap gd :vsc Edit.GoToDeclaration<cr>
 noremap gr :vsc Edit.FindAllReferences<cr>
 noremap gi :vsc Edit.GoToLastEditLocation<cr>
-noremap gI :vsc Edit.GoToImplementation<cr>
-
-noremap <leader>rf :vsc Refactor.ExtractMethod<cr>
-noremap <leader>ri :vsc Refactor.ExtractInterface<cr>
-
-noremap <leader>ob :vsc Build.BuildSolution<cr>
-noremap <leader>oB :vsc Build.RebuildSolution<cr>
-noremap <leader>oc :vsc Build.CleanSolution<cr>
-noremap <leader>oo :vsc Build.BuildSelection<cr>
-
-noremap <leader>da :vsc Debug.StartWithoutDebugging<cr>
-noremap <leader>db :vsc Debug.ToggleBreakpoint<cr>
-noremap <leader>dB :vsc Debug.Breakpoints<cr>
-noremap <leader>dc :vsc Debug.RunToCursor<cr>
-noremap <leader>dC :vsc Debug.RunToCursor<cr>
-noremap <leader>dd :vsc Debug.Start<cr>
-noremap <leader>di :vsc Debug.StepInto<cr>
-noremap <leader>do :vsc Debug.StepOut<cr>
-noremap <leader>dO :vsc Debug.StepOver<cr>
-noremap <leader>dt :vsc Debug.StopDebugging<cr>
-noremap <leader>dT :vsc Debug.TerminateAll<cr>
-
-noremap <leader>gb :vsc Team.Git.Annotate<cr>
-noremap <leader>gB :vsc Team.Git.OpenBrowser<cr>
-noremap <leader>gc :vsc Team.Git.ViewBranchHistory<cr>
-noremap <leader>gd :vsc Team.Git.CompareWithUnmodified<cr>
-noremap <leader>gf :vsc Team.Git.ViewHistory<cr>
-noremap <leader>gg :vsc Team.Git.Commit<cr>
-noremap <leader>gl :vsc Team.Git.ManageBranches<cr>
-noremap <leader>gs :vsc Team.Git.Commit<cr>
-noremap <leader>gS :vsc Team.Git.ShowStash<cr>
-noremap <leader>gY :vsc Team.Git.CopyLink<cr>
-noremap <leader>gp :vsc Edit.PeekDifference<cr>
-
-noremap <leader>tl :vsc TestExplorer.RepeatLastRun<cr>
-noremap <leader>to :vsc TestExplorer.ShowTestExplorer<cr>
-noremap <leader>tr  :vsc TestExplorer.RunAllTestsInView<cr>
-noremap <leader>ts :vsc TestExplorer.ShowTestExplorer<cr>
-noremap <leader>tr  :vsc TestExplorer.RunAllTestsInContext<cr>
-noremap <leader>tT :vsc TestExplorer.RunAllTests<cr>
-noremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<cr>
-
-noremap <leader>ss :vsc Edit.GotoSymbol<cr>
-noremap <leader>sd :vsc View.ErrorList<cr>
-noremap <leader>sk :vsc Tools.CustomizeKeyboard<cr>
-noremap <leader>sm :vsc View.BookmarkWindow<cr>
-noremap <leader>sg :vsc Edit.GotoText<cr>
-noremap <leader>sq :vsc Edit.ErrorList<cr>
-noremap <leader>sr :vsc Edit.ReplaceinFiles<cr>
-noremap <leader>sR :vsc Edit.Replace<cr>
-noremap <leader>st :vsc View.TaskList<cr>
-noremap <leader>sn :vsc View.Notifications<cr>
-noremap <leader>sf :vsc Edit.FindinFiles<cr>
-noremap <leader>sF :vsc Edit.Find<cr>
-
-noremap <leader>fb :vsc Window.Windows<cr>
-noremap <leader>e :vsc View.SolutionExplorer<cr>
-noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
-noremap <leader>fe :vsc View.SolutionExplorer<cr>
-noremap <leader>fE :vsc SolutionExplorer.SyncWithActiveDocument<cr>
-noremap <leader>ff :vsc Edit.GoToRecentFile<cr>
-noremap <leader>fg :vsc Team.Git.OpenFileExplorer<cr>
-noremap <leader>fn :vsc File.NewFile<cr>
-noremap <leader>fp :vsc View.Repository<cr>
-noremap <leader>fr :vsc Edit.GoToRecentFile<cr>
-noremap <leader>ft :vsc View.Terminal<cr>
-
-noremap <leader>uz :vsc View.FullScreen<cr>
-noremap <leader>uZ :vsc View.FullScreen<cr>
 
 noremap ]b :tabp<cr>
 noremap [b :tabn<cr>
