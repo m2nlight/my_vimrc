@@ -52,7 +52,7 @@
             "before": [
                 "<leader>",
                 "k",
-                "k",
+                "k"
             ],
             "commands": [
                 "extension.toggleBool"
