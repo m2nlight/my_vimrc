@@ -36,7 +36,8 @@ noremap <leader>/ :vsc Edit.CommentSelection<cr>
 noremap <leader>? :vsc Edit.UncommentSelection<cr>
 noremap <leader>\ :vsc Edit.ToggleBlockComment<cr>
 
-noremap <leader>q :vsc File.Close<cr>
+"noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
+noremap <leader>q :q<cr>
 noremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>w :w!<cr>
 "noremap <leader>W :vsc File.SaveAll<cr>

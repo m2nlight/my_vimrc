@@ -25,7 +25,7 @@ vnoremap Y $y
 noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
 noremap <leader><leader> :vsc Edit.GoToAll<cr>
-"noremap <leader><leader> :vsc 编辑.转换所有<cr>
+"noremap <leader><leader> :vsc 编辑.转到所有<cr>
 noremap <leader>, :vsc Edit.GoToRecentFile<cr>
 noremap <leader>` :vsc View.BookmarkWindow<cr>
 "noremap <leader>' :vsc View.BookmarkWindow<cr>
@@ -36,7 +36,8 @@ noremap <leader>/ :vsc Edit.CommentSelection<cr>
 noremap <leader>? :vsc Edit.UncommentSelection<cr>
 noremap <leader>\ :vsc Edit.ToggleBlockComment<cr>
 
-noremap <leader>q :vsc File.Close<cr>
+"noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
+noremap <leader>q :q<cr>
 noremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>w :w!<cr>
 "noremap <leader>W :vsc File.SaveAll<cr>
