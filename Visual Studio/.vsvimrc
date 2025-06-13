@@ -24,6 +24,7 @@ vnoremap Y $y
 
 noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 noremap <leader><leader> :vsc Edit.GoToAll<cr>
 "noremap <leader><leader> :vsc 编辑.转到所有<cr>
 noremap <leader>, :vsc Edit.GoToRecentFile<cr>
@@ -32,9 +33,8 @@ noremap <leader>` :vsc View.BookmarkWindow<cr>
 noremap <leader>; A;<esc>
 noremap <leader>| <c-w>v
 noremap <leader>- <c-w>s
-noremap <leader>/ :vsc Edit.CommentSelection<cr>
-noremap <leader>? :vsc Edit.UncommentSelection<cr>
-noremap <leader>\ :vsc Edit.ToggleBlockComment<cr>
+noremap <leader>/ :vsc Edit.FindinFiles<cr>
+noremap <leader>\ :vsc Team.Git.Annotate<cr>
 
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
 noremap <leader>q :q<cr>
@@ -63,10 +63,10 @@ vnoremap <leader>s :vsc Edit.SurroundWith<cr>
 noremap <leader>S :vsc View.DocumentOutline<cr>
 noremap <leader>d :vsc Debug.Start<cr>
 noremap <leader>D :vsc Debug.StartWithoutDebugging<cr>
-noremap <leader>f :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
-noremap <leader>F :vsc Edit.FindinFiles<cr>
-noremap <leader>g :vsc Edit.Find<cr>
-noremap <leader>G :vsc Edit.Replace<cr>
+noremap <leader>f :vsc Edit.Find<cr>
+noremap <leader>F :vsc Edit.Replace<cr>
+noremap <leader>g :vsc Team.Git.Commit<cr>
+noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
 noremap <leader>j :vsc Edit.CompleteWord<cr>
 noremap <leader>k :vsc Edit.QuickInfo<cr>

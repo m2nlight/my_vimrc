@@ -24,6 +24,7 @@ vnoremap Y $y
 
 noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
+noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 noremap <leader><leader> :vsc ReSharper.ReSharper_GotoType<cr>
 noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentFiles<cr>
 noremap <leader>. :vsc ReSharper.ReSharper_GotoRecentEdits<cr>
@@ -32,9 +33,8 @@ noremap <leader>` :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<cr>
 noremap <leader>; A;<esc>
 noremap <leader>| <c-w>v
 noremap <leader>- <c-w>s
-noremap <leader>/ :vsc Edit.CommentSelection<cr>
-noremap <leader>? :vsc Edit.UncommentSelection<cr>
-noremap <leader>\ :vsc Edit.ToggleBlockComment<cr>
+noremap <leader>/ :vsc Edit.FindinFiles<cr>
+noremap <leader>\ :vsc Team.Git.Annotate<cr>
 
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
 noremap <leader>q :q<cr>
@@ -43,7 +43,7 @@ noremap <leader>w :w!<cr>
 "noremap <leader>W :vsc File.SaveAll<cr>
 noremap <leader>e :vsc View.SolutionExplorer<cr>
 noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
-noremap <leader>r :vsc Refactor.Rename<cr>
+noremap <leader>r :vsc ReSharper.ReSharper_Rename<cr>
 noremap <leader>R :vsc Edit.ReplaceinFiles<cr>
 noremap <leader>t :vsc ReSharper.ReSharper_GotoText<cr>
 noremap <leader>T :vsc ReSharper.ReSharper_ShowTodoExplorer<cr>
@@ -64,10 +64,10 @@ vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<cr>
 noremap <leader>S :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
 noremap <leader>d :vsc Debug.Start<cr>
 noremap <leader>D :vsc Debug.StartWithoutDebugging<cr>
-noremap <leader>f :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
-noremap <leader>F :vsc Edit.FindinFiles<cr>
-noremap <leader>g :vsc Edit.Find<cr>
-noremap <leader>G :vsc Edit.Replace<cr>
+noremap <leader>f :vsc Edit.Find<cr>
+noremap <leader>F :vsc Edit.Replace<cr>
+noremap <leader>g :vsc Team.Git.Commit<cr>
+noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
 noremap <leader>j :vsc Edit.CompleteWord<cr>
 noremap <leader>k :vsc Edit.QuickInfo<cr>
@@ -80,7 +80,8 @@ noremap <leader>v :vsc Resharper.Resharper_IntroVariable<cr>
 noremap <leader>V :vsc Resharper.Resharper_InlineVariable<cr>
 noremap <leader>b :vsc Build.BuildSolution<cr>
 noremap <leader>B :vsc Build.RebuildSolution<cr>
-noremap <leader>m :vsc Refactor.ExtractMethod<cr>
+noremap <leader>m :vsc Resharper.Resharper_GotoFileMember<cr>
+vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<cr>
 noremap <leader>n :vsc ReSharper.Resharper_RefactorThis<cr>
 
 noremap <leader>cc :vsc Resharper.ReSharper_SilentCleanupCode<cr>

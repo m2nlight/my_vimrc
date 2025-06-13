@@ -4,12 +4,13 @@
 
 local opt = vim.opt
 
--- opt.guifont = "JetBrainsMonoNL Nerd Font Mono:h12"
--- opt.guifont = "CaskaydiaCove Nerd Font:h12"
-opt.guifont = "FiraCode Nerd Font:h12"
--- opt.guifont = "Hack Nerd Font:h12"
+opt.guifont = "FiraCode Nerd Font:h11"
+-- opt.guifont = "JetBrainsMonoNL Nerd Font Mono:h11"
+-- opt.guifont = "CaskaydiaCove Nerd Font:h11"
+-- opt.guifont = "Hack Nerd Font:h11"
 
 opt.spelllang = opt.spelllang + "cjk"
 -- opt.spelllang = { "en" }
 
 vim.g.autoformat = false
+vim.g.mapleader = ","
