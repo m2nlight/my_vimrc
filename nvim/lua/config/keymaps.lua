@@ -24,8 +24,9 @@ m.set("n", "<space>q", function() Snacks.bufdelete() end, { desc = "Delete Buffe
 m.set("n", "<space>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 m.set("n", "<space>w", "<cmd>w!<cr>", { desc = "Write File" })
 m.set("n", "<space>W", "<cmd>w !sudo tee %<cr>", { desc = "Write File with Super User" })
-m.set("n", "<space>e", function()  Snacks.explorer() end, { desc = "File Explorer" })
-m.set("n", "<space>E", function()  Snacks.picker.projects() end, { desc = "Projects" })
+---@diagnostic disable-next-line: missing-fields
+m.set("n", "<space>e", function() Snacks.explorer( { cwd = LazyVim.root() } ) end, { desc = "File Explorer" })
+m.set("n", "<space>E", function() Snacks.picker.projects() end, { desc = "Projects" })
 m.set("n", "<space>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end, { expr = true, desc = "IncRename" })
 m.set({"n", "v"}, "<space>R", function() require('grug-far').open({ prefills = { search = vim.fn.expand("<cword>") } }) end, { desc = "Search and Replace" })
 m.set("n", "<space>t", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
@@ -38,6 +39,7 @@ m.set("n", "<space>u", function() require("neotest").run.run() end, { desc = "Te
 m.set("n", "<space>U", function() require("neotest").summary.toggle() end, { desc = "Test Summary (Neotest)" })
 
 m.set("n", "<space>i", function() Snacks.picker.lsp_implementations() end, { desc = "Goto Implementation" })
+m.set("n", "<space>o", function() Snacks.explorer.reveal() end, { desc = "File Explorer (Reveal)" })
 m.set("n", "<space>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Toggle Pin" })
 
 m.set({ "n", "v" }, "<space>a", function() vim.lsp.buf.code_action() end, { desc = "Code Action" })

@@ -14,3 +14,7 @@ opt.spelllang = opt.spelllang + "cjk"
 
 vim.g.autoformat = false
 vim.g.mapleader = ","
+
+vim.g.im_select_command = "D:/Tools/mini/im-select.exe"
+vim.g.im_select_default = "1033"
+vim.g.im_select_enable_focus_events = 0
