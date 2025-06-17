@@ -4,6 +4,19 @@
 
 local m = vim.keymap
 -- m.set("i", "jj", "<esc>")
+
+local function adjust_font_size(amount)
+  if amount == 0 then
+    vim.g.neovide_scale_factor = 1
+  else
+    local current_size = vim.g.neovide_scale_factor or 1
+    vim.g.neovide_scale_factor = current_size + amount
+  end
+end
+m.set("n", "<c-=>", function() adjust_font_size(0.1) end,  { desc = "Increase Font Size" })
+m.set("n", "<c-->", function() adjust_font_size(-0.1) end,  { desc = "Decrease Font Size" })
+m.set("n", "<c-0>", function() adjust_font_size(0) end,  { desc = "Reset Font Size" })
+
 m.set("n", "zk", function ()  Snacks.picker.keymaps() end, {desc = "Keymaps"})
 m.set("n", "==", function() LazyVim.format({ force = true }) end, { desc = "Format" })
 m.set("n", "<space><space>", function()  Snacks.picker.smart() end, { desc = "Smart Find Files" })
@@ -24,6 +37,7 @@ m.set("n", "<space>q", function() Snacks.bufdelete() end, { desc = "Delete Buffe
 m.set("n", "<space>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 m.set("n", "<space>w", "<cmd>w!<cr>", { desc = "Write File" })
 m.set("n", "<space>W", "<cmd>w !sudo tee %<cr>", { desc = "Write File with Super User" })
+
 ---@diagnostic disable-next-line: missing-fields
 m.set("n", "<space>e", function() Snacks.explorer( { cwd = LazyVim.root() } ) end, { desc = "File Explorer" })
 m.set("n", "<space>E", function() Snacks.picker.projects() end, { desc = "Projects" })
@@ -35,6 +49,9 @@ m.set("n", "<space>t", function() Snacks.picker.grep_buffers() end, { desc = "Gr
 m.set("n", "<space>T", function() Snacks.picker.todo_comments() end, { desc = "Todo" })
 -- m.set("n", "<space>T", "<cmd>TodoLocList<cr>", { desc = "Todo" })
 
+vim.g.switch_mapping = ""
+m.set({ "n", "v" }, "<space>y", "<cmd>:Switch<cr>", { desc = "Switch" })
+m.set({ "n", "v" }, "<space>Y", "<cmd>:SwitchReverse<cr>", { desc = "Switch Reverse" })
 m.set("n", "<space>u", function() require("neotest").run.run() end, { desc = "Test Run (Neotest)" })
 m.set("n", "<space>U", function() require("neotest").summary.toggle() end, { desc = "Test Summary (Neotest)" })
 
@@ -72,3 +89,4 @@ m.set("n", "<space>m", function() Snacks.picker.lsp_symbols() end, { desc = "LSP
 m.set("v", "<space>m", function() require("refactoring").refactor("Extract Function") end, { desc = "Extract Function" })
 m.set("v", "<space>n", function() require("refactoring").refactor("Extract Block") end, { desc = "Extract Block" })
 m.set("v", "<space>N", function() require("refactoring").refactor("Extract Block To File") end, { desc = "Extract Block To File" })
+
