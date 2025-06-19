@@ -5,6 +5,15 @@
 local m = vim.keymap
 -- m.set("i", "jj", "<esc>")
 
+local function SmartCloseOrBd()
+    local win_count = vim.fn.tabpagewinnr(vim.fn.tabpagenr(), '$')
+    if win_count > 1 then
+        vim.cmd('close')
+    else
+        vim.cmd('bd')
+    end
+end
+
 local function adjust_font_size(amount)
   if amount == 0 then
     vim.g.neovide_scale_factor = 1
@@ -13,6 +22,7 @@ local function adjust_font_size(amount)
     vim.g.neovide_scale_factor = current_size + amount
   end
 end
+
 m.set("n", "<c-=>", function() adjust_font_size(0.1) end,  { desc = "Increase Font Size" })
 m.set("n", "<c-->", function() adjust_font_size(-0.1) end,  { desc = "Decrease Font Size" })
 m.set("n", "<c-0>", function() adjust_font_size(0) end,  { desc = "Reset Font Size" })
@@ -29,11 +39,10 @@ m.set("n", '<space>"', function() Snacks.picker.registers() end, { desc = "Regis
 m.set("n", "<space>;", "A;<esc>", { desc = "Append Semicolons" })
 m.set("n", "<space>|", "<c-w>v", { desc = "Split Window Vertically" })
 m.set("n", "<space>-", "<c-w>s", { desc = "Split Window" })
-m.set("n", "<space>/", function() Snacks.picker.grep() end, { desc = "Grep" })
+m.set("n", "<space>/", function() vim.wo.wrap = not vim.wo.wrap end, { desc = "Toggle Wrap" })
 m.set("n", "<space>\\", function() Snacks.git.blame_line() end, { desc = "Git Blame" })
 
--- m.set("n", "<space>q", "<cmd>q<cr>", { desc = "Quit" })
-m.set("n", "<space>q", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
+m.set("n", "<space>q", function() SmartCloseOrBd() end, { desc = "Close Window or Buffer" })
 m.set("n", "<space>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 m.set("n", "<space>w", "<cmd>w!<cr>", { desc = "Write File" })
 m.set("n", "<space>W", "<cmd>w !sudo tee %<cr>", { desc = "Write File with Super User" })
@@ -43,7 +52,7 @@ m.set("n", "<space>e", function() Snacks.explorer( { cwd = LazyVim.root() } ) en
 m.set("n", "<space>E", function() Snacks.picker.projects() end, { desc = "Projects" })
 m.set("n", "<space>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end, { expr = true, desc = "IncRename" })
 m.set({"n", "v"}, "<space>R", function() require('grug-far').open({ prefills = { search = vim.fn.expand("<cword>") } }) end, { desc = "Search and Replace" })
-m.set("n", "<space>t", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
+m.set("n", "<space>t", function() Snacks.picker.grep() end, { desc = "Grep" })
 
 ---@diagnostic disable-next-line: undefined-field
 m.set("n", "<space>T", function() Snacks.picker.todo_comments() end, { desc = "Todo" })
@@ -67,6 +76,7 @@ m.set("n", "<space>d", function()
 end, { desc = "Debug" })
 m.set("n", "<space>D", "<cmd>OverseerRun<cr>", { desc = "Run Task" })
 m.set("n", "<space>f", function() Snacks.picker.lines() end, { desc = "Buffer Lines" })
+m.set("n", "<space>F", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
 m.set("n", "<space>g", function() Snacks.lazygit() end, { desc = "Lazygit" })
 m.set("n", "<space>G", function() Snacks.picker.git_log_file() end, { desc = "Git Log File" })
 m.set("n", "<space>h", "^", { desc = "Line Begin" })

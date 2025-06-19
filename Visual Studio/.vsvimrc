@@ -33,7 +33,7 @@ noremap <leader>` :vsc View.BookmarkWindow<cr>
 noremap <leader>; A;<esc>
 noremap <leader>| <c-w>v
 noremap <leader>- <c-w>s
-noremap <leader>/ :vsc Edit.FindinFiles<cr>
+noremap <leader>/ :vsc Edit.ToggleWordWrap<cr>
 noremap <leader>\ :vsc Team.Git.Annotate<cr>
 
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
@@ -64,7 +64,8 @@ noremap <leader>S :vsc View.DocumentOutline<cr>
 noremap <leader>d :vsc Debug.Start<cr>
 noremap <leader>D :vsc Debug.StartWithoutDebugging<cr>
 noremap <leader>f :vsc Edit.Find<cr>
-noremap <leader>F :vsc Edit.Replace<cr>
+noremap <leader>F :vsc Edit.FindinFiles<cr>
+-- noremap <leader>F :vsc Edit.Replace<cr>
 noremap <leader>g :vsc Team.Git.Commit<cr>
 noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
