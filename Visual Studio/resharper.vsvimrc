@@ -22,9 +22,12 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
+"inoremap jj <esc>
+
 noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+vnoremap == :vsc Edit.FormatSelection<cr>
 noremap <leader><leader> :vsc ReSharper.ReSharper_GotoType<cr>
 noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentFiles<cr>
 noremap <leader>. :vsc ReSharper.ReSharper_GotoRecentEdits<cr>
@@ -38,6 +41,7 @@ noremap <leader>\ :vsc Team.Git.Annotate<cr>
 
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
 noremap <leader>q :q<cr>
+vnoremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>w :w!<cr>
 "noremap <leader>W :vsc File.SaveAll<cr>
@@ -54,11 +58,10 @@ noremap <leader>Y :vsc Tools.SwitchReverse<cr>
 noremap <leader>i :vsc ReSharper.ReSharper_GotoImplementations<cr>
 noremap <leader>I :vsc Debug.Immediate<cr>
 noremap <leader>o :vsc File.OpenContainingFolder<cr>
-noremap <leader>O :vsc View.Output<cr>
-noremap <leader>p :vsc Window.PinTab<cr>
+noremap <leader>p "0p<cr>
+noremap <leader>P :vsc Window.PinTab<cr>
 
-noremap <leader>a :vsc ReSharper_AltEnter<cr>
-noremap <leader>A :vsc View.QuickActions<cr>
+noremap <leader>a :vsc Edit.SelectAll<cr>
 noremap <leader>s :vsc ReSharper.ReSharper_GotoSymbol<cr>
 vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<cr>
 noremap <leader>S :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
@@ -70,27 +73,28 @@ noremap <leader>F :vsc Edit.FindinFiles<cr>
 noremap <leader>g :vsc Team.Git.Commit<cr>
 noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
-noremap <leader>j :vsc Edit.CompleteWord<cr>
-noremap <leader>k :vsc Edit.QuickInfo<cr>
+noremap <leader>j gj<cr>
+noremap <leader>k gk<cr>
 noremap <leader>l $
 
 noremap <leader>z :vsc View.FullScreen<cr>
-noremap <leader>x :vsc Debug.ToggleBreakpoint<cr>
-noremap <leader>X :vsc Debug.Breakpoints<cr>
+noremap <leader>x :x<cr>
+noremap <leader>X :xa<cr>
+vnoremap <leader>X :xa<cr>
 noremap <leader>v :vsc Resharper.Resharper_IntroVariable<cr>
 noremap <leader>V :vsc Resharper.Resharper_InlineVariable<cr>
 noremap <leader>b :vsc Build.BuildSolution<cr>
 noremap <leader>B :vsc Build.RebuildSolution<cr>
+noremap <leader>n :vsc Debug.ToggleBreakpoint<cr>
+vnoremap <leader>n :norm 
+noremap <leader>N :vsc Debug.Breakpoints<cr>
 noremap <leader>m :vsc Resharper.Resharper_GotoFileMember<cr>
-vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<cr>
-noremap <leader>n :vsc ReSharper.Resharper_RefactorThis<cr>
 
 noremap <leader>cc :vsc Resharper.ReSharper_SilentCleanupCode<cr>
 noremap <leader>cC :vsc Resharper.ReSharper_CleanupCode<cr>
 noremap <leader>cf :vsc Edit.FormatDocument<cr>
 vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
 
-"inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<cr>
 noremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
@@ -127,6 +131,7 @@ noremap gC :vsc ReSharper.ReSharper_BlockComment<cr>
 noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<cr>
 noremap gr :vsc ReSharper.ReSharper_FindUsages<cr>
 noremap gi :vsc ReSharper.ReSharper_GotoLastEditLocation<cr>
+noremap gI :vsc ReSharper.ReSharper_GotoImplementations<cr>
 
 noremap ]b :tabp<cr>
 noremap [b :tabn<cr>

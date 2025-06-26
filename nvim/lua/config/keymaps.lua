@@ -19,12 +19,12 @@ local function open_folder()
 end
 
 local function smart_close()
-    local win_count = vim.fn.tabpagewinnr(vim.fn.tabpagenr(), '$')
-    if win_count > 1 then
-        vim.cmd('close')
-    else
-        vim.cmd('bd')
-    end
+  local win_count = vim.fn.tabpagewinnr(vim.fn.tabpagenr(), '$')
+  if win_count > 1 then
+    vim.cmd('close')
+  else
+    vim.cmd('bd')
+  end
 end
 
 local function adjust_font_size(amount)
@@ -36,13 +36,19 @@ local function adjust_font_size(amount)
   end
 end
 
-m.set("n", "<c-=>", function() adjust_font_size(0.1) end,  { desc = "Increase Font Size" })
-m.set("n", "<c-->", function() adjust_font_size(-0.1) end,  { desc = "Decrease Font Size" })
-m.set("n", "<c-0>", function() adjust_font_size(0) end,  { desc = "Reset Font Size" })
+m.set({ "n", "v" }, "<c-=>", function() adjust_font_size(0.1) end, { desc = "Increase Font Size" })
+m.set({ "n", "v" }, "<c-->", function() adjust_font_size(-0.1) end, { desc = "Decrease Font Size" })
+m.set({ "n", "v" }, "<c-0>", function() adjust_font_size(0) end, { desc = "Reset Font Size" })
+m.set("i", "<c-x>", '<esc>"0ddI', { noremap = true, desc = 'Cut Line to "0' })
+m.set({ "n", "v" }, "<c-.>", function() vim.lsp.buf.code_action() end, { desc = "Code Action" })
+m.set({ "n", "v" }, "<a-cr>", function() vim.lsp.buf.code_action() end, { desc = "Code Action" })
+m.set("v", "+", "<plug>(expand_region_expand)", { desc = "Expand Region" })
+m.set("v", "_", "<plug>(expand_region_shrink)", { desc = "Shrink Region" })
 
-m.set("n", "zk", function ()  Snacks.picker.keymaps() end, {desc = "Keymaps"})
+m.set("n", "zk", function() Snacks.picker.keymaps() end, { desc = "Keymaps" })
 m.set("n", "==", function() LazyVim.format({ force = true }) end, { desc = "Format" })
-m.set("n", "<space><space>", function()  Snacks.picker.smart() end, { desc = "Smart Find Files" })
+m.set("v", "==", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format Selection" })
+m.set("n", "<space><space>", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
 m.set("n", "<space>,", function() Snacks.picker.recent() end, { desc = "Recent" })
 m.set("n", "<space>.", function() Snacks.picker.jumps() end, { desc = "Jumps" })
 m.set("n", "<space>:", function() Snacks.picker.command_history() end, { desc = "Command History" })
@@ -56,15 +62,18 @@ m.set("n", "<space>/", function() vim.wo.wrap = not vim.wo.wrap end, { desc = "T
 m.set("n", "<space>\\", function() Snacks.git.blame_line() end, { desc = "Git Blame" })
 
 m.set("n", "<space>q", function() smart_close() end, { desc = "Smart Close" })
-m.set("n", "<space>Q", "<cmd>qa<cr>", { desc = "Quit All" })
+m.set({ "n", "v" }, "<space>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 m.set("n", "<space>w", "<cmd>w!<cr>", { desc = "Write File" })
 m.set("n", "<space>W", "<cmd>w !sudo tee %<cr>", { desc = "Write File with Super User" })
 
 ---@diagnostic disable-next-line: missing-fields
 m.set("n", "<space>e", function() Snacks.explorer({ cwd = LazyVim.root() }) end, { desc = "File Explorer" })
 m.set("n", "<space>E", function() Snacks.explorer.reveal() end, { desc = "File Explorer (Reveal)" })
-m.set("n", "<space>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end, { expr = true, desc = "IncRename" })
-m.set({"n", "v"}, "<space>R", function() require('grug-far').open({ prefills = { search = vim.fn.expand("<cword>") } }) end, { desc = "Search and Replace" })
+m.set("n", "<space>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end,
+  { expr = true, desc = "IncRename" })
+m.set({ "n", "v" }, "<space>R",
+  function() require('grug-far').open({ prefills = { search = vim.fn.expand("<cword>") } }) end,
+  { desc = "Search and Replace" })
 m.set("n", "<space>t", function() Snacks.picker.grep({ cwd = LazyVim.root() }) end, { desc = "Grep" })
 
 ---@diagnostic disable-next-line: undefined-field
@@ -75,48 +84,49 @@ vim.g.switch_mapping = ""
 m.set({ "n", "v" }, "<space>y", "<cmd>:Switch<cr>", { desc = "Switch" })
 m.set({ "n", "v" }, "<space>Y", "<cmd>:SwitchReverse<cr>", { desc = "Switch Reverse" })
 ---@diagnostic disable-next-line: missing-fields
-m.set("n", "<space>u", function() require("neotest").run.run({vim.fn.expand("%"), strategy = "dap"}) end, { desc = "Test Run (Neotest)" })
+m.set("n", "<space>u", function() require("neotest").run.run({ vim.fn.expand("%"), strategy = "dap" }) end,
+  { desc = "Test Run (Neotest)" })
 m.set("n", "<space>U", function() require("neotest").summary.toggle() end, { desc = "Test Summary (Neotest)" })
 m.set("n", "<space>i", function() Snacks.picker.lsp_implementations() end, { desc = "Goto Implementation" })
 m.set("n", "<space>o", function() open_folder() end, { desc = "Open Folder" })
-m.set("n", "<space>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Toggle Pin" })
-m.set("n", "<space>P", function() Snacks.picker.projects() end, { desc = "Projects" })
+m.set("n", "<space>O", function() Snacks.picker.projects() end, { desc = "Projects" })
+m.set("n", "<space>p", '<cmd>norm "0p<cr>', { desc = 'Paste "0' })
+m.set("n", "<space>P", "<cmd>BufferLineTogglePin<cr>", { desc = "Toggle Pin" })
 
-m.set({ "n", "v" }, "<space>a", function() vim.lsp.buf.code_action() end, { desc = "Code Action" })
+m.set("n", "<space>a", "<cmd>norm ggVG<cr>", { desc = "Select All" })
 m.set("n", "<space>s", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
 m.set("n", "<space>S", "<cmd>Outline<cr>", { desc = "Toggle Outline" })
 m.set("n", "<space>d", function()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>dr", true, false, true), 'm', true)
-end, { desc = "Debug" })
-m.set("n", "<space>D", "<cmd>OverseerRun<cr>", { desc = "Run Task" })
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>dc", true, false, true), 'm', true)
+end, { desc = "Run/Continue (dap)" })
+m.set("n", "<space>D", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>du", true, false, true), 'm', true)
+end, { desc = "Dap UI" })
 m.set("n", "<space>f", function() Snacks.picker.lines() end, { desc = "Buffer Lines" })
 m.set("n", "<space>F", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
 m.set("n", "<space>g", function() Snacks.lazygit() end, { desc = "Lazygit" })
 m.set("n", "<space>G", function() Snacks.picker.git_log_file() end, { desc = "Git Log File" })
 m.set("n", "<space>h", "^", { desc = "Line Begin" })
--- m.set("n", "<space>j", function() require("blink.cmp").show({ providers = { 'snippets' } }) end, { desc = "blink.cmp" })
-m.set("n", "<space>k", function() return vim.lsp.buf.hover() end, { desc = "Hover" })
+m.set({ "n", "x" }, "<space>j", "v:count?'j':'gj'", { noremap = true, expr = true, desc = "Jump Up" })
+m.set({ "n", "x" }, "<space>k", "v:count?'k':'gk'", { noremap = true, expr = true, desc = "Jump Down" })
 m.set("n", "<space>l", "^", { desc = "Line End" })
 
 m.set("n", "<space>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
 m.set("n", "<space>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom" })
-m.set("n", "<space>x", function()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>db", true, false, true), 'm', true)
-end, { desc = "Toggle Breakpoint" })
-m.set("n", "<space>X", function()
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>ds", true, false, true), 'm', true)
-end, { desc = "Session" })
-m.set({"n", "v"}, "<space>c", function()
+m.set("n", "<space>x", "<cmd>:x<cr>", { desc = "Save and Quit" })
+m.set({ "n", "v" }, "<space>X", "<cmd>:xa<cr>", { desc = "Save and Quit All" })
+m.set({ "n", "v" }, "<space>c", function()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("gsr", true, false, true), 'm', true)
 end, { desc = "Replace Surrounding" })
-m.set({"n", "v"}, "<space>C", function()
+m.set({ "n", "v" }, "<space>C", function()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("gsd", true, false, true), 'm', true)
-end, { desc = "Highlight Surrounding" })
+end, { desc = "Delete Surrounding" })
 m.set("n", "<space>v", function() require("refactoring").refactor("Extract Variable") end, { desc = "Extract Variable" })
 m.set("n", "<space>V", function() require("refactoring").refactor("Inline Variable") end, { desc = "Inline Variable" })
 m.set("n", "<space>b", "<cmd>OverseerBuild<cr>", { desc = "Build" })
-m.set("v", "<space>n", function() require("refactoring").refactor("Extract Block") end, { desc = "Extract Block" })
-m.set("v", "<space>N", function() require("refactoring").refactor("Extract Block To File") end, { desc = "Extract Block To File" })
+m.set("v", "<space>n", ":norm ", { desc = "Cmd Normal..." })
+m.set("n", "<space>n", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<leader>db", true, false, true), 'm', true)
+end, { desc = "Toggle Breakpoint" })
+m.set("n", "<space>N", function() require("noice").cmd("all") end, { desc = "Notice All" })
 m.set("n", "<space>m", function() Snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
-m.set("v", "<space>m", function() require("refactoring").refactor("Extract Function") end, { desc = "Extract Function" })
-

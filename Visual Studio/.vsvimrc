@@ -22,9 +22,12 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
+"inoremap jj <esc>
+
 noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
+vnoremap == :vsc Edit.FormatSelection<cr>
 noremap <leader><leader> :vsc Edit.GoToAll<cr>
 "noremap <leader><leader> :vsc 编辑.转到所有<cr>
 noremap <leader>, :vsc Edit.GoToRecentFile<cr>
@@ -39,6 +42,7 @@ noremap <leader>\ :vsc Team.Git.Annotate<cr>
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
 noremap <leader>q :q<cr>
 noremap <leader>Q :vsc File.Exit<cr>
+vnoremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>w :w!<cr>
 "noremap <leader>W :vsc File.SaveAll<cr>
 noremap <leader>e :vsc View.SolutionExplorer<cr>
@@ -54,10 +58,10 @@ noremap <leader>U :vsc TestExplorer.ShowTestExplorer<cr>
 noremap <leader>i :vsc Edit.GoToImplementation<cr>
 noremap <leader>I :vsc Debug.Immediate<cr>
 noremap <leader>o :vsc File.OpenContainingFolder<cr>
-noremap <leader>O :vsc View.Output<cr>
-noremap <leader>p :vsc Window.PinTab<cr>
+noremap <leader>p "0p<cr>
+noremap <leader>P :vsc Window.PinTab<cr>
 
-noremap <leader>a :vsc View.QuickActions<cr>
+noremap <leader>a :vsc Edit.SelectAll<cr>
 noremap <leader>s :vsc Edit.GotoSymbol<cr>
 vnoremap <leader>s :vsc Edit.SurroundWith<cr>
 noremap <leader>S :vsc View.DocumentOutline<cr>
@@ -69,24 +73,26 @@ noremap <leader>F :vsc Edit.FindinFiles<cr>
 noremap <leader>g :vsc Team.Git.Commit<cr>
 noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
-noremap <leader>j :vsc Edit.CompleteWord<cr>
-noremap <leader>k :vsc Edit.QuickInfo<cr>
+noremap <leader>j gj<cr>
+noremap <leader>k gk<cr>
 noremap <leader>l $
 
 noremap <leader>z :vsc View.FullScreen<cr>
-noremap <leader>x :vsc Debug.ToggleBreakpoint<cr>
-noremap <leader>X :vsc Debug.Breakpoints<cr>
+noremap <leader>x :x<cr>
+noremap <leader>X :xa<cr>
+vnoremap <leader>X :xa<cr>
 noremap <leader>b :vsc Build.BuildSolution<cr>
 noremap <leader>B :vsc Build.RebuildSolution<cr>
-noremap <leader>m :vsc Refactor.ExtractMethod<cr>
-noremap <leader>n :vsc Refactor.ExtractInterface<cr>
+noremap <leader>n :vsc Debug.ToggleBreakpoint<cr>
+vnoremap <leader>n :norm 
+noremap <leader>N :vsc Debug.Breakpoints<cr>
+noremap <leader>m :vsc Edit.GoToMember<cr>
 
 noremap <leader>cc :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
 noremap <leader>cC :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
 noremap <leader>cf :vsc Edit.FormatDocument<cr>
 vnoremap <leader>cf :vsc Edit.FormatSelection<cr>
 
-"inoremap jj <esc>
 noremap s :vsc Tools.InvokeAceJumpCommand<cr>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<cr>
 noremap + :vsc Edit.ExpandSelection<cr>
@@ -123,6 +129,7 @@ noremap gC :vsc Edit.ToggleBlockComment<cr>
 noremap gd :vsc Edit.GoToDeclaration<cr>
 noremap gr :vsc Edit.FindAllReferences<cr>
 noremap gi :vsc Edit.GoToLastEditLocation<cr>
+noremap gI :vsc Edit.GoToImplementation<cr>
 
 noremap ]b :tabp<cr>
 noremap [b :tabn<cr>

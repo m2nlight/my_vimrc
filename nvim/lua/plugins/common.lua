@@ -16,6 +16,7 @@ return {
   -- plugins
   { "AndrewRadev/switch.vim" },
   { "brglng/vim-im-select" },
+  { "terryma/vim-expand-region" },
 
   -- override blink.cmp plugin
   {
