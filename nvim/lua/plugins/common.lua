@@ -17,6 +17,7 @@ return {
   { "AndrewRadev/switch.vim" },
   { "brglng/vim-im-select" },
   { "terryma/vim-expand-region" },
+  { "HiPhish/rainbow-delimiters.nvim" },
 
   -- override blink.cmp plugin
   {

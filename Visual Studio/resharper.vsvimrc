@@ -65,16 +65,16 @@ noremap <leader>a :vsc Edit.SelectAll<cr>
 noremap <leader>s :vsc ReSharper.ReSharper_GotoSymbol<cr>
 vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<cr>
 noremap <leader>S :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
-noremap <leader>d :vsc Debug.Start<cr>
-noremap <leader>D :vsc Debug.StartWithoutDebugging<cr>
+noremap <leader>d :vsc View.ErrorList<cr>
+noremap <leader>D :vsc View.Output<cr>
 noremap <leader>f :vsc Edit.Find<cr>
 noremap <leader>F :vsc Edit.FindinFiles<cr>
 -- noremap <leader>F :vsc Edit.Replace<cr>
 noremap <leader>g :vsc Team.Git.Commit<cr>
 noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
-noremap <leader>j gj<cr>
-noremap <leader>k gk<cr>
+noremap <leader>j :vsc Edit.CompleteWord<cr>
+noremap <leader>k :vsc Edit.QuickInfo<cr>
 noremap <leader>l $
 
 noremap <leader>z :vsc View.FullScreen<cr>
@@ -85,9 +85,8 @@ noremap <leader>v :vsc Resharper.Resharper_IntroVariable<cr>
 noremap <leader>V :vsc Resharper.Resharper_InlineVariable<cr>
 noremap <leader>b :vsc Build.BuildSolution<cr>
 noremap <leader>B :vsc Build.RebuildSolution<cr>
-noremap <leader>n :vsc Debug.ToggleBreakpoint<cr>
+noremap <leader>n :vsc View.Notifications<cr>
 vnoremap <leader>n :norm 
-noremap <leader>N :vsc Debug.Breakpoints<cr>
 noremap <leader>m :vsc Resharper.Resharper_GotoFileMember<cr>
 
 noremap <leader>cc :vsc Resharper.ReSharper_SilentCleanupCode<cr>
@@ -116,7 +115,14 @@ noremap <c-i> :vsc View.NavigateForward<cr>
 " ^o::Send "^-"
 " ; map ctrl-k to previous split pane
 " ^k::Send "+{F6}"
+" ; map ctrl-p, ctrl-n
+" ^p::Send "{up}"
+" ^n::Send "{down}"
 " #HotIf
+
+" VsVim not support v:count
+"nnoremap <expr> j v:count?'j':'gj'
+"nnoremap <expr> k v:count?'k':'gk'
 
 noremap K :vsc Edit.QuickInfo<cr>
 noremap H :tabp<cr>

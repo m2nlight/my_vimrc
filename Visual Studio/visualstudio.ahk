@@ -4,4 +4,7 @@
 ^o::Send "^-"
 ; map ctrl-k to previous split pane
 ^k::Send "+{F6}"
+; map ctrl-p, ctrl-n
+^p::Send "{up}"
+^n::Send "{down}"
 #HotIf
