@@ -39,12 +39,18 @@ noremap <leader>- <c-w>s
 noremap <leader>/ :vsc Edit.ToggleWordWrap<cr>
 noremap <leader>\ :vsc Team.Git.Annotate<cr>
 
+map <c-a> :vsc Edit.SelectAll<cr>
+imap <c-a> <esc>:vsc Edit.SelectAll<cr>
+map <c-x> :vsc Edit.LineCut<cr>
+imap <c-x> <esc>:vsc Edit.LineCut<cr>I
+vmap <c-x> :vsc Edit.Cut<cr>
+
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
 noremap <leader>q :q<cr>
 noremap <leader>Q :vsc File.Exit<cr>
 vnoremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>w :w!<cr>
-"noremap <leader>W :vsc File.SaveAll<cr>
+noremap <leader>W :vsc File.SaveAll<cr>
 noremap <leader>e :vsc View.SolutionExplorer<cr>
 noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
 noremap <leader>r :vsc Refactor.Rename<cr>
@@ -61,7 +67,8 @@ noremap <leader>o :vsc File.OpenContainingFolder<cr>
 noremap <leader>p "0p<cr>
 noremap <leader>P :vsc Window.PinTab<cr>
 
-noremap <leader>a :vsc Edit.SelectAll<cr>
+noremap <leader>a <c-a>
+noremap <leader>A <c-x>
 noremap <leader>s :vsc Edit.GotoSymbol<cr>
 vnoremap <leader>s :vsc Edit.SurroundWith<cr>
 noremap <leader>S :vsc View.DocumentOutline<cr>
@@ -86,6 +93,7 @@ noremap <leader>B :vsc Build.RebuildSolution<cr>
 noremap <leader>n :vsc View.Notifications<cr>
 vnoremap <leader>n :norm 
 noremap <leader>m :vsc Edit.GoToMember<cr>
+vnoremap <leader>m :vsc Refactor.ExtractMethod<cr>
 
 noremap <leader>cc :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<cr>
 noremap <leader>cC :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<cr>
@@ -98,9 +106,6 @@ noremap + :vsc Edit.ExpandSelection<cr>
 vnoremap + :vsc Edit.ExpandSelection<cr>
 noremap _ :vsc Edit.ContractSelection<cr>
 vnoremap _ :vsc Edit.ContractSelection<cr>
-
-noremap <c-/> :vsc View.Terminal<cr>
-inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
 
 noremap <c-o> :vsc View.NavigateBackward<cr>
 noremap <c-i> :vsc View.NavigateForward<cr>

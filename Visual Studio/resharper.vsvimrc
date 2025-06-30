@@ -39,12 +39,18 @@ noremap <leader>- <c-w>s
 noremap <leader>/ :vsc Edit.ToggleWordWrap<cr>
 noremap <leader>\ :vsc Team.Git.Annotate<cr>
 
+map <c-a> :vsc Edit.SelectAll<cr>
+imap <c-a> <esc>:vsc Edit.SelectAll<cr>
+map <c-x> :vsc Edit.LineCut<cr>
+imap <c-x> <esc>:vsc Edit.LineCut<cr>I
+vmap <c-x> :vsc Edit.Cut<cr>
+
 "noremap <leader>q :vsc Window.CloseDocumentWindow<cr>
 noremap <leader>q :q<cr>
 vnoremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>Q :vsc File.Exit<cr>
 noremap <leader>w :w!<cr>
-"noremap <leader>W :vsc File.SaveAll<cr>
+noremap <leader>W :vsc File.SaveAll<cr>
 noremap <leader>e :vsc View.SolutionExplorer<cr>
 noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<cr>
 noremap <leader>r :vsc ReSharper.ReSharper_Rename<cr>
@@ -61,7 +67,8 @@ noremap <leader>o :vsc File.OpenContainingFolder<cr>
 noremap <leader>p "0p<cr>
 noremap <leader>P :vsc Window.PinTab<cr>
 
-noremap <leader>a :vsc Edit.SelectAll<cr>
+noremap <leader>a <c-a>
+noremap <leader>A <c-x>
 noremap <leader>s :vsc ReSharper.ReSharper_GotoSymbol<cr>
 vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<cr>
 noremap <leader>S :vsc ReSharper.ReSharper_ShowCodeStructure<cr>
@@ -88,6 +95,7 @@ noremap <leader>B :vsc Build.RebuildSolution<cr>
 noremap <leader>n :vsc View.Notifications<cr>
 vnoremap <leader>n :norm 
 noremap <leader>m :vsc Resharper.Resharper_GotoFileMember<cr>
+vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<cr>
 
 noremap <leader>cc :vsc Resharper.ReSharper_SilentCleanupCode<cr>
 noremap <leader>cC :vsc Resharper.ReSharper_CleanupCode<cr>
@@ -100,9 +108,6 @@ noremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 vnoremap + :vsc Resharper.ReSharper_ExtendSelection<cr>
 noremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
 vnoremap _ :vsc Resharper.ReSharper_ShrinkSelection<cr>
-
-noremap <c-/> :vsc View.Terminal<cr>
-inoremap <c-x> <esc>:vsc Edit.LineCut<cr>I
 
 noremap <c-o> :vsc View.NavigateBackward<cr>
 noremap <c-i> :vsc View.NavigateForward<cr>
