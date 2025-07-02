@@ -28,6 +28,7 @@ noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 vnoremap == :vsc Edit.FormatSelection<cr>
+noremap <leader>= ==
 noremap <leader><leader> :vsc Edit.GoToAll<cr>
 "noremap <leader><leader> :vsc 编辑.转到所有<cr>
 noremap <leader>, :vsc Edit.GoToRecentFile<cr>

@@ -28,6 +28,7 @@ noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 vnoremap == :vsc Edit.FormatSelection<cr>
+noremap <leader>= ==
 noremap <leader><leader> :vsc ReSharper.ReSharper_GotoType<cr>
 noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentFiles<cr>
 noremap <leader>. :vsc ReSharper.ReSharper_GotoRecentEdits<cr>
