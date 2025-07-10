@@ -24,6 +24,11 @@ vnoremap Y $y
 
 "inoremap jj <esc>
 
+" VsVim not support v:count
+" noremap j "v:count?'j':'gj'"
+noremap j gj
+noremap k gk
+
 noremap zl :so ~/.vsvimrc<cr>
 noremap zk :vsc Tools.CustomizeKeyboard<cr>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
@@ -125,10 +130,6 @@ noremap <c-i> :vsc View.NavigateForward<cr>
 " ^p::Send "{up}"
 " ^n::Send "{down}"
 " #HotIf
-
-" VsVim not support v:count
-"nnoremap <expr> j v:count?'j':'gj'
-"nnoremap <expr> k v:count?'k':'gk'
 
 noremap K :vsc Edit.QuickInfo<cr>
 noremap H :tabp<cr>

@@ -3,7 +3,6 @@
 -- Add any additional keymaps here
 
 local m = vim.keymap
--- m.set("i", "jj", "<esc>")
 
 local function open_folder()
   if vim.fn.has("win32") == 1 then
@@ -39,6 +38,10 @@ local function adjust_font_size(amount)
     vim.g.neovide_scale_factor = current_size + amount
   end
 end
+
+-- m.set("i", "jj", "<esc>")
+-- m.set({ "n", "x" }, "j", "v:count?'j':'gj'", { noremap = true, expr = true, desc = "Jump Up" })
+-- m.set({ "n", "x" }, "k", "v:count?'k':'gk'", { noremap = true, expr = true, desc = "Jump Down" })
 
 m.set({ "n", "v" }, "<c-=>", function() adjust_font_size(0.1) end, { desc = "Increase Font Size" })
 m.set({ "n", "v" }, "<c-->", function() adjust_font_size(-0.1) end, { desc = "Decrease Font Size" })
@@ -116,8 +119,6 @@ m.set("n", "<space>h", "^", { desc = "Line Begin" })
 m.set("n", "<space>l", "$", { desc = "Line End" })
 m.set("n", "<space>j", function() sendkeys("<leader>cd") end, { desc = "Line Diagnostic" })
 m.set("n", "<space>k", function() vim.lsp.buf.hover() end, { desc = "Hover" })
--- m.set({ "n", "x" }, "<space>j", "v:count?'j':'gj'", { noremap = true, expr = true, desc = "Jump Up" })
--- m.set({ "n", "x" }, "<space>k", "v:count?'k':'gk'", { noremap = true, expr = true, desc = "Jump Down" })
 
 m.set("n", "<space>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
 m.set("n", "<space>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom" })
