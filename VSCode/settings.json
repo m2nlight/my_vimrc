@@ -17,26 +17,21 @@
     },
     "vim.leader": "<space>",
     "vim.handleKeys": {
-        "<c-s>": false
+        "<C-s>": false,
+        "<C-a>": false,
+        "<C-x>": false,
+        "<C-c>": false,
     },
     "vim.insertModeKeyBindings": [
-        //{
-        //    "before": [
-        //        "j",
-        //        "j"
-        //    ],
-        //    "after": [
-        //        "<esc>"
-        //    ]
-        //},
-        {
-            "before": [
-                "<c-x>"
-            ],
-            "commands": [
-                "editor.action.clipboardCutAction"
-            ]
-        }
+        // {
+        //     "before": [
+        //         "j",
+        //         "j"
+        //     ],
+        //     "after": [
+        //         "<esc>"
+        //     ]
+        // },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -69,8 +64,7 @@
         {
             "before": [
                 "<leader>",
-                "k",
-                "k"
+                "y"
             ],
             "commands": [
                 "extension.toggleBool"
@@ -90,6 +84,60 @@
             ],
             "commands": [
                 "undo_expand_region"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "a"
+            ],
+            "after": [
+                "<c-a>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x"
+            ],
+            "after": [
+                "<c-x>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "Q"
+            ],
+            "after": [
+                ":",
+                "q",
+                "a",
+                "<cr>"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                ":",
+                "n",
+                "o",
+                "r",
+                "m",
+                " "
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "0",
+                "p"
             ]
         }
     ],
@@ -123,6 +171,15 @@
         },
         {
             "before": [
+                "<leader>",
+                "y",
+            ],
+            "commands": [
+                "extension.toggleBool"
+            ]
+        },
+        {
+            "before": [
                 "<c-n>"
             ],
             "commands": [
@@ -132,6 +189,15 @@
         {
             "before": [
                 "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k"
             ],
             "commands": [
                 "editor.action.showHover"
@@ -150,7 +216,16 @@
         {
             "before": [
                 "<leader>",
-                "<space>"
+                "s"
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<leader>"
             ],
             "commands": [
                 "workbench.action.showAllSymbols"
@@ -169,6 +244,15 @@
             "before": [
                 "g",
                 "I"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "i"
             ],
             "commands": [
                 "editor.action.goToImplementation"
@@ -198,11 +282,29 @@
         {
             "before": [
                 "<leader>",
-                "-"
+                "_"
             ],
             "after": [
                 "<c-w>",
                 "s"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "after": [
+                "$"
             ]
         },
         {
@@ -328,11 +430,53 @@
         {
             "before": [
                 "<leader>",
-                "c",
                 "a"
             ],
-            "commands": [
-                "editor.action.quickFix"
+            "after": [
+                "<c-a>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x"
+            ],
+            "after": [
+                "<c-x>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "after": [
+                ":",
+                "q",
+                "<cr>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "Q"
+            ],
+            "after": [
+                ":",
+                "q",
+                "a",
+                "<cr>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "after": [
+                ":",
+                "w",
+                "<cr>"
             ]
         },
         {
@@ -347,7 +491,25 @@
         {
             "before": [
                 "<leader>",
-                "p"
+                "z"
+            ],
+            "commands": [
+                "workbench.action.toggleZenMode"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "Z"
+            ],
+            "commands": [
+                "workbench.action.toggleFullScreen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "P"
             ],
             "commands": [
                 "workbench.action.pinEditor"
@@ -365,8 +527,7 @@
         {
             "before": [
                 "<leader>",
-                "s",
-                "f"
+                "F"
             ],
             "commands": [
                 "workbench.action.findInFiles"
@@ -375,8 +536,7 @@
         {
             "before": [
                 "<leader>",
-                "s",
-                "F"
+                "g"
             ],
             "commands": [
                 "actions.find"
@@ -385,8 +545,7 @@
         {
             "before": [
                 "<leader>",
-                "s",
-                "r"
+                "G"
             ],
             "commands": [
                 "editor.action.startFindReplaceAction"
@@ -394,8 +553,17 @@
         },
         {
             "before": [
-                "=",
-                "="
+                "<leader>",
+                "R"
+            ],
+            "commands": [
+                "workbench.action.replaceInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
             ],
             "commands": [
                 "editor.action.format"
@@ -404,7 +572,6 @@
         {
             "before": [
                 "<leader>",
-                "k",
                 "o"
             ],
             "commands": [
@@ -414,31 +581,10 @@
         {
             "before": [
                 "<leader>",
-                "k",
-                "k"
+                "u"
             ],
             "commands": [
                 "extension.toggleBool"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "u",
-                "z"
-            ],
-            "commands": [
-                "workbench.action.toggleZenMode"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "u",
-                "Z"
-            ],
-            "commands": [
-                "workbench.action.toggleFullScreen"
             ]
         },
         {
@@ -456,6 +602,17 @@
             "commands": [
                 "undo_expand_region"
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "0",
+                "p"
+            ]
         }
     ],
     //// MacOS
@@ -468,4 +625,5 @@
     // "vim.autoSwitchInputMethod.defaultIM": "1033",
     // "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\Tools\\mini\\im-select.exe",
     // "vim.autoSwitchInputMethod.switchIMCmd": "D:\\Tools\\mini\\im-select.exe {im}",
+ 
 }
