@@ -1,4 +1,5 @@
 {
+    // "editor.editContext": false,
     "editor.lineNumbers": "relative",
     "vim.disableExtension": false,
     "vim.easymotion": true,

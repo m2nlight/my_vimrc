@@ -86,7 +86,9 @@ noremap <leader>F :vsc Edit.FindinFiles<cr>
 noremap <leader>g :vsc Team.Git.Commit<cr>
 noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
+noremap <leader>H :vsc ReSharper.ReSharper_TypeHierarchyBrowse<cr>
 noremap <leader>j :vsc Edit.CompleteWord<cr>
+noremap <leader>J :vsc ReSharper.ReSharper_InspectThis<cr>
 noremap <leader>k :vsc Edit.QuickInfo<cr>
 noremap <leader>l $
 
