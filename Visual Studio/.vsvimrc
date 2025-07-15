@@ -35,7 +35,7 @@ noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<cr>
 vnoremap == :vsc Edit.FormatSelection<cr>
 noremap <leader>= ==
 noremap <leader><leader> :vsc Edit.GoToAll<cr>
-"noremap <leader><leader> :vsc 编辑.转到所有<cr>
+noremap <leader><leader> :vsc 编辑.转到所有<cr>
 noremap <leader>, :vsc Edit.GoToRecentFile<cr>
 noremap <leader>` :vsc View.BookmarkWindow<cr>
 "noremap <leader>' :vsc View.BookmarkWindow<cr>
@@ -82,7 +82,7 @@ noremap <leader>d :vsc View.ErrorList<cr>
 noremap <leader>D :vsc View.Output<cr>
 noremap <leader>f :vsc Edit.Find<cr>
 noremap <leader>F :vsc Edit.FindinFiles<cr>
--- noremap <leader>F :vsc Edit.Replace<cr>
+"noremap <leader>F :vsc Edit.Replace<cr>
 noremap <leader>g :vsc Team.Git.Commit<cr>
 noremap <leader>G :vsc Team.Git.ViewHistory<cr>
 noremap <leader>h ^
@@ -140,6 +140,7 @@ noremap <c-l> :vsc Window.NextDocumentWindow<cr>
 noremap gc :vsc Edit.ToggleLineComment<cr>
 noremap gC :vsc Edit.ToggleBlockComment<cr>
 noremap gd :vsc Edit.GoToDeclaration<cr>
+noremap gd :vsc 编辑.转到定义<cr>
 noremap gr :vsc Edit.FindAllReferences<cr>
 noremap gi :vsc Edit.GoToLastEditLocation<cr>
 noremap gI :vsc Edit.GoToImplementation<cr>
