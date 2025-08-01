@@ -157,3 +157,8 @@ noremap ]f :vsc Edit.NextMethod<CR>
 noremap [f :vsc Edit.PreviousMethod<CR>
 noremap ]m :vsc Edit.NextMethod<CR>
 noremap [m :vsc Edit.PreviousMethod<CR>
+
+noremap ,b :vsc Edit.PreviousSubword<CR>
+noremap ,w :vsc Edit.NextSubword<CR>
+vnoremap ,b :vsc Edit.PreviousSubwordExtend<CR>
+vnoremap ,w :vsc Edit.NextSubwordExtend<CR>

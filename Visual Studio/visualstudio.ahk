@@ -1,4 +1,4 @@
-#HotIf WinActive("ahk_exe devenv.exe")
+#HotIf WinActive("ahk_exe devenv.exe") or WinActive("ahk_exe ReSharper.Backend64c.exe")
 ; map ctrl-o, ctrl-i to navigate back/forward
 ^i::Send "^+-"
 ^o::Send "^-"

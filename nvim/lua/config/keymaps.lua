@@ -93,8 +93,8 @@ m.set("n", "<space>T", function() Snacks.picker.todo_comments() end, { desc = "T
 -- m.set("n", "<space>T", "<cmd>TodoLocList<CR>", { desc = "Todo" })
 
 vim.g.switch_mapping = ""
-m.set({ "n", "v" }, "<space>y", "<cmd>:Switch<CR>", { desc = "Switch" })
-m.set({ "n", "v" }, "<space>Y", "<cmd>:SwitchReverse<CR>", { desc = "Switch Reverse" })
+m.set({ "n", "v" }, "<space>y", "<cmd>Switch<CR>", { desc = "Switch" })
+m.set({ "n", "v" }, "<space>Y", "<cmd>SwitchReverse<CR>", { desc = "Switch Reverse" })
 ---@diagnostic disable-next-line: missing-fields
 m.set("n", "<space>u", function() require("neotest").run.run({ vim.fn.expand("%"), strategy = "dap" }) end,
   { desc = "Test Run (Neotest)" })
