@@ -103,6 +103,7 @@ vnoremap <leader>m :vsc Refactor.ExtractMethod<CR>
 
 noremap <leader>cc :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<CR>
 noremap <leader>cC :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<CR>
+noremap <leader>cd :vsc Debug.ToggleJustMyCode<CR>
 noremap <leader>cf :vsc Edit.FormatDocument<CR>
 vnoremap <leader>cf :vsc Edit.FormatSelection<CR>
 

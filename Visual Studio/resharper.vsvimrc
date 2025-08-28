@@ -107,6 +107,7 @@ vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
 
 noremap <leader>cc :vsc Resharper.ReSharper_SilentCleanupCode<CR>
 noremap <leader>cC :vsc Resharper.ReSharper_CleanupCode<CR>
+noremap <leader>cd :vsc Debug.ToggleJustMyCode<CR>
 noremap <leader>cf :vsc Edit.FormatDocument<CR>
 vnoremap <leader>cf :vsc Edit.FormatSelection<CR>
 
