@@ -57,8 +57,8 @@ vnoremap <leader>Q :vsc File.Exit<CR>
 noremap <leader>Q :vsc File.Exit<CR>
 noremap <leader>w :w!<CR>
 noremap <leader>W :vsc File.SaveAll<CR>
-noremap <leader>e :vsc View.SolutionExplorer<CR>
-noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+noremap <leader>E :vsc View.SolutionExplorer<CR>
+noremap <leader>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
 noremap <leader>R :vsc Edit.ReplaceinFiles<CR>
 noremap <leader>t :vsc ReSharper.ReSharper_GotoText<CR>
