@@ -69,7 +69,8 @@ noremap <leader>y :vsc Tools.Switch<CR>
 noremap <leader>Y :vsc Tools.SwitchReverse<CR>
 noremap <leader>i :vsc ReSharper.ReSharper_GotoImplementations<CR>
 noremap <leader>I :vsc Debug.Immediate<CR>
-noremap <leader>o :vsc File.OpenContainingFolder<CR>
+noremap <leader>O :vsc File.OpenContainingFolder<CR>
+noremap <leader>o :vsc File.OpeninFileExplorer<CR>
 noremap <leader>p "0p<CR>
 noremap <leader>P :vsc Window.PinTab<CR>
 
@@ -83,7 +84,7 @@ noremap <leader>D :vsc View.Output<CR>
 noremap <leader>f :vsc Edit.Find<CR>
 noremap <leader>F :vsc Edit.FindinFiles<CR>
 "noremap <leader>F :vsc Edit.Replace<CR>
-noremap <leader>g :vsc Team.Git.Commit<CR>
+noremap <leader>g :vsc View.GitWindow<CR>
 noremap <leader>G :vsc Team.Git.ViewHistory<CR>
 noremap <leader>h ^
 noremap <leader>H :vsc ReSharper.ReSharper_TypeHierarchyBrowse<CR>
