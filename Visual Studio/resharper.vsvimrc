@@ -108,9 +108,12 @@ vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
 
 noremap <leader>cc :vsc Resharper.ReSharper_SilentCleanupCode<CR>
 noremap <leader>cC :vsc Resharper.ReSharper_CleanupCode<CR>
-noremap <leader>cd :vsc Debug.ToggleJustMyCode<CR>
+noremap <leader>cd :vsc Debug.GoToDeclaration<CR>
 noremap <leader>cf :vsc Edit.FormatDocument<CR>
 vnoremap <leader>cf :vsc Edit.FormatSelection<CR>
+noremap <leader>cj :vsc Debug.ToggleJustMyCode<CR>
+noremap <leader>cv :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader>cV :vsc Resharper.Resharper_GotoRelatedFiles<CR>
 
 noremap s :vsc Tools.InvokeAceJumpCommand<CR>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
