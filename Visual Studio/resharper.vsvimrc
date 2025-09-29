@@ -49,13 +49,11 @@ vmap <C-x> :vsc Edit.Cut<CR>
 
 noremap <space>q ci"
 noremap <space>Q ci'
-noremap <space><space>q da"
-noremap <space><space>Q da'
+noremap <space><space>q :q<CR>
 
 noremap <space>w ciw
 noremap <space>W cib
-noremap <space><space>w diw
-noremap <space><space>W dib
+noremap <space><space>w :w<CR>
 
 noremap <space>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 noremap <space>E :vsc View.SolutionExplorer<CR>
@@ -66,8 +64,7 @@ noremap <space><space>r :vsc Debug.StartWithoutDebugging<CR>
 
 noremap <space>t cit
 noremap <space>T cat
-noremap <space><space>t dit
-noremap <space><space>T dat
+noremap <space><space>t :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
 
 noremap <space>y :set wrap!<CR>
 noremap <space><space>y :set nu rnu!<CR>
@@ -125,16 +122,15 @@ noremap <space><space>l :vsc Team.Git.Annotate<CR>
 noremap <space>z :vsc View.FullScreen<CR>
 
 noremap <space>x :vsc Debug.ToggleBreakpoint<CR>
-noremap <space>X :vsc Debug.FunctionBreakpoint<CR>
-noremap <space><space>x :vsc Debug.EnableBreakpoint<CR>
-noremap <space><space>X :vsc Debug.DisableAllBreakpoints<CR>
+noremap <space>X :vsc Debug.EnableBreakpoint<CR>
+noremap <space><space>x :x<CR>
 
 noremap <space>c :vsc Resharper.ReSharper_SilentCleanupCode<CR>
 noremap <space><space>c :vsc Resharper.ReSharper_CleanupCode<CR>
 
 noremap <space>v :vsc Resharper.Resharper_IntroVariable<CR>
 noremap <space>V :vsc Resharper.Resharper_InlineVariable<CR>
-noremap <space><space>v :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
+noremap <space><space>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
 
 noremap <space>b :vsc Build.BuildSelection<CR>
 noremap <space>B :vsc Build.RebuildSelection<CR>
@@ -143,9 +139,10 @@ noremap <space><space>B :vsc Build.RebuildSolution<CR>
 
 noremap <space>n <C-a>
 noremap <space>N <C-x>
-noremap <space><space>n :vsc View.Notifications<CR>
+noremap <space><space>n :vsc AddQuickFile<CR>
+noremap <space><space>N :vsc View.Notifications<CR>
 
-noremap <space>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <space>m :vsc ReSharper.ReSharper_GotoImplementations<CR>
 noremap <space>M :vsc Resharper.ReSharper_GotoRelatedFiles<CR>
 noremap <space><space>m :vsc Debug.ParallelStacks<CR>
 
