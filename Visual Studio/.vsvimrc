@@ -96,7 +96,7 @@ noremap <space><space>s :vsc Edit.FindinFiles<CR>
 noremap <space>d :vsc Edit.GoToMember<CR>
 noremap <space><space>d :vsc Debug.Start<CR>
 
-noremap <space>f :vsc REdit.GotoSymbol<CR>
+noremap <space>f :vsc Edit.GotoSymbol<CR>
 noremap <space><space>f :vsc Edit.GotoText<CR>
 
 noremap <space>g :vsc 编辑.转到所有<CR>
@@ -128,8 +128,9 @@ noremap <space><space>x :x<CR>
 noremap <space>c :vsc EditorContextMenus.FileHealthIndicator.RunCustomCodeCleanup<CR>
 noremap <space><space>c :vsc EditorContextMenus.FileHealthIndicator.ConfigureCodeCleanup<CR>
 
-noremap <space>v :vsc Resharper.Resharper_IntroVariable<CR>
-noremap <space>V :vsc Resharper.Resharper_InlineVariable<CR>
+"noremap <space>v :vsc Resharper.Resharper_IntroVariable<CR>
+"noremap <space>V :vsc Resharper.Resharper_InlineVariable<CR>
+noremap <space>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
 noremap <space><space>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
 
 noremap <space>b :vsc Build.BuildSelection<CR>
