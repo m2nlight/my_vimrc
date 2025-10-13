@@ -1,6 +1,6 @@
 set vsvim_useeditordefaults
 set vsvim_useeditorindent
-"let mapheader = ' '
+let mapleader = ' '
 
 set scrolloff=5
 set nu rnu
@@ -15,6 +15,9 @@ map <C-s> :w!<CR>
 
 set cursorline
 set backspace=indent,eol,start
+
+noremap u :vsc Edit.Undo<CR>
+noremap <C-r> :vsc Edit.Redo<CR>
 
 set clipboard=unnamed
 noremap Y y$
@@ -33,13 +36,13 @@ noremap zl :so ~/.vsvimrc<CR>
 noremap zk :vsc Tools.CustomizeKeyboard<CR>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
 vnoremap == :vsc Edit.FormatSelection<CR>
-noremap <space><space> :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
-noremap <space>, :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
-noremap <space>` :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
-"noremap <space>' :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
-noremap <space>; A;<Esc>
-noremap <space>| <C-w>v
-noremap <space>- <C-w>s
+noremap <leader><leader> :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
+noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
+noremap <leader>` :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
+"noremap <leader>' :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
+noremap <leader>; A;<Esc>
+noremap <leader>| <C-w>v
+noremap <leader>- <C-w>s
 
 map <C-a> :vsc Edit.SelectAll<CR>
 imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
@@ -47,130 +50,130 @@ map <C-x> :vsc Edit.LineCut<CR>
 imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
 vmap <C-x> :vsc Edit.Cut<CR>
 
-noremap <space>q ci"
-noremap <space>Q ci'
-noremap <space><space>q :q<CR>
+noremap <leader>q ci"
+noremap <leader>Q ci'
+noremap <leader><leader>q :q<CR>
 
-noremap <space>w ciw
-noremap <space>W cib
-noremap <space><space>w :w<CR>
+noremap <leader>w ciw
+noremap <leader>W cib
+noremap <leader><leader>w :w<CR>
 
-noremap <space>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
-noremap <space>E :vsc View.SolutionExplorer<CR>
-noremap <space><space>e :vsc ReSharper.ReSharper_ShowCodeStructure<CR>
+noremap <leader>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+noremap <leader>E :vsc View.SolutionExplorer<CR>
+noremap <leader><leader>e :vsc ReSharper.ReSharper_ShowCodeStructure<CR>
 
-noremap <space>r :vsc ReSharper.ReSharper_Rename<CR>
-noremap <space><space>r :vsc Debug.StartWithoutDebugging<CR>
+noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
+noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
 
-noremap <space>t cit
-noremap <space>T cat
-noremap <space><space>t :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
+noremap <leader>t cit
+noremap <leader>T cat
+noremap <leader><leader>t :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
 
-noremap <space>y :set wrap!<CR>
-noremap <space><space>y :set nu rnu!<CR>
+noremap <leader>y :set wrap!<CR>
+noremap <leader><leader>y :set nu rnu!<CR>
 
-noremap <space>u :vsc ReSharper.ReSharper_ShowUnitTestExplorer<CR>
-noremap <space>U :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
-noremap <space><space>u :vsc Resharper.ReSharper_ShowSolutionCoverage<CR>
+noremap <leader>u :vsc ReSharper.ReSharper_ShowUnitTestExplorer<CR>
+noremap <leader>U :vsc ReSharper.ReSharper_ShowUnitTestSessions<CR>
+noremap <leader><leader>u :vsc Resharper.ReSharper_ShowSolutionCoverage<CR>
 
-noremap <space>i :vsc Tools.Switch<CR>
-noremap <space>I :vsc Tools.SwitchReverse<CR>
-noremap <space><space>i :vsc Debug.Immediate<CR>
+noremap <leader>i :vsc Tools.Switch<CR>
+noremap <leader>I :vsc Tools.SwitchReverse<CR>
+noremap <leader><leader>i :vsc Debug.Immediate<CR>
 
 "vs2026
-noremap <space>o :vsc File.OpeninFileExplorer<CR>
+noremap <leader>o :vsc File.OpeninFileExplorer<CR>
 "vs2022
-noremap <space>O :vsc File.OpenContainingFolder<CR>
-noremap <space><space>o :vsc View.Terminal<CR>
-noremap <space><space>O :vsc View.PackageManagerConsole<CR>
+noremap <leader>O :vsc File.OpenContainingFolder<CR>
+noremap <leader><leader>o :vsc View.Terminal<CR>
+noremap <leader><leader>O :vsc View.PackageManagerConsole<CR>
 
-noremap <space>p "0p<CR>
-noremap <space>P "0P<CR>
-noremap <space><space>p :vsc Window.PinTab<CR>
+noremap <leader>p "0p<CR>
+noremap <leader>P "0P<CR>
+noremap <leader><leader>p :vsc Window.PinTab<CR>
 
-noremap <space>a :vsc Edit.Replace<CR>
-noremap <space><space>a :vsc Edit.ReplaceinFiles<CR>
+noremap <leader>a :vsc Edit.Replace<CR>
+noremap <leader><leader>a :vsc Edit.ReplaceinFiles<CR>
 
-noremap <space>s :vsc Edit.Find<CR>
-noremap <space><space>s :vsc Edit.FindinFiles<CR>
+noremap <leader>s :vsc Edit.Find<CR>
+noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
 
-noremap <space>d :vsc Resharper.Resharper_GotoFileMember<CR>
-noremap <space><space>d :vsc Debug.Start<CR>
+noremap <leader>d :vsc Resharper.Resharper_GotoFileMember<CR>
+noremap <leader><leader>d :vsc Debug.Start<CR>
 
-noremap <space>f :vsc ReSharper.ReSharper_GotoSymbol<CR>
-noremap <space><space>f :vsc ReSharper.ReSharper_GotoText<CR>
+noremap <leader>f :vsc ReSharper.ReSharper_GotoSymbol<CR>
+noremap <leader><leader>f :vsc ReSharper.ReSharper_GotoText<CR>
 
-noremap <space>g :vsc ReSharper.ReSharper_GotoType<CR>
-noremap <space><space>g :vsc View.GitWindow<CR>
+noremap <leader>g :vsc ReSharper.ReSharper_GotoType<CR>
+noremap <leader><leader>g :vsc View.GitWindow<CR>
 
-noremap <space>h ^
-noremap <space>H :vsc ReSharper.ReSharper_TypeHierarchyBrowse<CR>
+noremap <leader>h ^
+noremap <leader>H :vsc ReSharper.ReSharper_TypeHierarchyBrowse<CR>
 
-noremap <space>h ^
-noremap <space><space>h :vsc Team.Git.ViewHistory<CR>
+noremap <leader>h ^
+noremap <leader><leader>h :vsc Team.Git.ViewHistory<CR>
 
-noremap <space>j za
-noremap <space><space>j :vsc Edit.ToggleAllOutlining<CR>
+noremap <leader>j za
+noremap <leader><leader>j :vsc Edit.ToggleAllOutlining<CR>
 
-noremap <space>k :vsc Edit.QuickInfo<CR>
-noremap <space><space>k :vsc Debug.StopDebugging<CR>
+noremap <leader>k :vsc Edit.QuickInfo<CR>
+noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
 
-noremap <space>l $
-noremap <space>L :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
-noremap <space><space>l :vsc Team.Git.Annotate<CR>
+noremap <leader>l $
+noremap <leader>L :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
+noremap <leader><leader>l :vsc Team.Git.Annotate<CR>
 
-noremap <space>z :vsc View.FullScreen<CR>
+noremap <leader>z :vsc View.FullScreen<CR>
 
-noremap <space>x :vsc Debug.ToggleBreakpoint<CR>
-noremap <space>X :vsc Debug.EnableBreakpoint<CR>
-noremap <space><space>x :x<CR>
+noremap <leader>x :vsc Debug.ToggleBreakpoint<CR>
+noremap <leader>X :vsc Debug.EnableBreakpoint<CR>
+noremap <leader><leader>x :x<CR>
 
-noremap <space>c :vsc Resharper.ReSharper_SilentCleanupCode<CR>
-noremap <space><space>c :vsc Resharper.ReSharper_CleanupCode<CR>
+noremap <leader>c :vsc Resharper.ReSharper_SilentCleanupCode<CR>
+noremap <leader><leader>c :vsc Resharper.ReSharper_CleanupCode<CR>
 
-noremap <space>v :vsc Resharper.Resharper_IntroVariable<CR>
-noremap <space>V :vsc Resharper.Resharper_InlineVariable<CR>
-noremap <space><space>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader>v :vsc Resharper.Resharper_IntroVariable<CR>
+noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
+noremap <leader><leader>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
 
-noremap <space>b :vsc Build.BuildSelection<CR>
-noremap <space>B :vsc Build.RebuildSelection<CR>
-noremap <space><space>b :vsc Build.BuildSolution<CR>
-noremap <space><space>B :vsc Build.RebuildSolution<CR>
+noremap <leader>b :vsc Build.BuildSelection<CR>
+noremap <leader>B :vsc Build.RebuildSelection<CR>
+noremap <leader><leader>b :vsc Build.BuildSolution<CR>
+noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
 
-noremap <space>n <C-a>
-noremap <space>N <C-x>
-noremap <space><space>n :vsc AddQuickFile<CR>
-noremap <space><space>N :vsc View.Notifications<CR>
+noremap <leader>n <C-a>
+noremap <leader>N <C-x>
+noremap <leader><leader>n :vsc AddQuickFile<CR>
+noremap <leader><leader>N :vsc View.Notifications<CR>
 
-noremap <space>m :vsc ReSharper.ReSharper_GotoImplementations<CR>
-noremap <space>M :vsc Resharper.ReSharper_GotoRelatedFiles<CR>
-noremap <space><space>m :vsc Debug.ParallelStacks<CR>
+noremap <leader>m :vsc ReSharper.ReSharper_GotoImplementations<CR>
+noremap <leader>M :vsc Resharper.ReSharper_GotoRelatedFiles<CR>
+noremap <leader><leader>m :vsc Debug.ParallelStacks<CR>
 
-vnoremap <space>s :vsc ReSharper.ReSharper_SurroundWith<CR>
-vnoremap <space>n :norm 
-vnoremap <space>m :vsc Resharper.Resharper_ExtractMethod<CR>
+vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<CR>
+vnoremap <leader>n :norm 
+vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
 
-noremap <space>` :vsc Resharper.Resharper_BookmarksBookmarksMenu<CR>
-noremap <space>0 :vsc Resharper_BookmarksToggleBookmark0<CR>
-noremap <space><space>0 :vsc Resharper_BookmarksGotoBookmark0<CR>
-noremap <space>1 :vsc Resharper_BookmarksToggleBookmark1<CR>
-noremap <space><space>1 :vsc Resharper_BookmarksGotoBookmark1<CR>
-noremap <space>2 :vsc Resharper_BookmarksToggleBookmark2<CR>
-noremap <space><space>2 :vsc Resharper_BookmarksGotoBookmark2<CR>
-noremap <space>3 :vsc Resharper_BookmarksToggleBookmark3<CR>
-noremap <space><space>3 :vsc Resharper_BookmarksGotoBookmark3<CR>
-noremap <space>4 :vsc Resharper_BookmarksToggleBookmark4<CR>
-noremap <space><space>4 :vsc Resharper_BookmarksGotoBookmark4<CR>
-noremap <space>5 :vsc Resharper_BookmarksToggleBookmark5<CR>
-noremap <space><space>5 :vsc Resharper_BookmarksGotoBookmark5<CR>
-noremap <space>6 :vsc Resharper_BookmarksToggleBookmark6<CR>
-noremap <space><space>6 :vsc Resharper_BookmarksGotoBookmark6<CR>
-noremap <space>7 :vsc Resharper_BookmarksToggleBookmark7<CR>
-noremap <space><space>7 :vsc Resharper_BookmarksGotoBookmark7<CR>
-noremap <space>8 :vsc Resharper_BookmarksToggleBookmark8<CR>
-noremap <space><space>8 :vsc Resharper_BookmarksGotoBookmark8<CR>
-noremap <space>9 :vsc Resharper_BookmarksToggleBookmark9<CR>
-noremap <space><space>9 :vsc Resharper_BookmarksGotoBookmark9<CR>
+noremap <leader>` :vsc Resharper.Resharper_BookmarksBookmarksMenu<CR>
+noremap <leader>0 :vsc Resharper_BookmarksToggleBookmark0<CR>
+noremap <leader><leader>0 :vsc Resharper_BookmarksGotoBookmark0<CR>
+noremap <leader>1 :vsc Resharper_BookmarksToggleBookmark1<CR>
+noremap <leader><leader>1 :vsc Resharper_BookmarksGotoBookmark1<CR>
+noremap <leader>2 :vsc Resharper_BookmarksToggleBookmark2<CR>
+noremap <leader><leader>2 :vsc Resharper_BookmarksGotoBookmark2<CR>
+noremap <leader>3 :vsc Resharper_BookmarksToggleBookmark3<CR>
+noremap <leader><leader>3 :vsc Resharper_BookmarksGotoBookmark3<CR>
+noremap <leader>4 :vsc Resharper_BookmarksToggleBookmark4<CR>
+noremap <leader><leader>4 :vsc Resharper_BookmarksGotoBookmark4<CR>
+noremap <leader>5 :vsc Resharper_BookmarksToggleBookmark5<CR>
+noremap <leader><leader>5 :vsc Resharper_BookmarksGotoBookmark5<CR>
+noremap <leader>6 :vsc Resharper_BookmarksToggleBookmark6<CR>
+noremap <leader><leader>6 :vsc Resharper_BookmarksGotoBookmark6<CR>
+noremap <leader>7 :vsc Resharper_BookmarksToggleBookmark7<CR>
+noremap <leader><leader>7 :vsc Resharper_BookmarksGotoBookmark7<CR>
+noremap <leader>8 :vsc Resharper_BookmarksToggleBookmark8<CR>
+noremap <leader><leader>8 :vsc Resharper_BookmarksGotoBookmark8<CR>
+noremap <leader>9 :vsc Resharper_BookmarksToggleBookmark9<CR>
+noremap <leader><leader>9 :vsc Resharper_BookmarksGotoBookmark9<CR>
 
 noremap s :vsc Tools.InvokeAceJumpCommand<CR>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
