@@ -25,7 +25,7 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
-"inoremap jj <Esc>
+inoremap jj <Esc>
 
 " VsVim not support v:count
 " noremap j "v:count?'j':'gj'"
@@ -36,8 +36,10 @@ noremap zl :so ~/.vsvimrc<CR>
 noremap zk :vsc Tools.CustomizeKeyboard<CR>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
 vnoremap == :vsc Edit.FormatSelection<CR>
-noremap <leader><leader> :vsc Edit.GoToRecentFile<CR>
-"noremap <leader>, _GotoRecentEdits
+noremap <leader><leader> :vsc 编辑.转到所有<CR>
+"noremap <leader><leader> :vsc Edit.GoToAll<CR>
+noremap <leader>, :vsc Edit.GoToRecentFile<CR>
+"noremap <leader>. _GotoRecentEdits
 noremap <leader>` :vsc View.BookmarkWindow<CR>
 "noremap <leader>' :vsc View.BookmarkWindow<CR>
 noremap <leader>; A;<Esc>
@@ -205,7 +207,7 @@ noremap [f :vsc Edit.PreviousMethod<CR>
 noremap ]m :vsc Edit.NextMethod<CR>
 noremap [m :vsc Edit.PreviousMethod<CR>
 
-noremap ,b :vsc Edit.PreviousSubword<CR>
-noremap ,w :vsc Edit.NextSubword<CR>
-vnoremap ,b :vsc Edit.PreviousSubwordExtend<CR>
-vnoremap ,w :vsc Edit.NextSubwordExtend<CR>
+"noremap ,b :vsc Edit.PreviousSubword<CR>
+"noremap ,w :vsc Edit.NextSubword<CR>
+"vnoremap ,b :vsc Edit.PreviousSubwordExtend<CR>
+"vnoremap ,w :vsc Edit.NextSubwordExtend<CR>

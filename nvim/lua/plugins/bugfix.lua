@@ -1,3 +1,5 @@
+if true then return {} end
+
 return {
   -- https://github.com/LazyVim/LazyVim/pull/6354
   "akinsho/bufferline.nvim",

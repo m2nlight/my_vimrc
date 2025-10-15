@@ -24,15 +24,15 @@
         "<C-c>": false,
     },
     "vim.insertModeKeyBindings": [
-        // {
-        //     "before": [
-        //         "j",
-        //         "j"
-        //     ],
-        //     "after": [
-        //         "<esc>"
-        //     ]
-        // },
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        },
         {
             "before": [
                 "<C-o>"
@@ -299,6 +299,22 @@
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "commands": [
+                "redo"
+            ]
+        },
         {
             "before": [
                 "<C-o>"
