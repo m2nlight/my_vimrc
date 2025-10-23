@@ -67,8 +67,8 @@ noremap <leader><leader>e :vsc View.DocumentOutline<CR>
 noremap <leader>r :vsc Refactor.Rename<CR>
 noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
 
-noremap <leader>t cit
-noremap <leader>T cat
+noremap <leader>t :vsc 编辑.转到所有<CR>
+noremap <leader>T :vsc Edit.GoToAll<CR>
 noremap <leader><leader>t :vsc View.TaskList<CR>
 
 noremap <leader>y :set wrap!<CR>
@@ -101,12 +101,12 @@ noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
 noremap <leader>d :vsc Edit.GoToMember<CR>
 noremap <leader><leader>d :vsc Debug.Start<CR>
 
-noremap <leader>f :vsc Edit.GotoSymbol<CR>
-noremap <leader><leader>f :vsc Edit.GotoText<CR>
+noremap <leader>f :vsc Edit.GotoText<CR>
+noremap <leader><leader>f :vsc Edit.GotoSymbol<CR>
 
-noremap <leader>g :vsc 编辑.转到所有<CR>
-noremap <leader>G :vsc Edit.GoToAll<CR>
-noremap <leader><leader>g :vsc View.GitWindow<CR>
+noremap <leader>g :vsc View.GitWindow<CR>
+noremap <leader>G :vsc Team.Git.ViewHistory<CR>
+noremap <leader><leader>g :vsc Team.Git.Annotate<CR>
 
 noremap <leader>h ^
 noremap <leader><leader>h :vsc Team.Git.ViewHistory<CR>
@@ -115,14 +115,12 @@ noremap <leader>j za
 noremap <leader><leader>j :vsc Edit.ToggleAllOutlining<CR>
 
 noremap <leader>h ^
-noremap <leader><leader>h :vsc Team.Git.ViewHistory<CR>
 
 noremap <leader>k :vsc Edit.QuickInfo<CR>
 noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
 
 noremap <leader>l $
-noremap <leader>L :vsc Tools.ILSpy<CR>
-noremap <leader><leader>l :vsc Team.Git.Annotate<CR>
+noremap <leader><leader>l :vsc Tools.ILSpy<CR>
 
 noremap <leader>z :vsc View.FullScreen<CR>
 

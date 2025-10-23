@@ -88,10 +88,9 @@ m.set("n", "<space>r", function() return ":IncRename " .. vim.fn.expand("<cword>
 m.set("n", "<space><space>r", "<cmd>OverseerRun<CR>", { desc = "Run" })
 m.set("n", "<space><space>R", "<cmd>OverseerRunCmd<CR>", { desc = "Run Cmd" })
 
-m.set("n", "<space>t", "cit", { desc = "Change the text in tag" })
-m.set("n", "<space>T", "cat", { desc = "Change the text with tag" })
+m.set("n", "<space>t", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
 m.set("n", "<space><space>t", function() Snacks.picker.todo_comments() end, { desc = "Todo" })
-m.set("n", "<space><spacE>T", "<cmd>TodoLocList<CR>", { desc = "Todo" })
+m.set("n", "<space><space>T", "<cmd>TodoLocList<CR>", { desc = "Todo" })
 
 m.set("n", "<space>y", function() vim.wo.wrap = not vim.wo.wrap end, { desc = "Toggle Wrap" })
 m.set("n", "<space><space>y", "<cmd>set nu rnu!<CR>", { desc = "Toggle Line Number" })
@@ -119,12 +118,12 @@ m.set("n", "<space>d", function() Snacks.picker.lsp_symbols() end, { desc = "LSP
 m.set("n", "<space><space>d", function() Snacks.picker.diagnostics() end, { desc = "Diagnostic" })
 m.set("n", "<space><space>D", function() Snacks.picker.diagnostics_buffer() end, { desc = "Diagnostic Buffer" })
 
-m.set("n", "<space>f", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
-m.set("n", "<space><space>f", function() Snacks.picker.grep({ cwd = LazyVim.root() }) end, { desc = "Grep" })
+m.set("n", "<space>f", function() Snacks.picker.grep({ cwd = LazyVim.root() }) end, { desc = "Grep" })
+m.set("n", "<space><space>f", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
 
-m.set("n", "<space>g", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
-m.set("n", "<space><space>g", function() Snacks.lazygit() end, { desc = "Lazygit" })
-m.set("n", "<space><space>G", function() Snacks.picker.git_log_file() end, { desc = "Git Log File" })
+m.set("n", "<space>g", function() Snacks.lazygit() end, { desc = "Lazygit" })
+m.set("n", "<space>G", function() Snacks.picker.git_log_file() end, { desc = "Git Log File" })
+m.set("n", "<space><space>g", function() Snacks.git.blame_line() end, { desc = "Git Blame" })
 
 m.set("n", "<space>h", "^", { desc = "Line Begin" })
 
@@ -135,7 +134,6 @@ m.set("n", "<space>K", function() sendkeys("<leader>cd") end, { desc = "Line Dia
 m.set("n", "<space><space>k", "<cmd>OverseerClose<CR>", { desc = "Overseer Close" })
 
 m.set("n", "<space>l", "$", { desc = "Line End" })
-m.set("n", "<space><space>l", function() Snacks.git.blame_line() end, { desc = "Git Blame" })
 
 m.set("n", "<space>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
 m.set("n", "<space>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom" })

@@ -66,8 +66,7 @@ noremap <leader><leader>e :vsc ReSharper.ReSharper_ShowCodeStructure<CR>
 noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
 noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
 
-noremap <leader>t cit
-noremap <leader>T cat
+noremap <leader>t :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <leader><leader>t :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
 
 noremap <leader>y :set wrap!<CR>
@@ -101,17 +100,15 @@ noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
 noremap <leader>d :vsc Resharper.Resharper_GotoFileMember<CR>
 noremap <leader><leader>d :vsc Debug.Start<CR>
 
-noremap <leader>f :vsc ReSharper.ReSharper_GotoSymbol<CR>
-noremap <leader><leader>f :vsc ReSharper.ReSharper_GotoText<CR>
+noremap <leader>f :vsc ReSharper.ReSharper_GotoText<CR>
+noremap <leader><leader>f :vsc ReSharper.ReSharper_GotoSymbol<CR>
 
-noremap <leader>g :vsc ReSharper.ReSharper_GotoType<CR>
-noremap <leader><leader>g :vsc View.GitWindow<CR>
-
-noremap <leader>h ^
-noremap <leader>H :vsc ReSharper.ReSharper_TypeHierarchyBrowse<CR>
+noremap <leader>g :vsc View.GitWindow<CR>
+noremap <leader>G :vsc Team.Git.ViewHistory<CR>
+noremap <leader><leader>g :vsc Team.Git.Annotate<CR>
 
 noremap <leader>h ^
-noremap <leader><leader>h :vsc Team.Git.ViewHistory<CR>
+noremap <leader><leader>h :vsc ReSharper.ReSharper_TypeHierarchyBrowse<CR>
 
 noremap <leader>j za
 noremap <leader><leader>j :vsc Edit.ToggleAllOutlining<CR>
@@ -120,8 +117,7 @@ noremap <leader>k :vsc Edit.QuickInfo<CR>
 noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
 
 noremap <leader>l $
-noremap <leader>L :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
-noremap <leader><leader>l :vsc Team.Git.Annotate<CR>
+noremap <leader><leader>l :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
 
 noremap <leader>z :vsc View.FullScreen<CR>
 
