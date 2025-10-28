@@ -445,7 +445,7 @@
         {
             "before": [
                 "<leader>",
-                "."
+                "<leader>"
             ],
             "commands": [
                 "workbench.action.quickOpen"

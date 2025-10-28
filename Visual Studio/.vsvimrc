@@ -36,8 +36,7 @@ noremap zl :so ~/.vsvimrc<CR>
 noremap zk :vsc Tools.CustomizeKeyboard<CR>
 noremap == :vsc EditorContextMenus.CodeWindow.ReformatWithCSharpier<CR>
 vnoremap == :vsc Edit.FormatSelection<CR>
-noremap <leader><leader> :vsc 编辑.转到所有<CR>
-"noremap <leader><leader> :vsc Edit.GoToAll<CR>
+noremap <leader><leader> :vsc Edit.GoToFile<CR>
 noremap <leader>, :vsc Edit.GoToRecentFile<CR>
 "noremap <leader>. _GotoRecentEdits
 noremap <leader>` :vsc View.BookmarkWindow<CR>
@@ -109,7 +108,6 @@ noremap <leader>G :vsc Team.Git.ViewHistory<CR>
 noremap <leader><leader>g :vsc Team.Git.Annotate<CR>
 
 noremap <leader>h ^
-noremap <leader><leader>h :vsc Team.Git.ViewHistory<CR>
 
 noremap <leader>j za
 noremap <leader><leader>j :vsc Edit.ToggleAllOutlining<CR>
