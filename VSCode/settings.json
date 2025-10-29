@@ -490,7 +490,8 @@
         {
             "before": [
                 "<leader>",
-                "m"
+                "<leader>",
+                "i"
             ],
             "commands": [
                 "editor.action.goToImplementation"

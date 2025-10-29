@@ -39,6 +39,7 @@ vnoremap == :vsc Edit.FormatSelection<CR>
 noremap <leader><leader> :vsc ReSharper.ReSharper_GotoFile<CR>
 noremap <leader>, :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
 noremap <leader>. :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
+noremap <leader>/ :vsc Resharper.ReSharper_GotoRelatedFiles<CR>
 noremap <leader>` :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
 "noremap <leader>' :vsc ReSharper.ReSharper_BookmarksBookMarksMenu<CR>
 noremap <leader>; A;<Esc>
@@ -59,8 +60,8 @@ noremap <leader>w ciw
 noremap <leader>W cib
 noremap <leader><leader>w :w<CR>
 
-noremap <leader>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
-noremap <leader>E :vsc View.SolutionExplorer<CR>
+noremap <leader>e :vsc View.SolutionExplorer<CR>
+noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 noremap <leader><leader>e :vsc ReSharper.ReSharper_ShowCodeStructure<CR>
 
 noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
@@ -78,7 +79,7 @@ noremap <leader><leader>u :vsc Resharper.ReSharper_ShowSolutionCoverage<CR>
 
 noremap <leader>i :vsc Tools.Switch<CR>
 noremap <leader>I :vsc Tools.SwitchReverse<CR>
-noremap <leader><leader>i :vsc Debug.Immediate<CR>
+noremap <leader><leader>i :vsc ReSharper.ReSharper_GotoImplementations<CR>
 
 "vs2026
 noremap <leader>o :vsc File.OpeninFileExplorer<CR>
@@ -117,7 +118,6 @@ noremap <leader>k :vsc Edit.QuickInfo<CR>
 noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
 
 noremap <leader>l $
-noremap <leader><leader>l :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
 
 noremap <leader>z :vsc View.FullScreen<CR>
 
@@ -130,7 +130,8 @@ noremap <leader><leader>c :vsc Resharper.ReSharper_CleanupCode<CR>
 
 noremap <leader>v :vsc Resharper.Resharper_IntroVariable<CR>
 noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
-noremap <leader><leader>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader><leader>v :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
+noremap <leader><leader>V :vsc Tools.ILSpy<CR>
 
 noremap <leader>b :vsc Build.BuildSelection<CR>
 noremap <leader>B :vsc Build.RebuildSelection<CR>
@@ -142,9 +143,8 @@ noremap <leader>N <C-x>
 noremap <leader><leader>n :vsc AddQuickFile<CR>
 noremap <leader><leader>N :vsc View.Notifications<CR>
 
-noremap <leader>m :vsc ReSharper.ReSharper_GotoImplementations<CR>
-noremap <leader>M :vsc Resharper.ReSharper_GotoRelatedFiles<CR>
-noremap <leader><leader>m :vsc Debug.ParallelStacks<CR>
+noremap <leader>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader><leader>m :vsc Debug.Immediate<CR>
 
 vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<CR>
 vnoremap <leader>n :norm 
@@ -206,6 +206,7 @@ noremap <C-l> :vsc Window.NextDocumentWindow<CR>
 noremap gc :vsc ReSharper.ReSharper_LineComment<CR>
 noremap gC :vsc ReSharper.ReSharper_BlockComment<CR>
 noremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+noremap gD :vsc Edit.GoToDeclaration<CR>
 noremap gr :vsc ReSharper.ReSharper_FindUsages<CR>
 noremap gi :vsc ReSharper.ReSharper_GotoLastEditLocation<CR>
 noremap gI :vsc ReSharper.ReSharper_GotoImplementations<CR>

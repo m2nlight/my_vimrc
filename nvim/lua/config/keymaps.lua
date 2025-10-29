@@ -101,6 +101,7 @@ m.set("n", "<space><space>u", function() require("neotest").run.run({ vim.fn.exp
 vim.g.switch_mapping = ""
 m.set({ "n", "v" }, "<space>i", "<cmd>Switch<CR>", { desc = "Switch" })
 m.set({ "n", "v" }, "<space>I", "<cmd>SwitchReverse<CR>", { desc = "Switch Reverse" })
+m.set("n", "<space><space>i", function() Snacks.picker.lsp_implementations() end, { desc = "Goto Implementation" })
 
 m.set("n", "<space>o", function() open_folder() end, { desc = "Open Folder" })
 m.set("n", "<space><space>o", function() Snacks.picker.projects() end, { desc = "Projects" })
@@ -159,6 +160,4 @@ m.set("v", "<space>n", ":norm ", { desc = "Cmd Normal..." })
 m.set("n", "<space><space>n", "<cmd>enew<CR>" , { desc = "New File" })
 m.set("n", "<space><space>N", function() require("noice").cmd("all") end, { desc = "Notice All" })
 -- m.set("n", "<space><space>N", function() sendkeys("<leader>n") end, { desc = "Notice History" })
-
-m.set("n", "<space>m", function() Snacks.picker.lsp_implementations() end, { desc = "Goto Implementation" })
 

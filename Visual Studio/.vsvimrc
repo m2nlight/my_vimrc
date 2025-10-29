@@ -59,8 +59,8 @@ noremap <leader>w ciw
 noremap <leader>W cib
 noremap <leader><leader>w :w<CR>
 
-noremap <leader>e :vsc SolutionExplorer.SyncWithActiveDocument<CR>
-noremap <leader>E :vsc View.SolutionExplorer<CR>
+noremap <leader>e :vsc View.SolutionExplorer<CR>
+noremap <leader>E :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 noremap <leader><leader>e :vsc View.DocumentOutline<CR>
 
 noremap <leader>r :vsc Refactor.Rename<CR>
@@ -78,7 +78,7 @@ noremap <leader><leader>u :vsc View.CodeCoverageResults<CR>
 
 noremap <leader>i :vsc Tools.Switch<CR>
 noremap <leader>I :vsc Tools.SwitchReverse<CR>
-noremap <leader><leader>i :vsc Debug.Immediate<CR>
+noremap <leader><leader>i :vsc Edit.GoToImplementation<CR>
 
 "vs2026
 noremap <leader>o :vsc File.OpeninFileExplorer<CR>
@@ -118,7 +118,6 @@ noremap <leader>k :vsc Edit.QuickInfo<CR>
 noremap <leader><leader>k :vsc Debug.StopDebugging<CR>
 
 noremap <leader>l $
-noremap <leader><leader>l :vsc Tools.ILSpy<CR>
 
 noremap <leader>z :vsc View.FullScreen<CR>
 
@@ -131,8 +130,7 @@ noremap <leader><leader>c :vsc EditorContextMenus.FileHealthIndicator.ConfigureC
 
 "noremap <leader>v :vsc Resharper.Resharper_IntroVariable<CR>
 "noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
-noremap <leader>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
-noremap <leader><leader>v :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader><leader>v :vsc Tools.ILSpy<CR>
 
 noremap <leader>b :vsc Build.BuildSelection<CR>
 noremap <leader>B :vsc Build.RebuildSelection<CR>
@@ -144,8 +142,8 @@ noremap <leader>N <C-x>
 noremap <leader><leader>n :vsc AddQuickFile<CR>
 noremap <leader><leader>N :vsc View.Notifications<CR>
 
-noremap <leader>m :vsc Edit.GoToImplementation<CR>
-noremap <leader><leader>m :vsc Debug.ParallelStacks<CR>
+noremap <leader>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
+noremap <leader><leader>m :vsc Debug.Immediate<CR>
 
 vnoremap <leader>s :vsc Edit.SurroundWith<CR>
 vnoremap <leader>n :norm 
@@ -184,8 +182,8 @@ noremap <C-l> :vsc Window.NextDocumentWindow<CR>
 
 noremap gc :vsc Edit.ToggleLineComment<CR>
 noremap gC :vsc Edit.ToggleBlockComment<CR>
-noremap gd :vsc Edit.GoToDeclaration<CR>
 noremap gd :vsc 编辑.转到定义<CR>
+noremap gD :vsc Edit.GoToDeclaration<CR>
 noremap gr :vsc Edit.FindAllReferences<CR>
 noremap gi :vsc Edit.GoToLastEditLocation<CR>
 noremap gI :vsc Edit.GoToImplementation<CR>
