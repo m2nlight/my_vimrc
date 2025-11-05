@@ -24,15 +24,15 @@
         "<C-c>": false,
     },
     "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<esc>"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "j",
+        //         "j"
+        //     ],
+        //     "after": [
+        //         "<esc>"
+        //     ]
+        // },
         {
             "before": [
                 "<C-o>"

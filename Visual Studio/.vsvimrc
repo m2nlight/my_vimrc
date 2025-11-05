@@ -25,7 +25,7 @@ vnoremap Y $y
 " black hole register for x because chars do not need to go in any accessible register anyway
 "noremap x "_x
 
-inoremap jj <Esc>
+"inoremap jj <Esc>
 
 " VsVim not support v:count
 " noremap j "v:count?'j':'gj'"
