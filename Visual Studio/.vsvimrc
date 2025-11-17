@@ -56,7 +56,7 @@ noremap <leader>Q ci'
 noremap <leader><leader>q :q<CR>
 
 noremap <leader>w ciw
-noremap <leader>W cib
+noremap <leader>W ci[
 noremap <leader><leader>w :w<CR>
 
 noremap <leader>e :vsc View.SolutionExplorer<CR>
@@ -66,8 +66,8 @@ noremap <leader><leader>e :vsc View.DocumentOutline<CR>
 noremap <leader>r :vsc Refactor.Rename<CR>
 noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
 
-noremap <leader>t :vsc 编辑.转到所有<CR>
-noremap <leader>T :vsc Edit.GoToAll<CR>
+noremap <leader>t cit
+noremap <leader>T cat
 noremap <leader><leader>t :vsc View.TaskList<CR>
 
 noremap <leader>y :set wrap!<CR>
@@ -97,11 +97,13 @@ noremap <leader><leader>a :vsc Edit.ReplaceinFiles<CR>
 noremap <leader>s :vsc Edit.Find<CR>
 noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
 
-noremap <leader>d :vsc Edit.GoToMember<CR>
+noremap <leader>d :vsc 编辑.转到所有<CR>
+"noremap <leader>d :vsc Edit.GoToAll<CR>
 noremap <leader><leader>d :vsc Debug.Start<CR>
 
-noremap <leader>f :vsc Edit.GotoText<CR>
-noremap <leader><leader>f :vsc Edit.GotoSymbol<CR>
+noremap <leader>f :vsc Edit.GoToMember<CR>
+noremap <leader>F :vsc Edit.GotoSymbol<CR>
+noremap <leader><leader>f :vsc Edit.GotoText<CR>
 
 noremap <leader>g :vsc View.GitWindow<CR>
 noremap <leader>G :vsc Team.Git.ViewHistory<CR>
@@ -132,9 +134,9 @@ noremap <leader><leader>c :vsc EditorContextMenus.FileHealthIndicator.ConfigureC
 "noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
 noremap <leader><leader>v :vsc Tools.ILSpy<CR>
 
-noremap <leader>b :vsc Build.BuildSelection<CR>
-noremap <leader>B :vsc Build.RebuildSelection<CR>
-noremap <leader><leader>b :vsc Build.BuildSolution<CR>
+noremap <leader>b cib
+noremap <leader>B ci{
+noremap <leader><leader>b :vsc Build.BuildSelection<CR>
 noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
 
 noremap <leader>n <C-a>

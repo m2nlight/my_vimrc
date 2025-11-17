@@ -57,7 +57,7 @@ noremap <leader>Q ci'
 noremap <leader><leader>q :q<CR>
 
 noremap <leader>w ciw
-noremap <leader>W cib
+noremap <leader>W ci[
 noremap <leader><leader>w :w<CR>
 
 noremap <leader>e :vsc View.SolutionExplorer<CR>
@@ -67,7 +67,8 @@ noremap <leader><leader>e :vsc ReSharper.ReSharper_ShowCodeStructure<CR>
 noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
 noremap <leader><leader>r :vsc Debug.StartWithoutDebugging<CR>
 
-noremap <leader>t :vsc ReSharper.ReSharper_GotoType<CR>
+noremap <leader>t cit
+noremap <leader>T cat
 noremap <leader><leader>t :vsc ReSharper.ReSharper_ShowTodoExplorer<CR>
 
 noremap <leader>y :set wrap!<CR>
@@ -98,11 +99,13 @@ noremap <leader><leader>a :vsc Edit.ReplaceinFiles<CR>
 noremap <leader>s :vsc Edit.Find<CR>
 noremap <leader><leader>s :vsc Edit.FindinFiles<CR>
 
-noremap <leader>d :vsc Resharper.Resharper_GotoFileMember<CR>
+noremap <leader>d :vsc ReSharper.ReSharper_GotoType<CR>
 noremap <leader><leader>d :vsc Debug.Start<CR>
 
-noremap <leader>f :vsc ReSharper.ReSharper_GotoText<CR>
-noremap <leader><leader>f :vsc ReSharper.ReSharper_GotoSymbol<CR>
+noremap <leader>f :vsc Resharper.Resharper_GotoFileMember<CR>
+noremap <leader>F :vsc ReSharper.ReSharper_GotoSymbol<CR>
+noremap <leader><leader>f :vsc ReSharper.ReSharper_GotoText<CR>
+
 
 noremap <leader>g :vsc View.GitWindow<CR>
 noremap <leader>G :vsc Team.Git.ViewHistory<CR>
@@ -133,9 +136,9 @@ noremap <leader>V :vsc Resharper.Resharper_InlineVariable<CR>
 noremap <leader><leader>v :vsc Resharper.Resharper_ShowIlViewerWindow<CR>
 noremap <leader><leader>V :vsc Tools.ILSpy<CR>
 
-noremap <leader>b :vsc Build.BuildSelection<CR>
-noremap <leader>B :vsc Build.RebuildSelection<CR>
-noremap <leader><leader>b :vsc Build.BuildSolution<CR>
+noremap <leader>b cib
+noremap <leader>B ci{
+noremap <leader><leader>b :vsc Build.BuildSelection<CR>
 noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
 
 noremap <leader>n <C-a>
@@ -149,28 +152,6 @@ noremap <leader><leader>m :vsc Debug.Immediate<CR>
 vnoremap <leader>s :vsc ReSharper.ReSharper_SurroundWith<CR>
 vnoremap <leader>n :norm 
 vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
-
-noremap <leader>` :vsc Resharper.Resharper_BookmarksBookmarksMenu<CR>
-noremap <leader>0 :vsc Resharper_BookmarksToggleBookmark0<CR>
-noremap <leader><leader>0 :vsc Resharper_BookmarksGotoBookmark0<CR>
-noremap <leader>1 :vsc Resharper_BookmarksToggleBookmark1<CR>
-noremap <leader><leader>1 :vsc Resharper_BookmarksGotoBookmark1<CR>
-noremap <leader>2 :vsc Resharper_BookmarksToggleBookmark2<CR>
-noremap <leader><leader>2 :vsc Resharper_BookmarksGotoBookmark2<CR>
-noremap <leader>3 :vsc Resharper_BookmarksToggleBookmark3<CR>
-noremap <leader><leader>3 :vsc Resharper_BookmarksGotoBookmark3<CR>
-noremap <leader>4 :vsc Resharper_BookmarksToggleBookmark4<CR>
-noremap <leader><leader>4 :vsc Resharper_BookmarksGotoBookmark4<CR>
-noremap <leader>5 :vsc Resharper_BookmarksToggleBookmark5<CR>
-noremap <leader><leader>5 :vsc Resharper_BookmarksGotoBookmark5<CR>
-noremap <leader>6 :vsc Resharper_BookmarksToggleBookmark6<CR>
-noremap <leader><leader>6 :vsc Resharper_BookmarksGotoBookmark6<CR>
-noremap <leader>7 :vsc Resharper_BookmarksToggleBookmark7<CR>
-noremap <leader><leader>7 :vsc Resharper_BookmarksGotoBookmark7<CR>
-noremap <leader>8 :vsc Resharper_BookmarksToggleBookmark8<CR>
-noremap <leader><leader>8 :vsc Resharper_BookmarksGotoBookmark8<CR>
-noremap <leader>9 :vsc Resharper_BookmarksToggleBookmark9<CR>
-noremap <leader><leader>9 :vsc Resharper_BookmarksGotoBookmark9<CR>
 
 noremap s :vsc Tools.InvokeAceJumpCommand<CR>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
@@ -228,3 +209,15 @@ noremap [m :vsc ReSharper.ReSharper_GotoPrevMember<CR>
 "noremap ,w :vsc Edit.NextSubword<CR>
 "vnoremap ,b :vsc Edit.PreviousSubwordExtend<CR>
 "vnoremap ,w :vsc Edit.NextSubwordExtend<CR>
+
+noremap <leader>` :vsc Resharper.Resharper_BookmarksBookmarksMenu<CR>
+noremap <leader>0 :vsc Resharper_BookmarksToggleBookmark0<CR>
+noremap <leader>1 :vsc Resharper_BookmarksToggleBookmark1<CR>
+noremap <leader>2 :vsc Resharper_BookmarksToggleBookmark2<CR>
+noremap <leader>3 :vsc Resharper_BookmarksToggleBookmark3<CR>
+noremap <leader>4 :vsc Resharper_BookmarksToggleBookmark4<CR>
+noremap <leader>5 :vsc Resharper_BookmarksToggleBookmark5<CR>
+noremap <leader>6 :vsc Resharper_BookmarksToggleBookmark6<CR>
+noremap <leader>7 :vsc Resharper_BookmarksToggleBookmark7<CR>
+noremap <leader>8 :vsc Resharper_BookmarksToggleBookmark8<CR>
+noremap <leader>9 :vsc Resharper_BookmarksToggleBookmark9<CR>

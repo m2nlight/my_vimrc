@@ -39,7 +39,7 @@ local function adjust_font_size(amount)
   end
 end
 
-m.set("i", "jj", "<esc>")
+-- m.set("i", "jj", "<esc>")
 -- m.set({ "n", "x" }, "j", "v:count?'j':'gj'", { noremap = true, expr = true, desc = "Jump Up" })
 -- m.set({ "n", "x" }, "k", "v:count?'k':'gk'", { noremap = true, expr = true, desc = "Jump Down" })
 
@@ -76,7 +76,7 @@ m.set("n", "<space>Q", "ci'", { desc = "Change the text in single quotes" })
 m.set("n", "<space><space>q", function() smart_close() end, { desc = "Smart Close" })
 
 m.set("n", "<space>w", "ciw", { desc = "Change the word" })
-m.set("n", "<space>W", "cib", { desc = "Change the text in brackets" })
+m.set("n", "<space>W", "ci[", { desc = "Change the text in []" })
 m.set("n", "<space><space>w", "<cmd>w!<CR>", { desc = "Write File" })
 m.set("n", "<space><space>W", "<cmd>w !sudo tee %<CR>", { desc = "Write File with Super User" })
 
@@ -88,7 +88,8 @@ m.set("n", "<space>r", function() return ":IncRename " .. vim.fn.expand("<cword>
 m.set("n", "<space><space>r", "<cmd>OverseerRun<CR>", { desc = "Run" })
 m.set("n", "<space><space>R", "<cmd>OverseerRunCmd<CR>", { desc = "Run Cmd" })
 
-m.set("n", "<space>t", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
+m.set("n", "<space>t", "cit", { desc = "Change the text in tag" })
+m.set("n", "<space>T", "cat", { desc = "Change the text arround tag" })
 m.set("n", "<space><space>t", function() Snacks.picker.todo_comments() end, { desc = "Todo" })
 m.set("n", "<space><space>T", "<cmd>TodoLocList<CR>", { desc = "Todo" })
 
@@ -115,12 +116,13 @@ m.set({ "n", "v" }, "<space>a", function() require('grug-far').open({ prefills =
 m.set("n", "<space>s", function() Snacks.picker.lines() end, { desc = "Buffer Lines" })
 m.set("n", "<space><space>s", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
 
-m.set("n", "<space>d", function() Snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
+m.set("n", "<space>d", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
 m.set("n", "<space><space>d", function() Snacks.picker.diagnostics() end, { desc = "Diagnostic" })
 m.set("n", "<space><space>D", function() Snacks.picker.diagnostics_buffer() end, { desc = "Diagnostic Buffer" })
 
-m.set("n", "<space>f", function() Snacks.picker.grep({ cwd = LazyVim.root() }) end, { desc = "Grep" })
-m.set("n", "<space><space>f", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
+m.set("n", "<space>f", function() Snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
+m.set("n", "<space>F", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
+m.set("n", "<space><space>f", function() Snacks.picker.grep({ cwd = LazyVim.root() }) end, { desc = "Grep" })
 
 m.set("n", "<space>g", function() Snacks.lazygit() end, { desc = "Lazygit" })
 m.set("n", "<space>G", function() Snacks.picker.git_log_file() end, { desc = "Git Log File" })
@@ -151,8 +153,10 @@ m.set("n", "<space>v", function() require("refactoring").refactor("Extract Varia
 m.set("n", "<space>V", function() require("refactoring").refactor("Inline Variable") end, { desc = "Inline Variable" })
 --m.set("n", "<space><space>v", "<Cmd><CR>", { desc = "Switch View" })
 
-m.set("n", "<space>b", "<cmd>OverseerBuild<CR>", { desc = "Build" })
--- m.set("n", "<space>B", "<cmd>OverseerBuild<CR>", { desc = "ReBuild" })
+m.set("n", "<space>b", "cib", { desc = "Change the text in brackets" })
+m.set("n", "<space>B", "ci{", { desc = "Change the text in {}" })
+m.set("n", "<space><space>b", "<cmd>OverseerBuild<CR>", { desc = "Build" })
+-- m.set("n", <space><space>B", "<cmd>OverseerBuild<CR>", { desc = "ReBuild" })
 
 m.set({ "n", "v" }, "<space>n", "<C-a>", { noremap = true, desc = "Increase" })
 m.set({ "n", "v" }, "<space>N", "<C-x>", { noremap = true, desc = "Decrease" })

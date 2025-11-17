@@ -2,24 +2,20 @@
 
 return {
   -- colorscheme
-  { "sainnhe/everforest" },
+  -- { "sainnhe/everforest" },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "everforest",
       colorscheme = "catppuccin-mocha",
       -- colorscheme = "catppuccin-latte",
       -- colorscheme = "tokyonight-day",
+      -- colorscheme = "everforest",
     },
   },
 
-  -- disabled
-  -- { "neotest-golang", enabled = false },
-
-  -- plugins
+  -- custom plugins
   { "AndrewRadev/switch.vim" },
   { "brglng/vim-im-select" },
-  { "chaoren/vim-wordmotion" },
   { "terryma/vim-expand-region" },
   { "HiPhish/rainbow-delimiters.nvim" },
 
