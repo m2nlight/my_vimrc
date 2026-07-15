@@ -129,10 +129,8 @@ map <leader>B ci{
 map <leader><leader>b <Action>(BuildCurrentProject)
 map <leader><leader>B <Action>(RebuildSolutionAction)
 
-map <leader>n <C-a>
-map <leader>N <C-x>
-map <leader><leader>n <Action>(NewElementSamePlace)
-map <leader><leader>N <Action>(ActivateNotificationsToolWindow)
+map <leader>n <Action>(NewElementSamePlace)
+map <leader>N <Action>(ActivateNotificationsToolWindow)
 
 map <leader>m <Action>(GotoRelated)
 vmap <leader>m <Action>(GotoRelated)

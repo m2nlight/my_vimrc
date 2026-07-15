@@ -51,11 +51,11 @@ noremap <leader>| <C-w>v
 noremap <leader>- <C-w>s
 noremap <leader>\ :vsc Windows.NewTab<CR>
 
-map <C-a> :vsc Edit.SelectAll<CR>
-imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
-map <C-x> :vsc Edit.LineCut<CR>
-imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
-vmap <C-x> :vsc Edit.Cut<CR>
+"map <C-a> :vsc Edit.SelectAll<CR>
+"imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
+"map <C-x> :vsc Edit.LineCut<CR>
+"imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
+"vmap <C-x> :vsc Edit.Cut<CR>
 
 noremap <leader>q ci"
 noremap <leader>Q ci'
@@ -149,16 +149,14 @@ noremap <leader>B ci{
 noremap <leader><leader>b :vsc Build.BuildSelection<CR>
 noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
 
-noremap <leader>n <C-a>
-noremap <leader>N <C-x>
-noremap <leader><leader>n :vsc AddQuickFile<CR>
-noremap <leader><leader>N :vsc View.Notifications<CR>
+noremap <leader>n :vsc AddQuickFile<CR>
+noremap <leader>N :vsc View.Notifications<CR>
 
 noremap <leader>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
 noremap <leader><leader>m :vsc Debug.Immediate<CR>
 
-noremap s :vsc Tools.InvokeAceJumpCommand<CR>
-"noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
+noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
+"noremap s :vsc Tools.InvokeAceJumpCommand<CR>
 vnoremap s :vsc Edit.SurroundWith<CR>
 vnoremap n :norm 
 vnoremap <leader>m :vsc Refactor.ExtractMethod<CR>

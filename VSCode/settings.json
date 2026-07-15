@@ -1,7 +1,6 @@
 {
-    // "editor.editContext": false,
-    "editor.lineNumbers": "relative",
     "vim.disableExtension": false,
+    "editor.lineNumbers": "relative",
     "vim.easymotion": true,
     "vim.foldfix": true,
     "vim.sneak": false,
@@ -20,7 +19,7 @@
     "vim.handleKeys": {
         "<C-s>": false,
         "<C-a>": true,
-        "<C-x>": false,
+        "<C-x>": true,
         "<C-c>": false,
     },
     "vim.insertModeKeyBindings": [
@@ -49,18 +48,18 @@
                 "workbench.action.navigateForward"
             ]
         },
-        {
-            "before": [
-                "<C-a>"
-            ],
-            "after": [
-                "<Esc>",
-                "g",
-                "g",
-                "V",
-                "G"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<C-a>"
+        //     ],
+        //     "after": [
+        //         "<Esc>",
+        //         "g",
+        //         "g",
+        //         "V",
+        //         "G"
+        //     ]
+        // },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -79,18 +78,18 @@
                 "workbench.action.navigateForward"
             ]
         },
-        {
-            "before": [
-                "<C-a>"
-            ],
-            "after": [
-                "<Esc>",
-                "g",
-                "g",
-                "V",
-                "G"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<C-a>"
+        //     ],
+        //     "after": [
+        //         "<Esc>",
+        //         "g",
+        //         "g",
+        //         "V",
+        //         "G"
+        //     ]
+        // },
         {
             "before": [
                 "j"
@@ -143,24 +142,24 @@
                 "undo_expand_region"
             ]
         },
-        {
-            "before": [
-                "<leader>",
-                "n"
-            ],
-            "after": [
-                "<C-a>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "N"
-            ],
-            "after": [
-                "<C-x>"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "n"
+        //     ],
+        //     "after": [
+        //         "<C-a>"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "N"
+        //     ],
+        //     "after": [
+        //         "<C-x>"
+        //     ]
+        // },
         {
             "before": [
                 "<leader>",
@@ -313,17 +312,17 @@
                 "workbench.action.navigateForward"
             ]
         },
-        {
-            "before": [
-                "<C-a>"
-            ],
-            "after": [
-                "g",
-                "g",
-                "V",
-                "G"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<C-a>"
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "g",
+        //         "V",
+        //         "G"
+        //     ]
+        // },
         {
             "before": [
                 "j"
@@ -675,24 +674,24 @@
                 "editor.gotoNextFold"
             ]
         },
-        {
-            "before": [
-                "<leader>",
-                "n"
-            ],
-            "after": [
-                "<C-a>"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "N"
-            ],
-            "after": [
-                "<C-x>"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "n"
+        //     ],
+        //     "after": [
+        //         "<C-a>"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "N"
+        //     ],
+        //     "after": [
+        //         "<C-x>"
+        //     ]
+        // },
         {
             "before": [
                 "<leader>",
