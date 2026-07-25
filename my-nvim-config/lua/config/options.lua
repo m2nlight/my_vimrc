@@ -2,11 +2,12 @@
 -- Default vim.options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/vim.options.lua
 -- Add any additional vim.options here
 
-vim.opt.guifont = "FiraCode Nerd Font,LXGW WenKai Mono:h11"
--- vim.opt.guifont = "Hack Nerd Font Mono,LXGW WenKai Mono:h11"
--- vim.opt.guifont = "JetBrainsMono Nerd Font,LXGW WenKai Mono:h11"
+vim.opt.guifont = "JetBrainsMono NFP,LXGW WenKai Mono:h10"
+-- vim.opt.guifont = "Hack Nerd Font Mono,LXGW WenKai Mono:h10"
+-- vim.opt.guifont = "FiraCode Nerd Font,LXGW WenKai Mono:h10"
 
-vim.opt.spelllang = vim.opt.spelllang + "cjk"
+vim.opt.spelllang = {}
+-- vim.opt.spelllang = vim.opt.spelllang + "cjk"
 -- vim.opt.spelllang = { "en" }
 
 vim.g.autoformat = false
@@ -16,6 +17,8 @@ vim.g.wordmotion_prefix=","
 vim.g.im_select_command = "D:/Tools/mini/im-select.exe"
 vim.g.im_select_default = "1033"
 vim.g.im_select_enable_focus_events = 0
+
+vim.opt.shell = '"C:/Program Files/Git/bin/bash.exe" -l -i'
 
 -- neovide https://neovide.dev/configuration.html
 -- vim.g.neovide_cursor_smooth_blink = false
