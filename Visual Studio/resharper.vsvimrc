@@ -55,9 +55,9 @@ noremap <leader>- :vsc Windows.NewTabBelow<CR>
 noremap <leader>\ :vsc Window.NewTab<CR>
 
 "map <C-a> :vsc Edit.SelectAll<CR>
-"imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
+imap <C-a> <Esc>:vsc Edit.SelectAll<CR>
 "map <C-x> :vsc Edit.LineCut<CR>
-"imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
+imap <C-x> <Esc>:vsc Edit.LineCut<CR>I
 "vmap <C-x> :vsc Edit.Cut<CR>
 
 noremap <leader>q ci"
