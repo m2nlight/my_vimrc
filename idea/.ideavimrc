@@ -130,16 +130,15 @@ map <leader><leader>b <Action>(BuildCurrentProject)
 map <leader><leader>B <Action>(RebuildSolutionAction)
 
 map <leader>n <Action>(NewElementSamePlace)
+vmap <leader>n :norm
 map <leader>N <Action>(ActivateNotificationsToolWindow)
 
 map <leader>m <Action>(GotoRelated)
-vmap <leader>m <Action>(GotoRelated)
+vmap <leader>m <Action>(ExtractMethod)
 map <leader><leader>m <Action>(NavigateToImmediateWindow)
 
 map s <Action>(AceAction)
 vmap s <Action>(RiderSurroundWith)
-vmap n :norm
-vmap <leader>m <Action>(ExtractMethod)
 
 map + <Action>(EditorSelectWord)
 map _ <Action>(EditorUnSelectWord)

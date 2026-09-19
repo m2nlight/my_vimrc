@@ -154,16 +154,16 @@ noremap <leader><leader>b :vsc Build.BuildSelection<CR>
 noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
 
 noremap <leader>n :vsc AddQuickFile<CR>
+vnoremap <leader>n :norm 
 noremap <leader>N :vsc View.Notifications<CR>
 
 noremap <leader>m :vsc MVVMTools.SwitchtoViewViewModel<CR>
+vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
 noremap <leader><leader>m :vsc Debug.Immediate<CR>
 
 noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>
 "noremap s :vsc Tools.InvokeAceJumpCommand<CR>
 vnoremap s :vsc ReSharper.ReSharper_SurroundWith<CR>
-vnoremap n :norm 
-vnoremap <leader>m :vsc Resharper.Resharper_ExtractMethod<CR>
 
 noremap + :vsc Resharper.ReSharper_ExtendSelection<CR>
 vnoremap + :vsc Resharper.ReSharper_ExtendSelection<CR>

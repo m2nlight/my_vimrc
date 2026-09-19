@@ -142,24 +142,6 @@
                 "undo_expand_region"
             ]
         },
-        // {
-        //     "before": [
-        //         "<leader>",
-        //         "n"
-        //     ],
-        //     "after": [
-        //         "<C-a>"
-        //     ]
-        // },
-        // {
-        //     "before": [
-        //         "<leader>",
-        //         "N"
-        //     ],
-        //     "after": [
-        //         "<C-x>"
-        //     ]
-        // },
         {
             "before": [
                 "<leader>",
@@ -198,6 +180,7 @@
         },
         {
             "before": [
+                "<leader>",
                 "n"
             ],
             "after": [
@@ -674,24 +657,6 @@
                 "editor.gotoNextFold"
             ]
         },
-        // {
-        //     "before": [
-        //         "<leader>",
-        //         "n"
-        //     ],
-        //     "after": [
-        //         "<C-a>"
-        //     ]
-        // },
-        // {
-        //     "before": [
-        //         "<leader>",
-        //         "N"
-        //     ],
-        //     "after": [
-        //         "<C-x>"
-        //     ]
-        // },
         {
             "before": [
                 "<leader>",

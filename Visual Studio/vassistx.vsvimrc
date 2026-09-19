@@ -141,17 +141,15 @@ noremap <leader>B :vsc Build.RebuildSelection<CR>
 noremap <leader><leader>b :vsc Build.BuildSolution<CR>
 noremap <leader><leader>B :vsc Build.RebuildSolution<CR>
 
-noremap <leader>n <C-a>
-noremap <leader>N <C-x>
-noremap <leader><leader>n :vsc AddQuickFile<CR>
+noremap <leader>n :vsc AddQuickFile<CR>
+vnoremap <leader>n :norm 
 noremap <leader><leader>N :vsc View.Notifications<CR>
 
 noremap <leader>m :vsc VAssistX.GotoImplementation<CR>
+vnoremap <leader>m :vsc VAssistX.RefactorExtractMethod<CR>
 noremap <leader><leader>m :vsc Debug.ParallelStacks<CR>
 
 vnoremap <leader>s :vsc Edit.SurroundWith<CR>
-vnoremap <leader>n :norm 
-vnoremap <leader>m :vsc VAssistX.RefactorExtractMethod<CR>
 
 noremap s :vsc Tools.InvokeAceJumpCommand<CR>
 "noremap s :vsc Tools.InvokePeasyMotionOneCharJump<CR>

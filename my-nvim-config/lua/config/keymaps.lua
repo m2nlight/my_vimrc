@@ -162,8 +162,8 @@ m.set("n", "<space>B", "ci{", { desc = "Change the text in {}" })
 m.set("n", "<space><space>b", "<cmd>OverseerBuild<CR>", { desc = "Build" })
 -- m.set("n", <space><space>B", "<cmd>OverseerBuild<CR>", { desc = "ReBuild" })
 
-m.set("v", "n", ":norm ", { desc = "Cmd Normal..." })
 m.set("n", "<space>n", "<cmd>enew<CR>" , { desc = "New File" })
+m.set("v", "<space>n", ":norm ", { desc = "Cmd Normal..." })
 m.set("n", "<space>N", function() require("noice").cmd("all") end, { desc = "Notice All" })
 -- m.set("n", "<space><space>N", function() sendkeys("<leader>n") end, { desc = "Notice History" })
 
